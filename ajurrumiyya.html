@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المرجع الشامل في شرح متن الآجرُّومية — لابن آجرُّوم الصنهاجي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   THE AJURRUMIYYA — A CLASSICAL MANUSCRIPT IN MODERN GARB
+   ========================================================= */
+
+:root{
+  --ink:        #2a1a0f;      /* deep sepia ink */
+  --ink-soft:   #4a3520;
+  --parchment:  #f6ecd6;      /* warm aged paper */
+  --parchment-2:#efe2c6;
+  --gold:       #a87935;      /* illumination gold */
+  --gold-soft:  #c89b59;
+  --crimson:    #8a2a1f;      /* andalusian red */
+  --emerald:    #2f5d3a;      /* manuscript green */
+  --rule:       #b89c6e;
+  --shadow:     0 4px 24px rgba(74,53,32,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+
+body{
+  font-family:'Amiri', 'Markazi Text', serif;
+  font-size:20px;
+  line-height:1.9;
+  color:var(--ink);
+  background:var(--parchment);
+  background-image:
+    radial-gradient(at 12% 8%,  rgba(168,121,53,.08) 0, transparent 50%),
+    radial-gradient(at 88% 92%, rgba(138,42,31,.06) 0, transparent 50%),
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(74,53,32,.012) 22px 23px);
+  min-height:100vh;
+}
+
+/* ---------- TOP HEADER / TITLE BAND ---------- */
+.title-band{
+  background:linear-gradient(180deg, #2a1a0f 0%, #1a0f08 100%);
+  color:var(--parchment);
+  padding:60px 20px 80px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:4px double var(--gold);
+}
+.title-band::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 120%, rgba(168,121,53,.4) 0, transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 39px, rgba(168,121,53,.06) 39px 40px);
+  pointer-events:none;
+}
+.title-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1}
+
+.ornament{
+  font-family:'Aref Ruqaa', serif;
+  color:var(--gold);
+  font-size:32px;
+  margin-bottom:18px;
+  letter-spacing:8px;
+}
+.ornament span{display:inline-block;animation:shimmer 3s infinite}
+@keyframes shimmer{0%,100%{opacity:.6}50%{opacity:1}}
+
+.main-title{
+  font-family:'Aref Ruqaa', serif;
+  font-size:clamp(34px, 6vw, 60px);
+  font-weight:700;
+  color:var(--gold-soft);
+  margin-bottom:14px;
+  text-shadow: 0 2px 0 rgba(0,0,0,.4);
+  line-height:1.3;
+}
+.sub-title{
+  font-family:'Reem Kufi', sans-serif;
+  font-size:clamp(16px, 2.4vw, 22px);
+  color:var(--parchment-2);
+  font-weight:400;
+  margin-bottom:8px;
+}
+.author-line{
+  font-family:'Amiri', serif;
+  font-style:italic;
+  color:#d4b87a;
+  font-size:18px;
+  margin-top:24px;
+}
+
+/* ---------- NAVIGATION ---------- */
+.nav-bar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(42,26,15,.97);
+  backdrop-filter:blur(8px);
+  border-bottom:2px solid var(--gold);
+  padding:12px 20px;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.nav-title{
+  font-family:'Aref Ruqaa', serif;
+  color:var(--gold-soft);
+  font-size:18px;
+}
+.nav-toggle{
+  background:var(--gold);color:var(--ink);
+  border:none;padding:8px 18px;border-radius:4px;
+  font-family:'Reem Kufi', sans-serif;
+  font-size:15px;font-weight:600;cursor:pointer;
+  transition:all .2s;
+}
+.nav-toggle:hover{background:var(--gold-soft);transform:translateY(-1px)}
+
+/* ---------- TABLE OF CONTENTS DRAWER ---------- */
+.toc-drawer{
+  position:fixed;top:0;right:-360px;width:340px;height:100vh;
+  background:var(--parchment);
+  border-left:3px solid var(--gold);
+  box-shadow:-8px 0 30px rgba(0,0,0,.2);
+  transition:right .35s cubic-bezier(.22,1,.36,1);
+  z-index:200;overflow-y:auto;
+  padding:24px 20px;
+}
+.toc-drawer.open{right:0}
+.toc-close{
+  position:absolute;top:14px;left:14px;
+  background:transparent;border:1px solid var(--ink);color:var(--ink);
+  width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+}
+.toc-close:hover{background:var(--ink);color:var(--parchment)}
+.toc-title{
+  font-family:'Aref Ruqaa', serif;
+  font-size:24px;color:var(--crimson);
+  text-align:center;margin:8px 0 20px;
+  padding-bottom:14px;border-bottom:2px solid var(--gold);
+}
+.toc-list{list-style:none}
+.toc-list > li{margin-bottom:6px}
+.toc-list a{
+  display:block;text-decoration:none;color:var(--ink);
+  font-family:'Amiri', serif;font-size:17px;
+  padding:7px 12px;border-radius:4px;
+  border-right:3px solid transparent;
+  transition:all .15s;
+}
+.toc-list a:hover{background:var(--parchment-2);border-right-color:var(--gold);color:var(--crimson)}
+.toc-section{
+  font-family:'Reem Kufi',sans-serif;
+  font-weight:600;color:var(--emerald);
+  font-size:15px;margin:14px 0 6px;
+  padding:0 4px;
+}
+.toc-sublist{list-style:none;padding-right:12px;border-right:1px dashed var(--rule)}
+.toc-sublist a{font-size:15.5px;padding:5px 10px}
+
+.toc-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.4);
+  opacity:0;pointer-events:none;transition:opacity .3s;z-index:150;
+}
+.toc-overlay.show{opacity:1;pointer-events:auto}
+
+/* ---------- MAIN CONTENT ---------- */
+main{
+  max-width:880px;margin:0 auto;padding:50px 28px 80px;
+}
+
+section.chapter{
+  background:#fbf5e3;
+  margin:36px 0;
+  border-radius:6px;
+  padding:38px 36px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(168,121,53,.25);
+  position:relative;
+}
+section.chapter::before{
+  content:'';position:absolute;top:0;right:0;width:100%;height:4px;
+  background:linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--crimson) 50%, var(--gold) 80%, transparent 100%);
+  border-radius:6px 6px 0 0;
+}
+
+.chapter-num{
+  font-family:'Aref Ruqaa', serif;
+  color:var(--gold);font-size:16px;
+  text-align:center;letter-spacing:4px;
+  margin-bottom:6px;text-transform:uppercase;
+}
+h1.chapter-title{
+  font-family:'Aref Ruqaa', serif;
+  font-size:clamp(28px, 4.5vw, 38px);
+  color:var(--crimson);
+  text-align:center;
+  margin-bottom:8px;
+  font-weight:700;
+}
+.chapter-divider{
+  display:flex;align-items:center;justify-content:center;
+  margin:14px 0 28px;color:var(--gold);font-size:20px;
+  gap:10px;
+}
+.chapter-divider::before, .chapter-divider::after{
+  content:'';flex:1;max-width:80px;height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+h2.section-title{
+  font-family:'Reem Kufi', sans-serif;
+  font-size:26px;color:var(--emerald);
+  margin:32px 0 14px;
+  padding:8px 14px 8px 0;
+  border-right:5px solid var(--gold);
+  background:linear-gradient(90deg, rgba(168,121,53,.08), transparent 60%);
+  font-weight:600;
+}
+
+h3.subsection{
+  font-family:'Reem Kufi', sans-serif;
+  font-size:21px;color:var(--crimson);
+  margin:22px 0 10px;
+  font-weight:500;
+}
+
+p{margin-bottom:14px;text-align:justify;text-justify:inter-word}
+p.lead{font-size:21px;color:var(--ink-soft);font-style:italic;text-align:center;margin:20px 0}
+
+/* ---------- DEFINITIONS / RULES BLOCKS ---------- */
+.definition{
+  background:linear-gradient(135deg, #f9e9c0 0%, #f3dca0 100%);
+  border-right:4px solid var(--crimson);
+  padding:16px 20px;margin:16px 0;
+  border-radius:4px;
+  font-size:20px;
+  position:relative;
+}
+.definition::before{
+  content:'التعريف';
+  position:absolute;top:-10px;right:14px;
+  background:var(--crimson);color:var(--parchment);
+  padding:2px 12px;border-radius:3px;
+  font-family:'Reem Kufi', sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:2px;
+}
+.rule{
+  background:rgba(47,93,58,.08);
+  border-right:4px solid var(--emerald);
+  padding:14px 20px;margin:14px 0;
+  border-radius:4px;
+  position:relative;
+}
+.rule::before{
+  content:'قاعدة';
+  position:absolute;top:-10px;right:14px;
+  background:var(--emerald);color:var(--parchment);
+  padding:2px 12px;border-radius:3px;
+  font-family:'Reem Kufi', sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:2px;
+}
+.note{
+  background:#fff8e3;
+  border-right:3px dashed var(--gold);
+  padding:12px 18px;margin:14px 0;
+  border-radius:3px;
+  font-size:18px;
+  position:relative;
+}
+.note::before{
+  content:'تنبيه';
+  position:absolute;top:-9px;right:14px;
+  background:var(--gold);color:var(--ink);
+  padding:2px 10px;border-radius:3px;
+  font-family:'Reem Kufi', sans-serif;font-size:12px;font-weight:600;
+}
+
+/* ---------- EXAMPLES ---------- */
+.example{
+  background:#fffdf6;
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:18px 22px;margin:18px 0;
+  position:relative;
+  box-shadow:0 2px 8px rgba(74,53,32,.06);
+}
+.example::before{
+  content:'مثال';
+  position:absolute;top:-11px;right:20px;
+  background:var(--ink);color:var(--gold);
+  padding:3px 14px;border-radius:3px;
+  font-family:'Reem Kufi', sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:2px;
+}
+.example.quran::before{content:'من القرآن الكريم';background:var(--emerald)}
+.example.poetry::before{content:'من الشعر العربي';background:var(--crimson)}
+.example.classical::before{content:'مثال كلاسيكي';background:var(--gold);color:var(--ink)}
+
+.ayah, .verse{
+  font-family:'Amiri', serif;
+  font-size:23px;font-weight:700;
+  color:var(--ink);
+  text-align:center;
+  margin:6px 0 12px;
+  padding:8px 0;
+  line-height:2;
+}
+.ayah{color:#1a3d22}
+.verse{color:#4a1f1a}
+.attribution{
+  text-align:center;color:var(--ink-soft);
+  font-size:15px;font-style:italic;margin-bottom:8px;
+}
+.parse, .explanation{
+  font-size:17.5px;
+  color:var(--ink-soft);
+  background:#f6ecd6;
+  padding:10px 14px;border-radius:4px;margin-top:8px;
+  border-right:2px solid var(--gold-soft);
+}
+.parse strong, .explanation strong{color:var(--crimson)}
+
+/* ---------- TABLES ---------- */
+.tbl-wrap{overflow-x:auto;margin:18px 0}
+table.gram{
+  width:100%;border-collapse:collapse;
+  font-family:'Amiri', serif;font-size:17.5px;
+  background:#fffdf6;
+}
+table.gram th{
+  background:var(--ink);color:var(--gold-soft);
+  font-family:'Reem Kufi', sans-serif;font-weight:600;
+  padding:10px 14px;text-align:center;
+  border:1px solid var(--ink);
+}
+table.gram td{
+  padding:9px 14px;border:1px solid var(--rule);
+  text-align:center;
+}
+table.gram tr:nth-child(even) td{background:#f6ecd6}
+table.gram tr:hover td{background:#f1dfb0}
+
+/* ---------- LISTS ---------- */
+ul.tidy, ol.tidy{
+  padding-right:28px;margin:14px 0;
+}
+ul.tidy li, ol.tidy li{margin-bottom:8px;line-height:1.8}
+ul.tidy li::marker{color:var(--gold);font-weight:700}
+ol.tidy li::marker{color:var(--crimson);font-weight:700;font-family:'Reem Kufi',sans-serif}
+
+/* ---------- HIGHLIGHTED WORDS ---------- */
+.hl{color:var(--crimson);font-weight:700}
+.hl-g{color:var(--emerald);font-weight:700}
+.hl-b{color:var(--gold);font-weight:700;background:rgba(168,121,53,.1);padding:1px 4px;border-radius:2px}
+
+/* ---------- DROPCAP ---------- */
+.dropcap::first-letter{
+  font-family:'Aref Ruqaa', serif;
+  font-size:60px;
+  color:var(--crimson);
+  float:right;
+  line-height:0.85;
+  margin:5px 0 0 8px;
+  padding:5px;
+}
+
+/* ---------- BIO BLOCK ---------- */
+.bio{
+  background:#2a1a0f;color:var(--parchment-2);
+  padding:30px;border-radius:6px;margin:30px 0;
+  border:2px solid var(--gold);position:relative;
+}
+.bio h3{color:var(--gold-soft);font-family:'Aref Ruqaa',serif;font-size:24px;margin-bottom:12px}
+.bio p{margin-bottom:10px;color:#e8d8b0}
+.bio strong{color:var(--gold-soft)}
+
+/* ---------- FOOTER ---------- */
+footer.foot{
+  background:#1a0f08;color:var(--parchment-2);
+  text-align:center;padding:40px 20px;
+  border-top:3px double var(--gold);
+}
+footer .orn{color:var(--gold);font-size:24px;margin-bottom:14px;letter-spacing:8px}
+footer p{margin-bottom:6px;font-family:'Amiri',serif;color:#c8b888}
+
+/* ---------- BACK TO TOP ---------- */
+.to-top{
+  position:fixed;bottom:24px;left:24px;
+  background:var(--ink);color:var(--gold);
+  border:2px solid var(--gold);
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;cursor:pointer;
+  box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:all .3s;
+  z-index:90;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{background:var(--gold);color:var(--ink)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px){
+  body{font-size:18px}
+  section.chapter{padding:24px 18px}
+  .ayah, .verse{font-size:20px}
+  main{padding:30px 12px 60px}
+  .toc-drawer{width:88vw;right:-90vw}
+  .definition,.rule,.note{padding:14px 16px}
+  table.gram{font-size:15px}
+  table.gram td,table.gram th{padding:7px 8px}
+}
+
+/* ---------- PRINT ---------- */
+@media print{
+  .nav-bar, .toc-drawer, .toc-overlay, .to-top{display:none}
+  section.chapter{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  body{background:white;color:black}
+}
+</style>
+</head>
+<body>
+
+<!-- =========== HEADER =========== -->
+<header class="title-band">
+  <div class="title-inner">
+    <div class="ornament"><span>۞</span> <span>﷽</span> <span>۞</span></div>
+    <h1 class="main-title">المُقَدِّمَة الآجُرُّومِيَّة<br>في مَبادِئ عِلْم العَرَبِيَّة</h1>
+    <div class="sub-title">شرح وافٍ، ومرجع جامع، للمبتدئ والمتقدّم</div>
+    <div class="sub-title">مدعَّمٌ بشواهد القرآن الكريم وفصيح الشِّعر العربي</div>
+    <p class="author-line">تأليف: الإمام أبي عبد الله محمد بن داود الصِّنهاجي المعروف بابن آجُرُّوم (ت ٧٢٣هـ)</p>
+  </div>
+</header>
+
+<!-- =========== NAVIGATION =========== -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-title">المرجع الشامل للآجرومية</div>
+    <button class="nav-toggle" onclick="toggleToc()">☰ فهرس الأبواب</button>
+  </div>
+</nav>
+
+<!-- TOC overlay -->
+<div class="toc-overlay" onclick="toggleToc()"></div>
+
+<!-- TOC drawer -->
+<aside class="toc-drawer">
+  <button class="toc-close" onclick="toggleToc()">✕</button>
+  <div class="toc-title">فِهْرِسُ الأبْواب</div>
+  <ul class="toc-list">
+    <li><a href="#intro">مقدّمة وتعريف بالمتن وبصاحبه</a></li>
+
+    <li class="toc-section">القسم الأول: المبادئ العامة</li>
+    <ul class="toc-sublist">
+      <li><a href="#kalam">١. باب الكلام</a></li>
+      <li><a href="#irab">٢. باب الإعراب</a></li>
+      <li><a href="#alamat">٣. باب علامات الإعراب</a></li>
+      <li><a href="#mu3rabat">٤. فصل المعربات</a></li>
+      <li><a href="#af3al">٥. باب الأفعال</a></li>
+    </ul>
+
+    <li class="toc-section">القسم الثاني: مرفوعات الأسماء</li>
+    <ul class="toc-sublist">
+      <li><a href="#marfu3at">٦. مرفوعات الأسماء (إجمال)</a></li>
+      <li><a href="#fa3il">٧. باب الفاعل</a></li>
+      <li><a href="#naib">٨. نائب الفاعل</a></li>
+      <li><a href="#mubtada">٩. المبتدأ والخبر</a></li>
+      <li><a href="#kana">١٠. كان وأخواتها</a></li>
+      <li><a href="#inna">١١. إنّ وأخواتها</a></li>
+      <li><a href="#dhanna">١٢. ظنّ وأخواتها</a></li>
+      <li><a href="#tawabi3">١٣. النعت والعطف والتوكيد والبدل</a></li>
+    </ul>
+
+    <li class="toc-section">القسم الثالث: منصوبات الأسماء</li>
+    <ul class="toc-sublist">
+      <li><a href="#mansubat">١٤. منصوبات الأسماء (إجمال)</a></li>
+      <li><a href="#maf3ulbih">١٥. المفعول به</a></li>
+      <li><a href="#masdar">١٦. المصدر (المفعول المطلق)</a></li>
+      <li><a href="#dharf">١٧. ظرفا الزمان والمكان</a></li>
+      <li><a href="#hal">١٨. الحال</a></li>
+      <li><a href="#tamyiz">١٩. التمييز</a></li>
+      <li><a href="#istithna">٢٠. الاستثناء</a></li>
+      <li><a href="#lanafia">٢١. لا النافية للجنس</a></li>
+      <li><a href="#munada">٢٢. المنادى</a></li>
+      <li><a href="#liajli">٢٣. المفعول لأجله</a></li>
+      <li><a href="#ma3ahu">٢٤. المفعول معه</a></li>
+    </ul>
+
+    <li class="toc-section">القسم الرابع: المخفوضات</li>
+    <ul class="toc-sublist">
+      <li><a href="#makhfudat">٢٥. باب مخفوضات الأسماء</a></li>
+    </ul>
+
+    <li class="toc-section">خاتمة</li>
+    <ul class="toc-sublist">
+      <li><a href="#summary">٢٦. خلاصة جامعة</a></li>
+    </ul>
+  </ul>
+</aside>
+
+<!-- =========== MAIN CONTENT =========== -->
+<main>
+
+<!-- =========================================================
+     INTRODUCTION
+     ========================================================= -->
+<section class="chapter" id="intro">
+  <div class="chapter-num">— المقدّمة —</div>
+  <h1 class="chapter-title">في التَّعريف بالمتن وصاحبه</h1>
+  <div class="chapter-divider">۞ ❖ ۞</div>
+
+  <p class="dropcap">الحمدُ لله رَبِّ العالمين، والصلاةُ والسلامُ على سيّدنا محمدٍ خاتم النبيّين، وعلى آله وصحبه أجمعين، أمّا بعد: فإنَّ <span class="hl-b">المُقَدِّمَة الآجُرُّومية</span> متنٌ مُختصَرٌ عظيمُ النفع، جليلُ القَدْر، طارَ في الآفاق صِيتُه، وتلقَّاه أهلُ العلم بالقَبول في كلِّ مِصْرٍ من أمصار الإسلام، حتى صار مدخلَ كلِّ مَن أراد أن يَطْرُقَ بابَ النحو، ومفتاحَ كلِّ مَن رامَ صَوْنَ لسانه عن اللحن في القرآن والكلام.</p>
+
+  <div class="bio">
+    <h3>صاحب المتن: ابن آجُرُّوم الصِّنهاجي</h3>
+    <p><strong>هو:</strong> الإمام أبو عبد الله محمد بن محمد بن داود الصِّنهاجي، المغربي الفاسي، المعروف بـ<strong>«ابن آجُرُّوم»</strong>.</p>
+    <p><strong>مولده ووفاته:</strong> وُلد بمدينة فاس بالمغرب سنة ٦٧٢هـ، وتوفي بها سنة ٧٢٣هـ.</p>
+    <p><strong>معنى آجرّوم:</strong> كلمة أعجمية من لسان البربر، قيل معناها <em>«الفقير الصوفي»</em>، وضُبط أوّلُها بالمدّ، وثانيها بضمّ الجيم وتشديد الراء.</p>
+    <p><strong>منزلته:</strong> كان نحويًّا، فقيهًا، مُقرِئًا، صالحًا، صاحبَ كرامات، اشتهر بهذا المتن الذي يَزْعَم بعضُ العلماء أنه ألَّفه تجاه الكعبة المشرَّفة فنالَ بركةَ ذلك، فلهذا قَبِلَه الناسُ.</p>
+  </div>
+
+  <h2 class="section-title">منهج هذا الشرح</h2>
+  <p>سار هذا المرجعُ على هذه الأصول:</p>
+  <ul class="tidy">
+    <li><strong>إيراد كلام المؤلِّف</strong> أو معناه ابتداءً، ثم بيانُه وشرحُه.</li>
+    <li><strong>تقعيدُ المسائل</strong> في صناديق واضحة المعالم: تعريف، قاعدة، تنبيه، مثال.</li>
+    <li><strong>التمثيل بالقرآن الكريم</strong> أوَّلًا، ثم بالحديث الشريف، ثم بفصيح الشعر العربي قديمه وحديثه.</li>
+    <li><strong>إعرابُ الأمثلة</strong> إعرابًا مُفصَّلًا لا يتركُ شيئًا، مع بيان الإشكالات وحلِّها.</li>
+    <li><strong>تذييلُ الأبواب</strong> بجداول تَجْمَع شَتاتَ المسألة في صورة واحدة.</li>
+  </ul>
+
+  <div class="note">
+    <p><strong>كيف تَنْتَفِع بهذا المرجع؟</strong> اقرأ البابَ كلَّه قراءةً تأمُّل، ثم عُد إلى الأمثلة وأَعْرِبْها بنفسك، ثم قارِن إعرابَك بالإعرابِ المكتوب. وإن أردت الإتقانَ فاحفظ <strong>متن الآجرومية</strong> أولًا، ثم اقرأ هذا الشرح، ثم انتقل إلى ما هو أعلى منه، كـ <em>«قطر النَّدى»</em> أو <em>«شُذور الذهب»</em> لابن هشام.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     BAB AL-KALAM
+     ========================================================= -->
+<section class="chapter" id="kalam">
+  <div class="chapter-num">— الباب الأول —</div>
+  <h1 class="chapter-title">بابُ الكَلامِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف الكلام عند النحاة</h2>
+  <div class="definition">
+    <p><span class="hl">الكلامُ</span>: هو اللَّفظُ المُرَكَّبُ المُفيدُ بالوَضْعِ.</p>
+  </div>
+
+  <p>فهذا الحدُّ مُؤلَّفٌ من أربعة قيود، كلُّ قيدٍ منها يُخرج شيئًا لا يَصْدُق عليه اسم «الكلام» اصطلاحًا:</p>
+
+  <h3 class="subsection">القيد الأول: اللَّفظ</h3>
+  <p>اللَّفظُ هو الصوتُ المُشتمِل على بعض الحروف الهجائية، نحو: <span class="hl">«زَيدٌ»</span>، فإنها مشتملةٌ على الزاي والياء والدال. وخرج بـ «اللفظ» <strong>الكتابةُ، والإشارةُ، والعقدُ بالأصابع</strong>، فإنها وإن دلّت على المعاني فليست بكلامٍ عند النحاة وإن سُمِّيَت كلامًا في العُرف.</p>
+
+  <h3 class="subsection">القيد الثاني: المُرَكَّب</h3>
+  <p>المركّبُ ما تركَّب من كلمتين فأكثر، فخرج به <span class="hl">المُفرَدُ</span> نحو «زيدٌ»، فإنه لفظٌ ولكنّه ليس مركّبًا فلا يُسمَّى كلامًا.</p>
+
+  <h3 class="subsection">القيد الثالث: المُفيد</h3>
+  <p>المُفيدُ هو ما يَحْسُن السكوتُ عليه بحيث لا يَبْقَى السامعُ مُنتظرًا لشيء. فلو قلت: <em>«إنْ قامَ زيدٌ»</em> لكان لفظًا مركّبًا، لكنَّه لا يُفيد لأن السامع ينتظر الجواب فيقول: ماذا؟ فلا يكون كلامًا حتى تُتمَّ فتقول: <em>«إنْ قام زيدٌ قعد عمرٌو»</em>.</p>
+
+  <h3 class="subsection">القيد الرابع: الوَضْع</h3>
+  <p>أي بالوضع العربي، فخرج به ما يُتلَفَّظ به من ألفاظ سائر اللغات، فإنه ليس كلامًا في اصطلاح النحاة العرب.</p>
+
+  <div class="example classical">
+    <div class="ayah">قامَ زيدٌ</div>
+    <div class="parse">جملةٌ تامّةُ المعنى، اشتملت على لَفْظٍ (الصوت المنطوق)، ومُرَكَّبٌ (من كلمتين)، ومُفيدٌ (يَحْسُن السكوت عليها)، وبالوَضع العربي. ⟵ <strong>إذًا هو كلامٌ</strong>.</div>
+  </div>
+
+  <h2 class="section-title">٢. أقسام الكلام</h2>
+  <div class="rule">
+    <p>أقسامُه ثلاثة: <span class="hl">اسمٌ</span>، و<span class="hl-g">فعلٌ</span>، و<span class="hl-b">حرفٌ جاء لمعنى</span>.</p>
+  </div>
+
+  <h3 class="subsection">أوّلًا: الاسم</h3>
+  <p>الاسمُ: كلمةٌ دلّت على معنًى في نفسها غيرَ مقترنة بزَمَن، نحو: <em>رجلٌ، فرسٌ، علمٌ، زيدٌ، مكَّة</em>.</p>
+
+  <p><strong>علاماتُه التي يَتميَّز بها عن الفعل والحرف خمسٌ، كما قال المؤلف:</strong></p>
+  <ol class="tidy">
+    <li><strong>الخفض (الجر):</strong> أي قَبولُه لعلامة الجر، كالكسرة. نحو: «مررتُ بزيدٍ».</li>
+    <li><strong>التنوين:</strong> وهو نونٌ ساكنة زائدة تلحَق آخر الاسم لفظًا لا خطًّا، نحو: «زيدٌ، زيدًا، زيدٍ».</li>
+    <li><strong>دخول الألف واللام:</strong> نحو: «الرجل، الكتاب، القمر».</li>
+    <li><strong>دخول حروف الخفض:</strong> وهي: <em>مِنْ، إلى، عَنْ، على، في، رُبَّ، الباء، الكاف، اللام، وحروف القَسَم: الواو والباء والتاء</em>.</li>
+    <li><strong>الإسناد إليه:</strong> أي أن يُحدَّث عنه فيكون مُسنَدًا إليه، نحو: «زيدٌ قائمٌ».</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">وَلَقَدْ خَلَقْنَا الْإِنسَانَ مِن سُلَالَةٍ مِّن طِينٍ</div>
+    <div class="attribution">[سورة المؤمنون: ١٢]</div>
+    <div class="parse">في هذه الآية: <span class="hl">«الإنسانَ»</span> اسمٌ، دلَّ على ذلك <strong>دخولُ الألف واللام</strong>. و<span class="hl">«سُلالةٍ»</span> اسمٌ، دلَّ على ذلك <strong>دخول حرف الجر «مِن» عليه، وكونُه مُنوَّنًا مكسورًا</strong>. وكذلك <span class="hl">«طينٍ»</span>.</div>
+  </div>
+
+  <h3 class="subsection">ثانيًا: الفعل</h3>
+  <p>الفعلُ: كلمةٌ دلّت على معنًى في نفسها مقترنةٍ بزَمَن، نحو: <em>كَتَبَ (للماضي)، يَكْتُبُ (للحاضر أو المستقبل)، اكْتُبْ (للأمر)</em>.</p>
+
+  <p><strong>علاماتُه أربع كما ذكر المؤلف:</strong></p>
+  <ol class="tidy">
+    <li><strong>قَدْ:</strong> وتدخل على الماضي والمضارع، نحو: «قد قام زيدٌ»، «قد يقومُ زيدٌ».</li>
+    <li><strong>السين:</strong> وتختصُّ بالمضارع، نحو: «سيقومُ زيدٌ»، تفيد التنفيس القريب.</li>
+    <li><strong>سوف:</strong> وتختصُّ بالمضارع كذلك، نحو: «سوف يقومُ زيدٌ»، وتفيد التنفيس البعيد.</li>
+    <li><strong>تاء التأنيث الساكنة:</strong> وتختصُّ بالماضي، نحو: «قامَتْ هندٌ»، «جاءتْ زينبُ».</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">قَدْ أَفْلَحَ الْمُؤْمِنُونَ</div>
+    <div class="attribution">[سورة المؤمنون: ١]</div>
+    <div class="parse">«قد» دخلت على <span class="hl-g">«أفلحَ»</span> فدلّت على أنه <strong>فعلٌ ماضٍ</strong>. و«قد» هاهنا تفيد التحقيق.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">سَيَقُولُ السُّفَهَاءُ مِنَ النَّاسِ</div>
+    <div class="attribution">[سورة البقرة: ١٤٢]</div>
+    <div class="parse">السين دخلت على <span class="hl-g">«يقولُ»</span> فدلّت على أنه <strong>فعلٌ مضارع</strong>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قَالَتِ امْرَأَتُ الْعَزِيزِ الْآنَ حَصْحَصَ الْحَقُّ</div>
+    <div class="attribution">[سورة يوسف: ٥١]</div>
+    <div class="parse">تاء التأنيث الساكنة دخلت على <span class="hl-g">«قالَتْ»</span> فدلّت على أنه <strong>فعلٌ ماضٍ</strong>.</div>
+  </div>
+
+  <h3 class="subsection">ثالثًا: الحرف</h3>
+  <p>الحرفُ: كلمةٌ دلّت على معنًى في غيرها، فإنك لو قلت: <em>«مِنْ»</em> وحدها لم يُفهم منها معنًى، فإذا قلتَ: <em>«ذهبتُ مِن البيتِ»</em> أفادت معنى ابتداء الغاية.</p>
+
+  <p><strong>علامتُه:</strong> أنه لا يَقْبَل علاماتِ الاسم ولا علاماتِ الفعل. فهو يُعرف بـ <span class="hl-b">العلامة العَدَمية</span>، أي بألَّا توجد فيه علاماتُ غيره.</p>
+
+  <div class="example quran">
+    <div class="ayah">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
+    <div class="attribution">[سورة الفاتحة: ٢]</div>
+    <div class="parse">اللام في «لله»: <strong>حرفُ جرّ</strong>. لا تَقبل تنوينًا ولا «أل»، ولا «قَدْ» ولا السينَ، ولا تاءَ التأنيث. فعُرف بذلك أنها حرفٌ.</div>
+  </div>
+
+  <h2 class="section-title">٣. خلاصةٌ في جدول</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr>
+        <th>القسم</th><th>الدلالة</th><th>أهم علاماته</th><th>أمثلة</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>الاسم</td><td>معنى في نفسه بلا زمن</td><td>الجر، التنوين، أل، حرف الجر، الإسناد إليه</td><td>زيدٌ، الكتاب، بمسجدٍ</td></tr>
+        <tr><td>الفعل</td><td>معنى في نفسه مع زمن</td><td>قَدْ، السين، سوف، تاء التأنيث الساكنة</td><td>كَتَبَ، يَكتُبُ، اكتُبْ</td></tr>
+        <tr><td>الحرف</td><td>معنى في غيره</td><td>لا يَقبل علامةَ اسمٍ ولا فعل</td><td>مِنْ، إلى، هل، لم، إنّ</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =========================================================
+     BAB AL-I'RAB
+     ========================================================= -->
+<section class="chapter" id="irab">
+  <div class="chapter-num">— الباب الثاني —</div>
+  <h1 class="chapter-title">بابُ الإعرابِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف الإعراب</h2>
+  <div class="definition">
+    <p><span class="hl">الإعرابُ</span>: تغييرُ أواخر الكَلِم لاختلاف العوامل الداخلة عليها، لفظًا أو تقديرًا.</p>
+  </div>
+
+  <p>أي أنّ الكلمة المُعرَبة يتغيَّر آخرُها بحسب ما يدخل عليها من عواملَ مختلفة، فتكون مرّةً مرفوعة، ومرةً منصوبة، ومرّةً مجرورة، ومرّةً مجزومة. وانظر إلى كلمة <strong>«زيدٌ»</strong> كيف تتقلّب أحوالها:</p>
+
+  <div class="example classical">
+    <div class="verse">
+      جاءَ زَيدٌ — رأيتُ زَيدًا — مَرَرْتُ بزَيدٍ
+    </div>
+    <div class="parse">في الأولى: <span class="hl">«زيدٌ»</span> مرفوعٌ بالضمة لأنه فاعل. وفي الثانية: <span class="hl">«زيدًا»</span> منصوبٌ بالفتحة لأنه مفعول به. وفي الثالثة: <span class="hl">«زيدٍ»</span> مجرورٌ بالكسرة لأنه مجرور بحرف الجر. فتغيَّر آخرُ الكلمة بسبب اختلاف العوامل (الفعل، حرف الجر).</p>
+    </div>
+  </div>
+
+  <h3 class="subsection">معنى «لفظًا أو تقديرًا»</h3>
+  <p><strong>الإعراب اللفظي:</strong> ما يَظهر على آخر الكلمة وتَنطق به، نحو «زيدٌ» بضمة ظاهرة.</p>
+  <p><strong>الإعراب التقديري:</strong> ما يكون آخرُ الكلمة فيه ساكنًا في النطق، لكنّا نُقدِّر فيه الحركة لمانعٍ من ظهورها. كقولك: <em>«جاء الفتى»</em>، فإن «الفتى» فاعلٌ مرفوع، ولكن لا تظهر الضمة على آخره لأن آخره ألفٌ، والألف لا تَقبل الحركة، فنُقدِّر الضمة عليها.</p>
+
+  <div class="example quran">
+    <div class="ayah">وَلَا يَخَافُ عُقْبَاهَا</div>
+    <div class="attribution">[سورة الشمس: ١٥]</div>
+    <div class="parse">«يخافُ»: فعلٌ مضارع مرفوع، وعلامة رفعه ضمةٌ <strong>ظاهرة</strong> على آخره. — <span class="hl">إعراب لفظيٌّ</span>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ</div>
+    <div class="attribution">[سورة فاطر: ٢٨]</div>
+    <div class="parse">«يخشى»: فعلٌ مضارع مرفوع، وعلامة رفعه ضمةٌ <strong>مقدَّرة</strong> على الألف منع من ظهورها التَّعذُّر. — <span class="hl">إعراب تقديريٌّ</span>.</div>
+  </div>
+
+  <h2 class="section-title">٢. أقسام الإعراب الأربعة</h2>
+  <div class="rule">
+    <p>الإعراب أربعة أقسام: <span class="hl">رفعٌ</span>، و<span class="hl">نصبٌ</span>، و<span class="hl">خفضٌ (جرٌّ)</span>، و<span class="hl">جزمٌ</span>.</p>
+  </div>
+
+  <p>وتتوزّع هذه الأقسام بين الأسماء والأفعال على النحو الآتي:</p>
+
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>القسم</th><th>الأسماء</th><th>الأفعال (المضارع)</th></tr></thead>
+      <tbody>
+        <tr><td>الرفع</td><td>✓ تَدخله</td><td>✓ يدخله</td></tr>
+        <tr><td>النصب</td><td>✓ تَدخله</td><td>✓ يدخله</td></tr>
+        <tr><td>الخفض (الجر)</td><td>✓ تَدخله</td><td>✗ لا يدخله</td></tr>
+        <tr><td>الجزم</td><td>✗ لا تَدخله</td><td>✓ يدخله</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>فمن هنا يُؤخذ هاتان القاعدتان الذهبيتان:</p>
+  <div class="rule">
+    <ul class="tidy">
+      <li><strong>الجرُّ من خصائص الأسماء</strong>: فلا يدخل في فعلٍ أبدًا. فإذا رأيت كلمةً مجرورة فاعلم أنها اسمٌ قطعًا.</li>
+      <li><strong>الجزمُ من خصائص الأفعال</strong>: فلا يدخل في اسمٍ أبدًا. فإذا رأيت كلمةً مجزومة فاعلم أنها فعلٌ مضارع قطعًا.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     BAB ALAMAT AL-I'RAB
+     ========================================================= -->
+<section class="chapter" id="alamat">
+  <div class="chapter-num">— الباب الثالث —</div>
+  <h1 class="chapter-title">بابُ مَعْرِفَةِ عَلاماتِ الإعْرابِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <p class="lead">العلاماتُ هي الإشاراتُ التي تَدُلُّ على حال الكلمة، أمرفوعةٌ هي أم منصوبةٌ أم مجرورةٌ أم مجزومة. ولكلِّ قسمٍ من أقسام الإعراب علاماتٌ أصلية وفرعية، وإليك تفصيلَها.</p>
+
+  <h2 class="section-title">١. علامات الرفع — أربع</h2>
+  <ol class="tidy">
+    <li>الضمَّة <span class="hl-b">(الأصل)</span></li>
+    <li>الواو</li>
+    <li>الألف</li>
+    <li>النون</li>
+  </ol>
+
+  <h3 class="subsection">١. الضمَّة</h3>
+  <p>هي العلامة الأصلية للرفع، وتكون علامةً للرفع في أربعة مواضع:</p>
+  <ul class="tidy">
+    <li><strong>الاسم المفرد</strong>: نحو «جاءَ زيدٌ».</li>
+    <li><strong>جمع التكسير</strong>: نحو «جاءَ الرِّجالُ».</li>
+    <li><strong>جمع المؤنث السالم</strong>: نحو «جاءتِ الهنداتُ».</li>
+    <li><strong>الفعل المضارع الذي لم يَتَّصل بآخره شيء</strong>: نحو «يَكتُبُ زيدٌ».</li>
+  </ul>
+
+  <div class="example quran">
+    <div class="ayah">وَيَخْلُقُ مَا لَا تَعْلَمُونَ</div>
+    <div class="attribution">[سورة النحل: ٨]</div>
+    <div class="parse">«يخلُقُ»: فعل مضارع مرفوع وعلامة رفعه <strong>الضمة الظاهرة</strong>. — مثال للضمة في الفعل المضارع.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَالْعَصْرِ ۝ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ ۝ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ</div>
+    <div class="attribution">[سورة العصر: ١-٣]</div>
+    <div class="parse">«الصالحاتِ»: جمعُ مؤنث سالم، وقع هنا منصوبًا، لكن لو وقع مرفوعًا — كقولك «جاءت الصالحاتُ» — لكانت علامةُ رفعِه <strong>الضمةَ الظاهرة</strong>.</div>
+  </div>
+
+  <h3 class="subsection">٢. الواو</h3>
+  <p>تكون علامةً للرفع في موضعين:</p>
+  <ul class="tidy">
+    <li><strong>جمع المذكر السالم</strong>: نحو «جاء المسلمونَ».</li>
+    <li><strong>الأسماء الخمسة</strong>: وهي: <em>أبوك، وأخوك، وحَموك، وفُوك، وذو مال</em>. نحو «جاء أبوك».</li>
+  </ul>
+
+  <div class="example quran">
+    <div class="ayah">قَدْ أَفْلَحَ الْمُؤْمِنُونَ</div>
+    <div class="attribution">[سورة المؤمنون: ١]</div>
+    <div class="parse">«المؤمنون»: فاعلٌ مرفوع، وعلامة رفعه <strong>الواو</strong>؛ لأنه جمعُ مذكَّرٍ سالم.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قَالُوا يَا أَبَانَا اسْتَغْفِرْ لَنَا ذُنُوبَنَا</div>
+    <div class="attribution">[سورة يوسف: ٩٧]</div>
+    <div class="parse">لو قلت «هذا أبوك» لكانت «أبو» مرفوعةً بالواو لأنها من الأسماء الخمسة. (في الآية «أبا» منادى منصوب بالألف لأنه من الأسماء الخمسة).</div>
+  </div>
+
+  <h3 class="subsection">٣. الألف</h3>
+  <p>تكون علامةً للرفع في موضعٍ واحدٍ، وهو: <strong>المُثنَّى</strong>. نحو «جاء الزيدانِ».</p>
+  <div class="example quran">
+    <div class="ayah">قَالَ رَجُلَانِ مِنَ الَّذِينَ يَخَافُونَ</div>
+    <div class="attribution">[سورة المائدة: ٢٣]</div>
+    <div class="parse">«رجلانِ»: فاعل مرفوع، وعلامة رفعه <strong>الألف</strong> لأنه مثنّى، والنون عوضٌ عن التنوين في الاسم المفرد.</div>
+  </div>
+
+  <h3 class="subsection">٤. النون</h3>
+  <p>تكون علامةً للرفع في موضعٍ واحد، وهو: <strong>الأفعال الخمسة</strong>. والأفعال الخمسة هي: كل فعلٍ مضارع اتَّصل به ألفُ الاثنين، أو واوُ الجماعة، أو ياءُ المخاطبة. وأوزانُها: <em>«يفعلانِ، تفعلانِ، يفعلونَ، تفعلونَ، تفعلينَ»</em>.</p>
+
+  <div class="example quran">
+    <div class="ayah">الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ</div>
+    <div class="attribution">[سورة البقرة: ٣]</div>
+    <div class="parse">«يؤمنونَ»، «يقيمونَ»: فعلانِ مضارعانِ مرفوعانِ، وعلامة رفعِهما <strong>ثبوتُ النون</strong> لأنهما من الأفعال الخمسة.</div>
+  </div>
+
+  <h2 class="section-title">٢. علامات النصب — خمس</h2>
+  <ol class="tidy">
+    <li>الفتحة <span class="hl-b">(الأصل)</span></li>
+    <li>الألف</li>
+    <li>الكسرة</li>
+    <li>الياء</li>
+    <li>حذف النون</li>
+  </ol>
+
+  <h3 class="subsection">١. الفتحة</h3>
+  <p>تكون علامةً للنصب في ثلاثة مواضع:</p>
+  <ul class="tidy">
+    <li><strong>الاسم المفرد</strong>: «رأيتُ زيدًا».</li>
+    <li><strong>جمع التكسير</strong>: «رأيتُ الرجالَ».</li>
+    <li><strong>الفعل المضارع المنصوب الذي لم يَتَّصل بآخره شيء</strong>: «لن يَكتُبَ زيدٌ».</li>
+  </ul>
+  <div class="example quran">
+    <div class="ayah">لَن نَّبْرَحَ عَلَيْهِ عَاكِفِينَ</div>
+    <div class="attribution">[سورة طه: ٩١]</div>
+    <div class="parse">«نَبْرَحَ»: فعل مضارع منصوب بـ«لن»، وعلامة نصبه <strong>الفتحة الظاهرة</strong>.</div>
+  </div>
+
+  <h3 class="subsection">٢. الألف</h3>
+  <p>تكون علامةً للنصب في الأسماء الخمسة، نحو: «رأيتُ أباك».</p>
+  <div class="example quran">
+    <div class="ayah">وَاللَّهُ أَخْرَجَكُم مِّن بُطُونِ أُمَّهَاتِكُمْ</div>
+    <div class="attribution">[سورة النحل: ٧٨]</div>
+    <div class="parse">في قوله «إنَّ أباك ذو علمٍ»، «أبا» اسم «إنَّ» منصوب بالألف لأنه من الأسماء الخمسة.</div>
+  </div>
+
+  <h3 class="subsection">٣. الكسرة</h3>
+  <p>تكون علامةً للنصب في جمع المؤنث السالم. نحو: «رأيتُ الهنداتِ».</p>
+  <div class="example quran">
+    <div class="ayah">إِنَّ الْمُسْلِمِينَ وَالْمُسْلِمَاتِ وَالْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ</div>
+    <div class="attribution">[سورة الأحزاب: ٣٥]</div>
+    <div class="parse">«المسلماتِ»، «المؤمناتِ»: معطوفاتٌ على «المسلمين»، وهي اسم «إنَّ» منصوب، وعلامة نصبهنّ <strong>الكسرة</strong> نيابةً عن الفتحة لأنها جموع مؤنث سالمة.</div>
+  </div>
+
+  <h3 class="subsection">٤. الياء</h3>
+  <p>تكون علامةً للنصب في موضعين: <strong>المثنى</strong>، و<strong>جمع المذكر السالم</strong>.</p>
+  <div class="example quran">
+    <div class="ayah">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ</div>
+    <div class="attribution">[سورة الفاتحة: ٦-٧]</div>
+    <div class="parse">في الآية: «يومَ القيامةِ» لو أردنا مثالًا للمثنى المنصوب: «إنَّ الرجلَيْنِ قائمانِ»: «الرجلَيْنِ» اسم إنَّ منصوب وعلامة نصبه <strong>الياء</strong>. ومثال جمع المذكر السالم المنصوب من الآية يحتاج إعرابًا. أوضح: «رأيتُ المسلمينَ»، فالمسلمينَ مفعول به منصوب بالياء.</div>
+  </div>
+
+  <h3 class="subsection">٥. حذف النون</h3>
+  <p>يكون علامةً للنصب في الأفعال الخمسة. نحو: «لن يكتُبُوا»، أصلها «يكتبونَ» فحُذِفت النون بسبب الناصب.</p>
+  <div class="example quran">
+    <div class="ayah">لَن تَنَالُوا الْبِرَّ حَتَّىٰ تُنفِقُوا مِمَّا تُحِبُّونَ</div>
+    <div class="attribution">[سورة آل عمران: ٩٢]</div>
+    <div class="parse">«تنالوا»، «تنفقوا»: فعلانِ مضارعانِ من الأفعال الخمسة، منصوبانِ بـ«لن» و«حتى»، وعلامة نصبهما <strong>حذفُ النون</strong>. الأصل: تنالونَ، تنفقونَ.</div>
+  </div>
+
+  <h2 class="section-title">٣. علامات الخفض (الجر) — ثلاث</h2>
+  <ol class="tidy">
+    <li>الكسرة <span class="hl-b">(الأصل)</span></li>
+    <li>الياء</li>
+    <li>الفتحة</li>
+  </ol>
+
+  <h3 class="subsection">١. الكسرة</h3>
+  <p>تكون علامةً للخفض في ثلاثة مواضع:</p>
+  <ul class="tidy">
+    <li><strong>الاسم المفرد المنصرف</strong>: «مررتُ بزيدٍ».</li>
+    <li><strong>جمع التكسير المنصرف</strong>: «مررتُ بالرجالِ».</li>
+    <li><strong>جمع المؤنث السالم</strong>: «مررتُ بالمسلماتِ».</li>
+  </ul>
+  <div class="example quran">
+    <div class="ayah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="attribution">[سورة الفاتحة: ١]</div>
+    <div class="parse">«اللهِ، الرحمنِ، الرحيمِ»: أسماءٌ مفردةٌ مجرورة، وعلامة جرّها <strong>الكسرة الظاهرة</strong>. والاسم الأول مجرور بحرف الجر «الباء»، والثاني والثالث نَعتانِ للأول تَبِعاه في الجرّ.</div>
+  </div>
+
+  <h3 class="subsection">٢. الياء</h3>
+  <p>تكون علامةً للخفض في ثلاثة مواضع: <strong>الأسماء الخمسة</strong>، و<strong>المثنى</strong>، و<strong>جمع المذكر السالم</strong>.</p>
+  <div class="example quran">
+    <div class="ayah">إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّلْمُؤْمِنِينَ</div>
+    <div class="attribution">[سورة الحجر: ٧٧]</div>
+    <div class="parse">«المؤمنينَ»: مجرور باللام، وعلامة جره <strong>الياء</strong> لأنه جمع مذكر سالم.</div>
+  </div>
+
+  <h3 class="subsection">٣. الفتحة</h3>
+  <p>تكون علامةً للخفض في <strong>الاسم الذي لا ينصرف</strong> (الممنوع من الصرف)، نحو: «مررتُ بأحمدَ»، «صلَّيتُ في مساجدَ».</p>
+  <div class="example quran">
+    <div class="ayah">وَلَقَدْ آتَيْنَا مُوسَى تِسْعَ آيَاتٍ بَيِّنَاتٍ</div>
+    <div class="attribution">[سورة الإسراء: ١٠١]</div>
+    <div class="parse">«موسى» اسمٌ ممنوعٌ من الصرف للعَلَمية والعُجمة، فلو وقع مجرورًا — كقولك «مررتُ بموسى» — لكانت علامة جره <strong>الفتحة المقدَّرة على الألف</strong>.</div>
+  </div>
+
+  <h2 class="section-title">٤. علامات الجزم — اثنتان</h2>
+  <ol class="tidy">
+    <li>السكون <span class="hl-b">(الأصل)</span></li>
+    <li>الحذف (حذف حرف العلة من المعتل، وحذف النون من الأفعال الخمسة)</li>
+  </ol>
+
+  <h3 class="subsection">١. السكون</h3>
+  <p>يكون علامةً للجزم في الفعل المضارع الصحيح الآخر، نحو: «لم يكتُبْ».</p>
+  <div class="example quran">
+    <div class="ayah">لَمْ يَلِدْ وَلَمْ يُولَدْ</div>
+    <div class="attribution">[سورة الإخلاص: ٣]</div>
+    <div class="parse">«يَلِدْ» و«يُولَدْ»: فعلانِ مضارعانِ مجزومانِ بـ«لم»، وعلامة جزمِهما <strong>السكون</strong>.</div>
+  </div>
+
+  <h3 class="subsection">٢. الحذف</h3>
+  <ul class="tidy">
+    <li><strong>حذف حرف العلة</strong> في الفعل المضارع المعتلِّ الآخر (الذي ينتهي بألف أو واو أو ياء)، نحو: «لم يَدْعُ، لم يَخْشَ، لم يَرْمِ». الأصل: يدعو، يخشى، يرمي.</li>
+    <li><strong>حذف النون</strong> في الأفعال الخمسة، نحو: «لم يكتبوا». الأصل: يكتبونَ.</li>
+  </ul>
+  <div class="example quran">
+    <div class="ayah">وَمَن يَدْعُ مَعَ اللَّهِ إِلَٰهًا آخَرَ لَا بُرْهَانَ لَهُ بِهِ</div>
+    <div class="attribution">[سورة المؤمنون: ١١٧]</div>
+    <div class="parse">«يَدْعُ»: فعل مضارع مجزوم بـ«مَن» الشرطية، وعلامة جزمه <strong>حذف حرف العلة</strong> (الواو).</div>
+  </div>
+
+  <h2 class="section-title">٥. جدول جامع لعلامات الإعراب</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>نوع الكلمة</th><th>الرفع</th><th>النصب</th><th>الجر</th><th>الجزم</th></tr></thead>
+      <tbody>
+        <tr><td>الاسم المفرد</td><td>الضمة</td><td>الفتحة</td><td>الكسرة</td><td>—</td></tr>
+        <tr><td>جمع التكسير</td><td>الضمة</td><td>الفتحة</td><td>الكسرة</td><td>—</td></tr>
+        <tr><td>جمع المؤنث السالم</td><td>الضمة</td><td>الكسرة</td><td>الكسرة</td><td>—</td></tr>
+        <tr><td>جمع المذكر السالم</td><td>الواو</td><td>الياء</td><td>الياء</td><td>—</td></tr>
+        <tr><td>المثنى</td><td>الألف</td><td>الياء</td><td>الياء</td><td>—</td></tr>
+        <tr><td>الأسماء الخمسة</td><td>الواو</td><td>الألف</td><td>الياء</td><td>—</td></tr>
+        <tr><td>الممنوع من الصرف</td><td>الضمة</td><td>الفتحة</td><td>الفتحة</td><td>—</td></tr>
+        <tr><td>المضارع الصحيح</td><td>الضمة</td><td>الفتحة</td><td>—</td><td>السكون</td></tr>
+        <tr><td>المضارع المعتلّ</td><td>الضمة المقدّرة</td><td>الفتحة (الياء/الواو) أو المقدّرة (الألف)</td><td>—</td><td>حذف حرف العلة</td></tr>
+        <tr><td>الأفعال الخمسة</td><td>ثبوت النون</td><td>حذف النون</td><td>—</td><td>حذف النون</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =========================================================
+     FASL AL-MU'RABAT
+     ========================================================= -->
+<section class="chapter" id="mu3rabat">
+  <div class="chapter-num">— الباب الرابع —</div>
+  <h1 class="chapter-title">فَصْلٌ في المُعْرَباتِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <p class="lead">الكَلِم في الإعراب على ضربين: <span class="hl">مُعرَبٌ</span> يتغير آخره بحسب العوامل، و<span class="hl">مَبْنيٌّ</span> يلزم آخرُه حالةً واحدة لا تتغير. وهذا الفصل عَقَدَه المؤلِّف لبيان أنواع المعرب من جهة علامة إعرابه.</p>
+
+  <h2 class="section-title">١. قسما المُعرَب</h2>
+  <div class="rule">
+    <p>المُعرَبات قسمان:</p>
+    <ul class="tidy">
+      <li><span class="hl">مُعرَبٌ بالحركات</span>: وأصلُه أن تكون علاماتُ إعرابِه الضمةَ والفتحةَ والكسرة والسكون.</li>
+      <li><span class="hl">مُعرَبٌ بالحروف</span>: تكون علاماتُ إعرابِه حروفًا: كالواو والألف والياء والنون.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">٢. المُعرَب بالحركات</h2>
+  <p>هو أربعة أنواع، تُعرَب كلُّها بالحركات الأصلية على هذا الميزان:</p>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>النوع</th><th>الرفع</th><th>النصب</th><th>الجر</th><th>الجزم</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>الاسم المفرد</td><td>الضمة</td><td>الفتحة</td><td>الكسرة</td><td>—</td><td>زيدٌ — زيدًا — زيدٍ</td></tr>
+        <tr><td>جمع التكسير</td><td>الضمة</td><td>الفتحة</td><td>الكسرة</td><td>—</td><td>رجالٌ — رجالًا — رجالٍ</td></tr>
+        <tr><td>جمع المؤنث السالم</td><td>الضمة</td><td><span class="hl">الكسرة</span></td><td>الكسرة</td><td>—</td><td>مسلماتٌ — مسلماتٍ — مسلماتٍ</td></tr>
+        <tr><td>المضارع الصحيح الآخر</td><td>الضمة</td><td>الفتحة</td><td>—</td><td>السكون</td><td>يكتُبُ — يكتُبَ — يكتُبْ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p><strong>خرج عن الأصل</strong> فيها موضعان:</p>
+    <ul class="tidy">
+      <li><strong>جمع المؤنث السالم</strong> يُنصَب بالكسرة نيابةً عن الفتحة.</li>
+      <li><strong>الاسم الذي لا يَنصرف</strong> (الممنوع من الصرف) يُجَرّ بالفتحة نيابةً عن الكسرة، نحو «مررتُ بأحمدَ»، إلا أن يُضاف أو تدخله «أل»، فيُعاد إلى الجرّ بالكسرة، نحو: «مررتُ بأحمدِكم»، «صلَّيتُ في المساجدِ».</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">٣. المُعرَب بالحروف</h2>
+  <p>وهو أربعة أنواع كذلك:</p>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>النوع</th><th>الرفع</th><th>النصب</th><th>الجر</th><th>الجزم</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>المثنى</td><td>الألف</td><td>الياء</td><td>الياء</td><td>—</td><td>الزيدانِ — الزيدَيْنِ — الزيدَيْنِ</td></tr>
+        <tr><td>جمع المذكر السالم</td><td>الواو</td><td>الياء</td><td>الياء</td><td>—</td><td>الزيدونَ — الزيدِينَ — الزيدِينَ</td></tr>
+        <tr><td>الأسماء الخمسة</td><td>الواو</td><td>الألف</td><td>الياء</td><td>—</td><td>أبوك — أباك — أبيك</td></tr>
+        <tr><td>الأفعال الخمسة</td><td>ثبوت النون</td><td>حذف النون</td><td>—</td><td>حذف النون</td><td>يكتبونَ — لن يكتبوا — لم يكتبوا</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَلِكُلٍّ دَرَجَاتٌ مِّمَّا عَمِلُوا</div>
+    <div class="attribution">[سورة الأنعام: ١٣٢]</div>
+    <div class="parse">«درجاتٌ»: مبتدأ مؤخر مرفوع، وعلامة رفعه <strong>الضمة الظاهرة</strong> لأنه جمع مؤنث سالم. (وفي الرفع لا فرق بينه وبين المفرد).</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     BAB AL-AF'AL
+     ========================================================= -->
+<section class="chapter" id="af3al">
+  <div class="chapter-num">— الباب الخامس —</div>
+  <h1 class="chapter-title">بابُ الأفعالِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. أقسام الفعل من حيث الزمن</h2>
+  <div class="rule">
+    <p>الأفعالُ ثلاثة: <span class="hl">ماضٍ</span>، و<span class="hl-g">مضارعٌ</span>، و<span class="hl-b">أمرٌ</span>. نحو: كَتَبَ — يَكتُبُ — اكتُبْ.</p>
+  </div>
+
+  <h3 class="subsection">١. الفعل الماضي</h3>
+  <p><strong>تعريفه:</strong> ما دلَّ على حَدَثٍ وَقَع وانقضى قبل زمن التكلم.</p>
+  <p><strong>علامته:</strong> قَبولُه لتاءِ التأنيث الساكنة، نحو «قامتْ هندٌ».</p>
+  <p><strong>حُكمه:</strong> مَفْتوحُ الآخر أبدًا (مَبنيٌّ على الفتح)، نحو: «كَتَبَ، قَرَأَ»، إلا إن اتَّصل به ضمير رفع متحرك فيُسكَّن، أو اتَّصلت به واو الجماعة فيُضَمّ.</p>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ</div>
+    <div class="attribution">[سورة القدر: ١]</div>
+    <div class="parse">«أنزَلْنا»: فعل ماضٍ مبنيٌّ على <strong>السكون</strong> لاتصاله بضمير الرفع المتحرّك «نا».</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قَالُوا سُبْحَانَكَ لَا عِلْمَ لَنَا</div>
+    <div class="attribution">[سورة البقرة: ٣٢]</div>
+    <div class="parse">«قالوا»: فعل ماضٍ مبنيٌّ على <strong>الضم</strong> لاتصاله بواو الجماعة.</div>
+  </div>
+
+  <h3 class="subsection">٢. الفعل المضارع</h3>
+  <p><strong>تعريفه:</strong> ما دلَّ على حدثٍ يَقَع في الحال أو يقع في المستقبل.</p>
+  <p><strong>علامته:</strong> أن يُبدأ بإحدى الزوائد الأربع المجموعة في كلمة «<span class="hl">أَنَيْتُ</span>»: الهمزة للمتكلم، والنون لمتكلم معه غيره، والياء للغائب، والتاء للمخاطب أو الغائبة.</p>
+  <p><strong>حُكمه:</strong> مرفوعٌ أبدًا حتى يدخل عليه ناصبٌ أو جازم.</p>
+
+  <h4 style="color:var(--crimson);font-family:'Reem Kufi';margin-top:14px">النواصب: عشرة، عند المؤلف</h4>
+  <p>وهي: <span class="hl">أنْ، لنْ، إذنْ، كَيْ، لامُ كَيْ (لام التعليل)، لامُ الجحود، حتى، الجوابُ بالفاء والواو وأو</span>.</p>
+
+  <div class="example quran">
+    <div class="ayah">يُرِيدُونَ أَن يُطْفِئُوا نُورَ اللَّهِ بِأَفْوَاهِهِمْ</div>
+    <div class="attribution">[سورة التوبة: ٣٢]</div>
+    <div class="parse">«يُطفِئُوا»: فعل مضارع منصوب بـ«أنْ»، وعلامة نصبه <strong>حذف النون</strong> لأنه من الأفعال الخمسة.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">لَن تَنفَعَكُمْ أَرْحَامُكُمْ</div>
+    <div class="attribution">[سورة الممتحنة: ٣]</div>
+    <div class="parse">«تَنفَعَ»: فعل مضارع منصوب بـ«لن»، وعلامة نصبه <strong>الفتحة</strong>.</div>
+  </div>
+
+  <h4 style="color:var(--crimson);font-family:'Reem Kufi';margin-top:14px">الجوازم: ثمانية عشر</h4>
+  <p>وهي قسمان:</p>
+  <ul class="tidy">
+    <li><strong>جوازم تَجزِم فعلًا واحدًا (٤):</strong> <span class="hl">لمْ، لمَّا، لامُ الأمر، لا الناهية</span>.</li>
+    <li><strong>جوازم تَجزِم فِعلَين (يُسمَّى الأول فعلَ الشرط والثاني جوابَ الشرط):</strong> <span class="hl">إنْ، ما، مَنْ، مهما، إذما، أيُّ، متى، أينَ، أيَّان، أنَّى، حيثما، كيفما</span>.</li>
+  </ul>
+
+  <div class="example quran">
+    <div class="ayah">لَمْ يَلِدْ وَلَمْ يُولَدْ</div>
+    <div class="attribution">[سورة الإخلاص: ٣]</div>
+    <div class="parse">«يَلِدْ، يُولَدْ»: فعلانِ مضارعانِ مجزومانِ بـ«لم»، علامة جزمِهما <strong>السكون</strong>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَإِن تَعُودُوا نَعُدْ</div>
+    <div class="attribution">[سورة الأنفال: ١٩]</div>
+    <div class="parse">«تعودوا»: فعل الشرط، مجزوم بـ«إنْ»، علامة جزمه حذف النون. و«نَعُدْ»: جواب الشرط، مجزوم، وعلامة جزمه <strong>السكون</strong>.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وَمَنْ يَكُ ذا فَمٍ مُرٍّ مَريضٍ ・ يَجِدْ مُرًّا بهِ الماءَ الزُّلالا
+    </div>
+    <div class="attribution">— المتنبي</div>
+    <div class="parse">«مَنْ»: اسمُ شرطٍ جازم. «يَكُ»: فعل مضارع ناقص، فعل الشرط، مجزوم بحذف النون والواو (أصله يَكونُ). «يَجِدْ»: جواب الشرط، مجزوم وعلامة جزمه السكون.</div>
+  </div>
+
+  <h3 class="subsection">٣. فعل الأمر</h3>
+  <p><strong>تعريفه:</strong> ما دلَّ على طلب الفعل من المخاطب على وجه الاستعلاء (مع إمكان الجَزم بالطلب).</p>
+  <p><strong>علامته:</strong> أن يَدلّ على الطلب ويَقْبَل ياءَ المخاطبة، نحو: «اكتُبي».</p>
+  <p><strong>حُكمه:</strong> <strong>مبنيٌّ أبدًا</strong> على ما يُجزَم به مضارعُه. فمضارع «اكتُبْ» هو «يَكتُبْ» (مجزوم بالسكون)، فبُني الأمر على السكون.</p>
+
+  <div class="example quran">
+    <div class="ayah">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</div>
+    <div class="attribution">[سورة العلق: ١]</div>
+    <div class="parse">«اقرَأْ»: فعل أمر مبنيٌّ على <strong>السكون</strong>، والفاعل ضمير مستتر تقديره «أنتَ».</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قُلْ هُوَ اللَّهُ أَحَدٌ</div>
+    <div class="attribution">[سورة الإخلاص: ١]</div>
+    <div class="parse">«قُلْ»: فعل أمر مبنيٌّ على السكون، والفاعل ضمير مستتر تقديره «أنتَ».</div>
+  </div>
+
+  <h2 class="section-title">٢. حُكم بناء الأفعال وإعرابها — جدول</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الفعل</th><th>الأصل فيه</th><th>الحالات</th></tr></thead>
+      <tbody>
+        <tr><td>الماضي</td><td>مبنيٌّ على الفتح</td><td>يُسكَّن مع ضمير الرفع المتحرك، ويُضَم مع واو الجماعة</td></tr>
+        <tr><td>المضارع</td><td>مُعرَبٌ، مرفوع إلا أن يَنصِبه ناصب أو يَجزِمه جازم</td><td>يُبنى على الفتح مع نون التوكيد، وعلى السكون مع نون النسوة</td></tr>
+        <tr><td>الأمر</td><td>مبنيٌّ على ما يُجزَم به مضارعه</td><td>على السكون، أو حذف العلة، أو حذف النون، أو الفتح مع نون التوكيد</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =========================================================
+     MARFU'AT - OVERVIEW
+     ========================================================= -->
+<section class="chapter" id="marfu3at">
+  <div class="chapter-num">— القسم الثاني —</div>
+  <h1 class="chapter-title">مَرفوعاتُ الأسْماءِ</h1>
+  <div class="chapter-divider">۞ ❖ ۞</div>
+
+  <p class="lead">قال المؤلِّفُ — رحمه الله —: «المرفوعاتُ سبعة، وهي: الفاعلُ، والمفعولُ الذي لم يُسَمَّ فاعلُه، والمبتدأُ، وخبرُه، واسمُ كانَ وأخواتها، وخبرُ إنّ وأخواتها، والتابع للمرفوع، وهو أربعة: النعتُ، والعطفُ، والتوكيدُ، والبَدَل».</p>
+
+  <div class="note">
+    <p><strong>منهج الدراسة في هذا القسم:</strong> سنَدْرُس كلَّ مرفوعٍ على حِدَةٍ، فنذكر تعريفَه، وأقسامَه، وأحكامَه، وأمثلتَه من القرآن والشعر، مع إعرابٍ مُفصَّل.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     FA'IL
+     ========================================================= -->
+<section class="chapter" id="fa3il">
+  <div class="chapter-num">— الفصل السابع —</div>
+  <h1 class="chapter-title">بابُ الفاعِلِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف الفاعل</h2>
+  <div class="definition">
+    <p><span class="hl">الفاعلُ</span>: اسمٌ مرفوعٌ المذكورُ قَبْلَه فِعلُه، أو ما يَجري مَجْراه.</p>
+  </div>
+
+  <p>هذا تعريفُ المؤلِّف، وفيه أربعةُ قيود:</p>
+  <ul class="tidy">
+    <li><strong>اسمٌ</strong>: ليَخْرُج بذلك الفعلُ والحرف.</li>
+    <li><strong>مرفوعٌ</strong>: لبيان حكمه، وأنَّ الرفع حقُّه دائمًا.</li>
+    <li><strong>المذكورُ قبله فِعلُه</strong>: ليُخرَج المبتدأَ ونحوه.</li>
+    <li><strong>أو ما يَجري مَجراه</strong>: أي ما هو في معنى الفعل كاسم الفاعل، نحو: «أقائمٌ الزيدانِ؟»، فالزيدان فاعلٌ بـ«قائم».</li>
+  </ul>
+
+  <h2 class="section-title">٢. أقسام الفاعل</h2>
+  <div class="rule">
+    <p>الفاعل قسمان: <span class="hl">ظاهرٌ</span> و<span class="hl-g">مُضمَر</span>.</p>
+  </div>
+
+  <h3 class="subsection">أ) الفاعل الظاهر</h3>
+  <p>هو ما دلَّ على مُسمَّاه بنفسه من غير قَرينة، نحو: «قام زيدٌ، يقومُ زيدٌ، قامَ الزيدانِ، يقومُ الزيدانِ، قام الزيدونَ، يقوم الزيدونَ، قامَ الرجالُ، يقومُ الرجالُ، قامت هندٌ، تَقومُ هندٌ، قام الرجلُ، تقومُ المرأةُ»، وعلى هذا فقِسْ.</p>
+
+  <div class="example quran">
+    <div class="ayah">قَدْ أَفْلَحَ الْمُؤْمِنُونَ</div>
+    <div class="attribution">[سورة المؤمنون: ١]</div>
+    <div class="parse">
+      «قد»: حرف تحقيق.<br>
+      «أفلحَ»: فعل ماضٍ مبنيّ على الفتح.<br>
+      «<span class="hl">المؤمنونَ</span>»: <strong>فاعل</strong> مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ</div>
+    <div class="attribution">[سورة الإسراء: ٨١]</div>
+    <div class="parse">
+      «جاءَ»: فعل ماضٍ. «الحقُّ»: <strong>فاعل</strong> مرفوع بالضمة الظاهرة.<br>
+      «الواو»: عاطفة. «زهقَ»: فعل ماضٍ. «الباطلُ»: <strong>فاعل</strong> مرفوع بالضمة الظاهرة.
+    </div>
+  </div>
+
+  <h3 class="subsection">ب) الفاعل المُضمَر</h3>
+  <p>هو ما دلَّ على مُسمَّاه بقرينة تكلُّمٍ أو خطابٍ أو غَيْبة. ويُذكر منه اثنا عشر ضميرًا، وهي:</p>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الضمير</th><th>المثال</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td>تاء المتكلم</td><td>قُمْتُ</td><td>المتكلم وحده</td></tr>
+        <tr><td>«نا»</td><td>قُمْنا</td><td>المتكلم ومعه غيره</td></tr>
+        <tr><td>تاء المخاطب</td><td>قُمْتَ</td><td>مذكر مفرد</td></tr>
+        <tr><td>تاء المخاطبة</td><td>قُمْتِ</td><td>مؤنث مفرد</td></tr>
+        <tr><td>تاء المخاطبَيْن</td><td>قُمْتُما</td><td>مثنى مذكرًا أو مؤنثًا</td></tr>
+        <tr><td>تاء المخاطبين</td><td>قُمْتُمْ</td><td>جمع المذكر</td></tr>
+        <tr><td>تاء المخاطبات</td><td>قُمْتُنَّ</td><td>جمع المؤنث</td></tr>
+        <tr><td>ضمير الغائب المستتر</td><td>زيدٌ قامَ</td><td>غائب مفرد مذكر</td></tr>
+        <tr><td>ضمير الغائبة المستتر</td><td>هندٌ قامَتْ</td><td>غائبة مفردة</td></tr>
+        <tr><td>ألف الاثنين</td><td>الزيدانِ قاما</td><td>مثنى</td></tr>
+        <tr><td>واو الجماعة</td><td>الزيدونَ قاموا</td><td>جمع مذكر</td></tr>
+        <tr><td>نون النسوة</td><td>الهنداتُ قُمْنَ</td><td>جمع مؤنث</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ</div>
+    <div class="attribution">[سورة القدر: ١]</div>
+    <div class="parse">«أنزَلْنا»: فعل ماضٍ، و«نا»: ضميرٌ متصل في محل رفع <strong>فاعل</strong> (مضمَر بارز). والهاء: مفعول به.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَإِذَا قِيلَ لَهُمْ آمِنُوا بِمَا أَنزَلَ اللَّهُ قَالُوا نُؤْمِنُ بِمَا أُنزِلَ إِلَيْنَا</div>
+    <div class="attribution">[سورة البقرة: ٩١]</div>
+    <div class="parse">«آمِنوا»: فعل أمر، وواو الجماعة: ضمير مبنيّ في محل رفع <strong>فاعل</strong>. — مثال للفاعل الضمير البارز المتصل.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قُلْ هُوَ اللَّهُ أَحَدٌ</div>
+    <div class="attribution">[سورة الإخلاص: ١]</div>
+    <div class="parse">«قُلْ»: فعل أمر، والفاعل: ضميرٌ مستترٌ وجوبًا تقديره «أنتَ». — مثال للفاعل الضمير المستتر.</div>
+  </div>
+
+  <h2 class="section-title">٣. أحكام الفاعل المهمّة</h2>
+  <ol class="tidy">
+    <li><strong>وجوب رفعه</strong>، فلا يجوز نَصْبه أو جرّه.</li>
+    <li><strong>وجوب تأخيره عن فعله</strong>؛ فإن تقدَّم لم يُعَدّ فاعلًا، نحو: «زيدٌ قامَ»، فـ«زيدٌ» مبتدأٌ لا فاعل، و«قامَ» فعلٌ فاعلُه ضميرٌ مستتر تقديره «هو».</li>
+    <li><strong>إفراد فعله</strong> إذا تقدَّم عليه فاعلٌ مثنًّى أو جمع، فيقال: «قامَ الزيدانِ، قامَ الزيدونَ، قامت الهنداتُ»، ولا يقال: «قاما الزيدانِ، قاموا الزيدونَ» في فصيح الكلام.</li>
+    <li><strong>تأنيث فعله</strong> إذا كان الفاعل مؤنثًا حقيقيَّ التأنيث متصلًا بالفعل: «قامتْ هندٌ»، ويجوز التأنيث أو التذكير في غيره.</li>
+  </ol>
+
+  <div class="example poetry">
+    <div class="verse">
+      أتى المُحَصِّبَ مِن نَجْدٍ وَساكِنُهُ ・ يَوْمَ النَّفيرِ فأَلْقَى عَنهُ أَجْفانَهْ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«أتى»: فعل ماضٍ. «المُحَصِّبَ»: مفعول به منصوب. «ساكنُه»: <strong>فاعل</strong> مرفوع بالضمة، وهو مضاف، والهاء: مضاف إليه. لاحظ كيف جاء الفاعلُ بعد المفعول به في الترتيب، وهذا جائز.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     NAIB AL-FA'IL
+     ========================================================= -->
+<section class="chapter" id="naib">
+  <div class="chapter-num">— الفصل الثامن —</div>
+  <h1 class="chapter-title">بابُ المَفعولِ الذي لم يُسَمَّ فاعِلُه<br>(نائبِ الفاعل)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف نائب الفاعل</h2>
+  <div class="definition">
+    <p><span class="hl">نائبُ الفاعل</span>: هو الاسمُ المرفوعُ الذي لم يُذكَر معه فاعلُه، فإن كان الفعلُ ماضيًا ضُمَّ أوَّلُه وكُسر ما قبلَ آخره، وإن كان مضارعًا ضُمَّ أوَّلُه وفُتح ما قبلَ آخره.</p>
+  </div>
+
+  <p>أي إذا أردتَ بناءَ الفعل للمجهول، فالقاعدة هكذا:</p>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الفعل</th><th>المعلوم</th><th>المجهول</th><th>القاعدة</th></tr></thead>
+      <tbody>
+        <tr><td>الماضي</td><td>ضَرَبَ</td><td>ضُرِبَ</td><td>ضَمُّ الأول، كَسْرُ ما قبل الآخر</td></tr>
+        <tr><td>المضارع</td><td>يَضْرِبُ</td><td>يُضْرَبُ</td><td>ضَمُّ الأول، فَتْحُ ما قبل الآخر</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">٢. أقسام نائب الفاعل</h2>
+  <p>هو كالفاعل، ينقسم إلى <strong>ظاهر</strong> و<strong>مُضمَر</strong>.</p>
+
+  <h3 class="subsection">الظاهر</h3>
+  <div class="example quran">
+    <div class="ayah">وَخُلِقَ الْإِنسَانُ ضَعِيفًا</div>
+    <div class="attribution">[سورة النساء: ٢٨]</div>
+    <div class="parse">
+      «خُلِقَ»: فعل ماضٍ مبنيٌّ للمجهول.<br>
+      «<span class="hl">الإنسانُ</span>»: <strong>نائب فاعل</strong> مرفوع بالضمة الظاهرة.<br>
+      «ضعيفًا»: حال منصوبة.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يُرْزَقُونَ فِيهَا بِغَيْرِ حِسَابٍ</div>
+    <div class="attribution">[سورة غافر: ٤٠]</div>
+    <div class="parse">«يُرزَقونَ»: فعل مضارع مبنيٌّ للمجهول، وواو الجماعة: <strong>نائب فاعل</strong> مبنيٌّ في محل رفع.</div>
+  </div>
+
+  <h3 class="subsection">المُضمَر</h3>
+  <div class="example quran">
+    <div class="ayah">قُتِلْتُ ظُلْمًا</div>
+    <div class="attribution">[مثال]</div>
+    <div class="parse">«قُتِلْتُ»: فعل ماضٍ مبنيّ للمجهول. والتاء: ضمير في محل رفع <strong>نائب فاعل</strong>.</div>
+  </div>
+
+  <h2 class="section-title">٣. ما يَنوبُ عن الفاعل</h2>
+  <p>إذا حُذف الفاعل، فإنه يَنوب عنه أحدُ هذه الأشياء على هذا الترتيب:</p>
+  <ol class="tidy">
+    <li><strong>المفعول به</strong> (الأكثر وأَوْلى)، نحو: «<span class="hl">ضُرِبَ زيدٌ</span>».</li>
+    <li><strong>الجار والمجرور</strong>، نحو: «جُلِسَ في الدارِ» (في الدار: في محل رفع نائب فاعل).</li>
+    <li><strong>الظرف</strong> (إن كان مختصًّا متصرفًا)، نحو: «صِيمَ يومُ الخميسِ».</li>
+    <li><strong>المصدر</strong> (إن كان مختصًّا)، نحو: «سِيرَ سَيْرٌ طويلٌ».</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُوا لَهُ وَأَنصِتُوا</div>
+    <div class="attribution">[سورة الأعراف: ٢٠٤]</div>
+    <div class="parse">«قُرِئَ»: فعل ماضٍ مبنيّ للمجهول. «<span class="hl">القرآنُ</span>»: <strong>نائب فاعل</strong> مرفوع بالضمة.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MUBTADA WA KHABAR
+     ========================================================= -->
+<section class="chapter" id="mubtada">
+  <div class="chapter-num">— الفصل التاسع —</div>
+  <h1 class="chapter-title">بابُ المُبتدأِ والخَبَرِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف المبتدأ والخبر</h2>
+  <div class="definition">
+    <p><span class="hl">المبتدأُ</span>: هو الاسمُ المرفوعُ العاري عن العوامل اللفظية.<br>
+    <span class="hl">الخبرُ</span>: هو الاسمُ المرفوعُ المُسنَدُ إلى المبتدأ، نحو قولك: «زيدٌ قائمٌ، الزَّيدانِ قائمانِ، الزيدونَ قائمونَ».</p>
+  </div>
+
+  <p><strong>توضيح:</strong> «العاري عن العوامل اللفظية» معناه: لم يَدخل عليه عاملٌ من عوامل النحو، كحرف الجر، أو ناصب، أو فاعل لفعل قبله. ورافِعُ المبتدأ هو <span class="hl-b">الابتداء</span> نفسه (عامل معنوي)، ورافع الخبر هو المبتدأ على المختار.</p>
+
+  <h2 class="section-title">٢. أقسام المبتدأ</h2>
+  <p>المبتدأ قسمان: <strong>ظاهر</strong> كـ«زيدٌ قائمٌ»، و<strong>مُضمَر</strong> وهو اثنا عشر ضميرًا: <em>أنا، نحنُ، أنتَ، أنتِ، أنتما، أنتم، أنتُنّ، هو، هي، هما، هم، هُنَّ</em>.</p>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ</div>
+    <div class="attribution">[سورة الحجرات: ١٠]</div>
+    <div class="parse">«إنما»: كافة ومكفوفة (لا تعمل). «<span class="hl">المؤمنونَ</span>»: <strong>مبتدأ</strong> مرفوع بالواو. «<span class="hl-g">إخوةٌ</span>»: <strong>خبر</strong> مرفوع بالضمة.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قُلْ هُوَ اللَّهُ أَحَدٌ</div>
+    <div class="attribution">[سورة الإخلاص: ١]</div>
+    <div class="parse">
+      «قُلْ»: فعل أمر.<br>
+      «<span class="hl">هو</span>»: ضمير منفصل مبنيٌّ على الفتح في محل رفع <strong>مبتدأ</strong>.<br>
+      «<span class="hl-g">الله</span>»: لفظ الجلالة، <strong>خبر</strong> أول مرفوع.<br>
+      «<span class="hl-g">أحدٌ</span>»: <strong>خبر</strong> ثانٍ مرفوع. وقيل بدلٌ من «الله».
+    </div>
+  </div>
+
+  <h2 class="section-title">٣. أقسام الخبر</h2>
+  <div class="rule">
+    <p>الخبر قسمان:</p>
+    <ul class="tidy">
+      <li><span class="hl">مفرد</span>: ما ليس بجملة ولا شِبهَ جملة، نحو: «زيدٌ قائمٌ».</li>
+      <li><span class="hl">غيرُ مُفرَد</span>، وهو أربعة أشياء: الجار والمجرور، والظرف، والفعل مع فاعله، والمبتدأ مع خبره.</li>
+    </ul>
+  </div>
+
+  <h3 class="subsection">الخبر المفرد</h3>
+  <div class="example quran">
+    <div class="ayah">اللَّهُ غَفُورٌ رَّحِيمٌ</div>
+    <div class="attribution">[سورة البقرة: ١٧٣]</div>
+    <div class="parse">«الله»: مبتدأ. «<span class="hl">غفورٌ</span>»: خبر أول مفرد. «<span class="hl">رحيمٌ</span>»: خبر ثانٍ مفرد.</div>
+  </div>
+
+  <h3 class="subsection">الخبر جملة فعلية</h3>
+  <div class="example quran">
+    <div class="ayah">وَاللَّهُ يَعْلَمُ مَا تُسِرُّونَ وَمَا تُعْلِنُونَ</div>
+    <div class="attribution">[سورة النحل: ١٩]</div>
+    <div class="parse">«اللهُ»: مبتدأ. «<span class="hl">يعلمُ</span>»: فعل مضارع، والفاعل ضمير مستتر تقديره «هو» يعود على «الله». والجملة «يعلمُ...» في محل رفع <strong>خبر</strong>.</div>
+  </div>
+
+  <h3 class="subsection">الخبر جملة اسمية</h3>
+  <div class="example quran">
+    <div class="ayah">اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ</div>
+    <div class="attribution">[سورة النور: ٣٥]</div>
+    <div class="parse">في تركيب «زيدٌ جاريتُه ذاهبةٌ»: «زيدٌ» مبتدأ، «جاريتُه» مبتدأ ثانٍ، «ذاهبةٌ» خبر المبتدأ الثاني، والجملة الاسمية «جاريتُه ذاهبةٌ» في محل رفع خبر المبتدأ الأول.</div>
+  </div>
+
+  <h3 class="subsection">الخبر شبهُ جملة (ظرف أو جار ومجرور)</h3>
+  <div class="example quran">
+    <div class="ayah">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
+    <div class="attribution">[سورة الفاتحة: ٢]</div>
+    <div class="parse">«الحمدُ»: مبتدأ مرفوع. «لله»: جار ومجرور، شِبه جملة، في محل رفع <strong>خبر</strong>. والتقدير: «الحمد مستقرٌّ لله».</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَعِندَهُ مَفَاتِحُ الْغَيْبِ</div>
+    <div class="attribution">[سورة الأنعام: ٥٩]</div>
+    <div class="parse">«عندَ»: ظرف مكان، شِبه جملة، في محل رفع <strong>خبر مقدَّم</strong>. والهاء: مضاف إليه. «مفاتحُ»: <strong>مبتدأ مؤخر</strong> مرفوع.</div>
+  </div>
+
+  <h2 class="section-title">٤. أحكام مهمة في باب المبتدأ والخبر</h2>
+  <ol class="tidy">
+    <li><strong>مطابقة الخبر للمبتدأ</strong> في الإفراد والتثنية والجمع، والتذكير والتأنيث، إذا كان الخبر مفردًا غير مصدرٍ ولا اسمٍ جامد.</li>
+    <li><strong>الأصل تقديم المبتدأ وتأخير الخبر</strong>، ولكن قد يَجبُ تقديم الخبر أو تأخيره أو يُجَوَّز.</li>
+    <li><strong>الأصل في المبتدأ التعريف، وفي الخبر التنكير</strong>: «زيدٌ قائمٌ». ولا يَصِحّ الابتداء بالنكرة إلا لِمُسَوِّغ، كأن تكون موصوفةً، أو في سياق نفيٍ أو استفهام، نحو: «رجلٌ كريمٌ عندنا»، «هل عندك أحدٌ؟».</li>
+  </ol>
+</section>
+
+<!-- =========================================================
+     KANA WA AKHAWATUHA
+     ========================================================= -->
+<section class="chapter" id="kana">
+  <div class="chapter-num">— الفصل العاشر —</div>
+  <h1 class="chapter-title">بابُ كانَ وأخَواتِها<br>(الأفعالُ الناقصة)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. عملها</h2>
+  <div class="rule">
+    <p><span class="hl">كانَ وأخواتُها</span>: تدخل على المبتدأ والخبر، فتَرْفَع المبتدأ ويُسمَّى <span class="hl-b">اسمَها</span>، وتَنْصِب الخبر ويُسمَّى <span class="hl-b">خبرَها</span>.</p>
+  </div>
+
+  <p>قبل دخولها:</p>
+  <div class="example classical">
+    <div class="verse">زيدٌ قائمٌ</div>
+    <div class="parse">«زيدٌ»: مبتدأ. «قائمٌ»: خبر. كلاهما مرفوع.</div>
+  </div>
+  <p>بعد دخولها:</p>
+  <div class="example classical">
+    <div class="verse">كانَ زيدٌ قائمًا</div>
+    <div class="parse">«كانَ»: فعل ماضٍ ناقص. «زيدٌ»: <strong>اسم كانَ</strong> مرفوع. «قائمًا»: <strong>خبر كانَ</strong> منصوب.</div>
+  </div>
+
+  <h2 class="section-title">٢. أخوات كانَ</h2>
+  <p>أخواتها ثلاثة عشر فعلًا، وهي:</p>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الفعل</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td>كانَ</td><td>تَدُلُّ على الاتصاف بالخبر في الماضي</td></tr>
+        <tr><td>أمسى</td><td>الاتصاف بالخبر في وقت المساء</td></tr>
+        <tr><td>أصبحَ</td><td>الاتصاف بالخبر في وقت الصباح</td></tr>
+        <tr><td>أضحى</td><td>الاتصاف بالخبر في وقت الضحى</td></tr>
+        <tr><td>ظَلَّ</td><td>الاتصاف بالخبر في النهار</td></tr>
+        <tr><td>باتَ</td><td>الاتصاف بالخبر في الليل</td></tr>
+        <tr><td>صار</td><td>التَّحوُّل من حالٍ إلى حال</td></tr>
+        <tr><td>ليس</td><td>النفي في الحال</td></tr>
+        <tr><td>ما زال</td><td>الاتصاف بالخبر مع الاستمرار</td></tr>
+        <tr><td>ما انفكَّ</td><td>الاتصاف بالخبر مع الاستمرار</td></tr>
+        <tr><td>ما فَتِئَ</td><td>الاتصاف بالخبر مع الاستمرار</td></tr>
+        <tr><td>ما بَرِحَ</td><td>الاتصاف بالخبر مع الاستمرار</td></tr>
+        <tr><td>ما دامَ</td><td>توقيتُ الخبر بمُدّةٍ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p><strong>تنبيه:</strong> تتصرف كانَ وأكثرُ أخواتها، فتأتي ماضيًا ومضارعًا وأمرًا، نحو: كان — يكون — كُن. وأما <strong>ليس</strong> فلا تتصرف. و<strong>ما دامَ</strong> لا يأتي منها إلا الماضي. والأخوات التي تَتَطلَّب «ما» قبلها (ما زال، ما انفك، ما فتئ، ما برح) لا بدّ أن يَسبقها نفيٌ أو نهي.</p>
+  </div>
+
+  <h2 class="section-title">٣. أمثلة من القرآن الكريم</h2>
+
+  <div class="example quran">
+    <div class="ayah">وَكَانَ اللَّهُ غَفُورًا رَّحِيمًا</div>
+    <div class="attribution">[سورة النساء: ٩٦]</div>
+    <div class="parse">
+      «كان»: فعل ماضٍ ناقص.<br>
+      «الله»: لفظ الجلالة، <strong>اسم كان</strong> مرفوع بالضمة الظاهرة.<br>
+      «غفورًا»: <strong>خبر كان</strong> أول، منصوب بالفتحة الظاهرة.<br>
+      «رحيمًا»: <strong>خبر كان</strong> ثانٍ، منصوب.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">لَيْسَ كَمِثْلِهِ شَيْءٌ</div>
+    <div class="attribution">[سورة الشورى: ١١]</div>
+    <div class="parse">
+      «ليس»: فعل ماضٍ ناقص.<br>
+      «كمثلِه»: جار ومجرور (والكاف زائدة)، شبه جملة في محل نصب <strong>خبر ليس</strong> مقدَّم.<br>
+      «شيءٌ»: <strong>اسم ليس</strong> مؤخّر، مرفوع بالضمة.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَأَوْصَانِي بِالصَّلَاةِ وَالزَّكَاةِ مَا دُمْتُ حَيًّا</div>
+    <div class="attribution">[سورة مريم: ٣١]</div>
+    <div class="parse">
+      «ما»: مصدرية ظرفية.<br>
+      «دُمْتُ»: فعل ماضٍ ناقص، والتاء: ضمير في محل رفع <strong>اسم دامَ</strong>.<br>
+      «حيًّا»: <strong>خبر دامَ</strong> منصوب.
+    </div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      ما زالَ يَرْعى ذِمامَ الجارِ مُذْ بَلَغَتْ ・ كَفّاهُ مَبْلَغَ كَفِّ الرَّجُلِ المُحْتَلِمِ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«ما زالَ»: ما نافية + زال (من أخوات كان). «يرعى»: فعل مضارع، والفاعل ضمير مستتر. والجملة الفعلية «يرعى ذمام الجار» في محل نصب <strong>خبر ما زالَ</strong>. واسم «ما زال»: ضمير مستتر تقديره «هو».</div>
+  </div>
+
+  <h2 class="section-title">٤. الأفعال الملحقة بـ«كانَ» — أفعال المقاربة والرجاء والشروع</h2>
+  <p>هذه أفعال زادها بعض النحاة على أخوات كان، وهي:</p>
+  <ul class="tidy">
+    <li><strong>أفعال المقاربة:</strong> كادَ، أوشكَ، كَرَبَ. تَدُلُّ على قُرْب وقوع الخبر.</li>
+    <li><strong>أفعال الرجاء:</strong> عسى، حَرَى، اخْلَوْلَقَ. تَدُلُّ على رجاء وقوع الخبر.</li>
+    <li><strong>أفعال الشروع:</strong> شَرَعَ، بدأ، أخذ، أنشأ، جَعَلَ، طَفِقَ، عَلِقَ، هَبَّ، قام (بمعنى شرع). تَدُلُّ على الشروع في الخبر.</li>
+  </ul>
+  <div class="note">
+    <p><strong>الفرق:</strong> هذه الأفعال خبرُها لا يكون إلا <strong>جملةً فعلية</strong> فعلُها مضارعٌ، نحو: «كاد الرجلُ يَهلِكُ»، «عسى زيدٌ أن يُفلِحَ»، «شرع المعلمُ يَشرحُ».</p>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَكَادُ زَيْتُهَا يُضِيءُ وَلَوْ لَمْ تَمْسَسْهُ نَارٌ</div>
+    <div class="attribution">[سورة النور: ٣٥]</div>
+    <div class="parse">«يكادُ»: فعل مضارع ناقص من أفعال المقاربة. «زيتُها»: <strong>اسم يكاد</strong> مرفوع. «يُضيءُ»: فعل مضارع وفاعله ضمير مستتر، والجملة «يُضيءُ» في محل نصب <strong>خبر يكاد</strong>.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     INNA WA AKHAWATUHA
+     ========================================================= -->
+<section class="chapter" id="inna">
+  <div class="chapter-num">— الفصل الحادي عشر —</div>
+  <h1 class="chapter-title">بابُ إنَّ وأخَواتِها<br>(الحروفُ الناسخة)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. عملها</h2>
+  <div class="rule">
+    <p><span class="hl">إنَّ وأخواتُها</span>: حروفٌ تَدخل على الجملة الاسمية، فتَنْصِبُ المبتدأ ويُسمَّى <span class="hl-b">اسمَها</span>، وتَرْفَع الخبر ويُسمَّى <span class="hl-b">خبرَها</span>. وعملُها <strong>عكسُ عمل كان وأخواتها</strong>.</p>
+  </div>
+
+  <p>قبل دخولها:</p>
+  <div class="example classical">
+    <div class="verse">زيدٌ قائمٌ</div>
+  </div>
+  <p>بعد دخولها:</p>
+  <div class="example classical">
+    <div class="verse">إنَّ زيدًا قائمٌ</div>
+    <div class="parse">«إنَّ»: حرف مشبَّه بالفعل. «زيدًا»: <strong>اسم إنَّ</strong> منصوب. «قائمٌ»: <strong>خبر إنَّ</strong> مرفوع.</div>
+  </div>
+
+  <h2 class="section-title">٢. أخوات إنَّ ومعانيها</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الحرف</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td>إنَّ — أنَّ</td><td>التوكيد</td></tr>
+        <tr><td>كأنَّ</td><td>التشبيه</td></tr>
+        <tr><td>لكنَّ</td><td>الاستدراك</td></tr>
+        <tr><td>ليتَ</td><td>التَّمنِّي (لما لا يُرجى وقوعه)</td></tr>
+        <tr><td>لعلَّ</td><td>الترجِّي (لما يُرجى وقوعه) أو الإشفاق</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p><strong>الفرق بين إنّ المكسورة وأنّ المفتوحة:</strong>
+    <ul class="tidy">
+      <li><strong>إنّ</strong> (مكسورة الهمزة): تقع في ابتداء الكلام، أو بعد القول، أو بعد ألا الاستفتاحية، نحو: «إنَّ اللهَ غفورٌ».</li>
+      <li><strong>أنّ</strong> (مفتوحة الهمزة): تكون مع ما بعدها بمنزلة المصدر، فيُؤوَّل ما بعدها بمصدر يقع موقع المرفوع أو المنصوب أو المجرور، نحو: «بَلَغَني أنَّك مسافرٌ» = «بَلَغَني سَفَرُك».</li>
+    </ul>
+    </p>
+  </div>
+
+  <h2 class="section-title">٣. أمثلة من القرآن الكريم</h2>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ</div>
+    <div class="attribution">[سورة البقرة: ١٧٣]</div>
+    <div class="parse">
+      «إنَّ»: حرف مشبَّه بالفعل للتوكيد.<br>
+      «اللهَ»: <strong>اسم إنَّ</strong> منصوب بالفتحة الظاهرة.<br>
+      «غفورٌ»: <strong>خبر إنَّ</strong> أول مرفوع.<br>
+      «رحيمٌ»: <strong>خبر إنَّ</strong> ثانٍ مرفوع.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّ الْإِنسَانَ لَفِي خُسْرٍ</div>
+    <div class="attribution">[سورة العصر: ٢]</div>
+    <div class="parse">
+      «إنَّ»: حرف توكيد ونصب.<br>
+      «الإنسانَ»: <strong>اسم إنَّ</strong> منصوب.<br>
+      «لفي خسرٍ»: اللام: لام المُزَحْلَقَة (التوكيد). «في خسرٍ»: جار ومجرور، شِبه جملة في محل رفع <strong>خبر إنَّ</strong>.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">كَأَنَّهُنَّ بَيْضٌ مَّكْنُونٌ</div>
+    <div class="attribution">[سورة الصافات: ٤٩]</div>
+    <div class="parse">«كأنَّ»: حرف تشبيه ونصب. «هنّ»: ضمير في محل نصب <strong>اسم كأنَّ</strong>. «بيضٌ»: <strong>خبر كأنَّ</strong> مرفوع. «مكنونٌ»: نَعتٌ.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَا لَيْتَنِي كُنتُ تُرَابًا</div>
+    <div class="attribution">[سورة النبأ: ٤٠]</div>
+    <div class="parse">«يا»: حرف نداء للتنبيه. «ليتَ»: حرف تَمَنٍّ ونصب. والياء: ضمير المتكلم في محل نصب <strong>اسم ليتَ</strong>، والنون: للوقاية. وجملة «كنتُ ترابًا» في محل رفع <strong>خبر ليتَ</strong>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">لَعَلَّ السَّاعَةَ قَرِيبٌ</div>
+    <div class="attribution">[سورة الشورى: ١٧]</div>
+    <div class="parse">«لعلَّ»: حرف ترجٍّ ونصب. «الساعةَ»: <strong>اسم لعلَّ</strong> منصوب. «قريبٌ»: <strong>خبر لعلَّ</strong> مرفوع. (وذُكِّر الخبر مع أن الاسم مؤنث على معنى البعث أو اليوم).</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      كَأَنَّ قُلوبَ الطَّيرِ رَطْبًا ويابسًا ・ لَدى وَكْرِها العُنّابُ والحَشَفُ البالي
+    </div>
+    <div class="attribution">— امرؤ القيس</div>
+    <div class="parse">«كأنَّ»: حرف تشبيه ونصب. «قلوبَ»: <strong>اسم كأنَّ</strong> منصوب وهو مضاف. «الطير»: مضاف إليه. «العنّابُ والحَشَفُ»: <strong>خبر كأنَّ</strong> مرفوع وما عُطف عليه.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     DHANNA WA AKHAWATUHA
+     ========================================================= -->
+<section class="chapter" id="dhanna">
+  <div class="chapter-num">— الفصل الثاني عشر —</div>
+  <h1 class="chapter-title">بابُ ظَنَنْتُ وأَخَواتِها<br>(الأفعالُ القلبية)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. عملها</h2>
+  <div class="rule">
+    <p><span class="hl">ظنَّ وأخواتُها</span>: أفعالٌ تَدخل على الجملة الاسمية، فتَنْصِبُ المبتدأ ويُسمَّى <span class="hl-b">مفعولًا أوَّل</span>، وتَنصِب الخبرَ ويُسمَّى <span class="hl-b">مفعولًا ثانيًا</span>.</p>
+  </div>
+
+  <p>هذا هو الفارق الجوهري؛ إذ تنصب الاسمَ والخبرَ معًا، بخلاف كانَ وإنَّ.</p>
+
+  <h2 class="section-title">٢. أخواتها على قسمين</h2>
+
+  <h3 class="subsection">أ) أفعال القلوب (الشَّكّ واليقين)</h3>
+  <ul class="tidy">
+    <li><strong>للظن (رجحان):</strong> ظنَّ، حَسِبَ، خال، زَعَمَ.</li>
+    <li><strong>لليقين:</strong> رأى (القلبية)، علِمَ، وَجَدَ، دَرى.</li>
+    <li><strong>للنفي:</strong> جَعَلَ (بمعنى نسب)، اتَّخذ (في بعض الاستعمالات).</li>
+  </ul>
+
+  <h3 class="subsection">ب) أفعال التحويل</h3>
+  <p>وهي التي تُفيد تحويل الشيء من حالٍ إلى حال: صَيَّرَ، رَدَّ، اتَّخذ، تَرَكَ، جَعَل (بمعنى صَيَّر).</p>
+
+  <h2 class="section-title">٣. أمثلة من القرآن</h2>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</div>
+    <div class="attribution">[سورة الحجر: ٩]</div>
+    <div class="parse">هذا للسياق فحسب. والمثال على ظنّ:</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَيَحْسَبُونَ أَنَّهُمْ عَلَىٰ شَيْءٍ</div>
+    <div class="attribution">[سورة المجادلة: ١٨]</div>
+    <div class="parse">
+      «يحسَبونَ»: فعل مضارع وفاعله واو الجماعة.<br>
+      وسدَّ مَسَدَّ المفعولَيْن <strong>أنَّهم على شيءٍ</strong>، فالمصدر المؤول من «أنّ» وما بعدها سدّ مسد المفعولين.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَاتَّخَذَ اللَّهُ إِبْرَاهِيمَ خَلِيلًا</div>
+    <div class="attribution">[سورة النساء: ١٢٥]</div>
+    <div class="parse">
+      «اتّخذَ»: فعل ماضٍ من أفعال التحويل.<br>
+      «الله»: فاعل مرفوع.<br>
+      «إبراهيمَ»: <strong>مفعول أول</strong> منصوب وعلامة نصبه الفتحة (والصرف منعه العَلَمية والعُجمة، فاحتُجَّ بقول من أعربه ممنوعًا من الصرف).<br>
+      «خليلًا»: <strong>مفعول ثانٍ</strong> منصوب.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَاللَّهُ جَعَلَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا وَجَعَلَ لَكُم مِّنْ أَزْوَاجِكُم بَنِينَ وَحَفَدَةً</div>
+    <div class="attribution">[سورة النحل: ٧٢]</div>
+    <div class="parse">هذه «جعل» بمعنى خَلَقَ، فتنصب مفعولًا واحدًا. أما إذا كانت بمعنى صَيَّر فتنصب مفعولين، نحو: «جعلتُ الطينَ خَزَفًا».</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      رأيتُ اللهَ أكْبَرَ كُلِّ شَيءٍ ・ مُحاوَلةً وأكْثَرَهُم جُنودا
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«رأيتُ»: فعل ماضٍ من رؤية القلب (بمعنى علمتُ يقينًا). «اللهَ»: <strong>مفعول أول</strong> منصوب. «أكبرَ»: <strong>مفعول ثانٍ</strong> منصوب وهو مضاف إلى «كلِّ».</div>
+  </div>
+
+  <div class="note">
+    <p><strong>الفرق بين الرؤيتَين:</strong>
+    <ul class="tidy">
+      <li><strong>رأى البصرية</strong> (رؤية بالعين): تنصب مفعولًا واحدًا، نحو: «رأيتُ زيدًا في الشارع».</li>
+      <li><strong>رأى القلبية</strong> (رؤية بمعنى علم): تنصب مفعولين، نحو: «رأيتُ زيدًا عالمًا».</li>
+    </ul>
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     AT-TAWABI' (Adjective, Conjunction, Emphasis, Apposition)
+     ========================================================= -->
+<section class="chapter" id="tawabi3">
+  <div class="chapter-num">— الفصل الثالث عشر —</div>
+  <h1 class="chapter-title">بابُ التَّوابِعِ<br>(النَّعتُ والعَطْفُ والتَّوكيدُ والبَدَل)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <p class="lead"><span class="hl">التابعُ</span>: هو ما يَتْبَع ما قَبْلَه في إعرابه: فإن كان قَبْلَه مرفوعًا رُفِع، وإن كان منصوبًا نُصِب، وإن كان مجرورًا جُرَّ. وهو أربعة أشياء: النعت، والعطف، والتوكيد، والبدل.</p>
+
+  <!-- ============ النعت ============ -->
+  <h2 class="section-title">أوّلًا: النَّعت (الصِّفة)</h2>
+  <div class="definition">
+    <p><span class="hl">النعتُ</span>: تابعٌ يَدُلُّ على صفةٍ في اسمٍ قبله يُسمَّى المنعوت.</p>
+  </div>
+  <p><strong>قاعدة التطابق:</strong> يَتْبع النعتُ منعوتَه في أربعةٍ من عشرة:</p>
+  <ol class="tidy">
+    <li>الإعراب: رفع — نصب — جر.</li>
+    <li>العدد: إفراد — تثنية — جمع.</li>
+    <li>الجنس: تذكير — تأنيث.</li>
+    <li>التعريف والتنكير.</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ</div>
+    <div class="attribution">[سورة الفاتحة: ٢-٤]</div>
+    <div class="parse">
+      «اللهِ»: لفظ الجلالة مجرور. «<span class="hl">ربِّ</span>»: <strong>نعت</strong> أول لله، مجرور وعلامة جره الكسرة. «<span class="hl">الرحمنِ</span>»: نعت ثانٍ مجرور. «<span class="hl">الرحيمِ</span>»: نعت ثالث مجرور. «<span class="hl">مالكِ</span>»: نعت رابع مجرور. فكلُّها تَبِعَت «الله» في الجر.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">جَاءَ رَجُلٌ كَرِيمٌ</div>
+    <div class="attribution">[مثال نحوي شائع]</div>
+    <div class="parse">«رجلٌ»: فاعل مرفوع، نكرة، مفرد، مذكر. «<span class="hl">كريمٌ</span>»: نعت مرفوع، نكرة، مفرد، مذكر. فطابق منعوتَه في الأربعة.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وَلَقَدْ ذَكَرْتُكِ والرِّماحُ نَواهِلٌ ・ مِنّي وَبيضُ الهِنْدِ تَقْطُرُ مِن دَمي
+    </div>
+    <div class="attribution">— عنترة بن شدّاد</div>
+    <div class="parse">«الرماحُ»: مبتدأ. «نواهلٌ»: خبر مرفوع. وهي بمنزلة النعت المعنوي في الوصف.</div>
+  </div>
+
+  <!-- ============ المعارف ============ -->
+  <h3 class="subsection">المعارف عند المؤلف</h3>
+  <p>المعرفة خمسة أنواع:</p>
+  <ol class="tidy">
+    <li><strong>الاسم المُضمَر</strong> نحو: أنا، أنتَ.</li>
+    <li><strong>الاسم العَلَم</strong> نحو: زيدٌ، مكَّة.</li>
+    <li><strong>الاسم المُبهَم</strong> (اسم الإشارة والموصول) نحو: هذا، الذي.</li>
+    <li><strong>الاسم الذي فيه الألف واللام</strong> نحو: الرجل، الكتاب.</li>
+    <li><strong>ما أُضيف إلى واحدٍ من هذه الأربعة</strong> نحو: غلامُك، كتابُ زيدٍ، صاحبُ هذا.</li>
+  </ol>
+
+  <!-- ============ العطف ============ -->
+  <h2 class="section-title">ثانيًا: العَطْف</h2>
+  <div class="definition">
+    <p><span class="hl">العطفُ</span>: تابعٌ يَتوسَّط بينه وبين متبوعِه أحدُ حروف العطف.</p>
+  </div>
+  <p><strong>حروف العطف عشرة:</strong> <span class="hl">الواو، الفاء، ثُمَّ، أو، أمْ، إمَّا، بل، لا، لكن، حتى</span>.</p>
+
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الحرف</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td>الواو</td><td>مُطلق الجمع بلا ترتيب</td></tr>
+        <tr><td>الفاء</td><td>الترتيب والتعقيب</td></tr>
+        <tr><td>ثمّ</td><td>الترتيب والتراخي</td></tr>
+        <tr><td>أو</td><td>التخيير أو الإباحة أو التقسيم أو الشك</td></tr>
+        <tr><td>أم</td><td>طلب التعيين (المعادلة)</td></tr>
+        <tr><td>إمّا</td><td>التخيير، تستعمل مكرَّرة</td></tr>
+        <tr><td>بل</td><td>الإضراب</td></tr>
+        <tr><td>لا</td><td>نفي الحكم عن المعطوف</td></tr>
+        <tr><td>لكن</td><td>الاستدراك</td></tr>
+        <tr><td>حتى</td><td>الغاية والانتهاء</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَأَنزَلَ التَّوْرَاةَ وَالْإِنجِيلَ</div>
+    <div class="attribution">[سورة آل عمران: ٣]</div>
+    <div class="parse">«التوراةَ»: مفعول به منصوب. «الواو»: حرف عطف. «<span class="hl">الإنجيلَ</span>»: <strong>معطوف</strong> على «التوراة» منصوب مثله بالفتحة.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">فَلَمَّا جَنَّ عَلَيْهِ اللَّيْلُ رَأَىٰ كَوْكَبًا قَالَ هَٰذَا رَبِّي فَلَمَّا أَفَلَ قَالَ لَا أُحِبُّ الْآفِلِينَ</div>
+    <div class="attribution">[سورة الأنعام: ٧٦]</div>
+    <div class="parse">جاءت «<strong>الفاء</strong>» في «<span class="hl">فلمّا أفل قال</span>» لإفادة التعقيب والترتيب: فحينما أفل وقع القول مباشرةً.</div>
+  </div>
+
+  <!-- ============ التوكيد ============ -->
+  <h2 class="section-title">ثالثًا: التَّوكيد</h2>
+  <div class="definition">
+    <p><span class="hl">التوكيدُ</span>: تابعٌ يُؤكَّد به ما قبلَه لرفع تَوهُّمِ المجاز أو السهو.</p>
+  </div>
+
+  <h3 class="subsection">أقسام التوكيد</h3>
+  <ol class="tidy">
+    <li><strong>التوكيد اللفظي:</strong> أن تُعيد اللفظ الأول بعينه، نحو: «جاء زيدٌ زيدٌ».</li>
+    <li><strong>التوكيد المعنوي:</strong> ويكون بألفاظٍ مخصوصة هي: <span class="hl">النفس، العين، كلّ، أجمع، أكتع، أبتع، أبصع</span>.</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">فَسَجَدَ الْمَلَائِكَةُ كُلُّهُمْ أَجْمَعُونَ</div>
+    <div class="attribution">[سورة الحجر: ٣٠]</div>
+    <div class="parse">
+      «الملائكةُ»: فاعل مرفوع.<br>
+      «<span class="hl">كلُّهم</span>»: <strong>توكيد معنوي</strong> مرفوع تابعًا لـ«الملائكة»، وهو مضاف، والهاء: مضاف إليه.<br>
+      «<span class="hl">أجمعونَ</span>»: <strong>توكيد ثانٍ</strong> مرفوع بالواو.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">كَلَّا إِذَا دُكَّتِ الْأَرْضُ دَكًّا دَكًّا</div>
+    <div class="attribution">[سورة الفجر: ٢١]</div>
+    <div class="parse">«دكًّا دكًّا»: مفعول مطلق + توكيد لفظي.</div>
+  </div>
+
+  <!-- ============ البدل ============ -->
+  <h2 class="section-title">رابعًا: البَدَل</h2>
+  <div class="definition">
+    <p><span class="hl">البَدَلُ</span>: تابعٌ يَحُلُّ مَحَلَّ متبوعِه ويكون المقصودَ بالحُكم.</p>
+  </div>
+
+  <h3 class="subsection">أقسام البدل أربعة</h3>
+  <ol class="tidy">
+    <li><strong>بدلُ الكُلِّ من الكل</strong> (بدل مطابق): «جاء أخوك زيدٌ»، فزيدٌ هو نفسُ الأخ.</li>
+    <li><strong>بدلُ البعض من الكل</strong>: «أكلتُ الرَّغيفَ ثُلُثَه»، فالثلث بعض الرغيف.</li>
+    <li><strong>بدلُ الاشتمال</strong>: «نَفَعَني زيدٌ عِلْمُه»، فالعلم مما يَشتمل عليه زيد.</li>
+    <li><strong>بدل الغَلَط (المباينة)</strong>: ويكون لتدارك خطأ، نحو: «رأيتُ زيدًا الفرسَ»، أي أخطأتُ ثم تَداركتُ.</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ</div>
+    <div class="attribution">[سورة الفاتحة: ٦-٧]</div>
+    <div class="parse">«الصراطَ»: مفعول به أول لـ«اهدِنا». «<span class="hl">صراطَ الذين</span>»: <strong>بدل كل من كل</strong> منصوب بالفتحة، وهو مضاف. وهذا من أبدع البدل في القرآن.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا</div>
+    <div class="attribution">[سورة آل عمران: ٩٧]</div>
+    <div class="parse">«الناس»: مجرور بحرف الجر. «<span class="hl">مَنِ استطاع</span>»: <strong>بدل بعض من كل</strong> في محل جر، لأن المستطيعين بعض الناس.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MANSUBAT - OVERVIEW
+     ========================================================= -->
+<section class="chapter" id="mansubat">
+  <div class="chapter-num">— القسم الثالث —</div>
+  <h1 class="chapter-title">مَنصوباتُ الأسْماءِ</h1>
+  <div class="chapter-divider">۞ ❖ ۞</div>
+
+  <p class="lead">قال المؤلِّفُ: «المنصوباتُ خمسةَ عشرَ، وهي: المفعولُ به، والمصدرُ، وظرفُ الزمان، وظرفُ المكان، والحالُ، والتمييز، والمستثنى، واسمُ لا، والمنادى، والمفعولُ من أجله، والمفعولُ معه، وخبرُ كانَ وأخواتها، واسمُ إنَّ وأخواتها، والتابعُ للمنصوب».</p>
+
+  <div class="note">
+    <p><strong>تنبيه:</strong> قد سبق الكلامُ على خبر كانَ، واسم إنّ، والتوابع. وها نحن نَأخذ في تفصيل بقيتها.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     MAF'UL BIH
+     ========================================================= -->
+<section class="chapter" id="maf3ulbih">
+  <div class="chapter-num">— الفصل الخامس عشر —</div>
+  <h1 class="chapter-title">بابُ المَفْعولِ به</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف المفعول به</h2>
+  <div class="definition">
+    <p><span class="hl">المفعولُ به</span>: اسمٌ منصوبٌ، وقَع عليه فِعْلُ الفاعل.</p>
+  </div>
+
+  <p>فإذا قلتَ: «ضَرَبَ زيدٌ عَمْرًا»، فعمرٌو هو الذي وَقَع عليه فعلُ الضرب، فهو مفعولٌ به منصوب.</p>
+
+  <h2 class="section-title">٢. أقسام المفعول به</h2>
+  <p>المفعول به قسمان: <strong>ظاهر</strong> و<strong>مُضمَر</strong>.</p>
+
+  <h3 class="subsection">أ) المفعول الظاهر</h3>
+  <div class="example quran">
+    <div class="ayah">وَقَتَلَ دَاوُودُ جَالُوتَ</div>
+    <div class="attribution">[سورة البقرة: ٢٥١]</div>
+    <div class="parse">
+      «قَتَلَ»: فعل ماضٍ.<br>
+      «داودُ»: فاعل مرفوع.<br>
+      «<span class="hl">جالوتَ</span>»: <strong>مفعول به</strong> منصوب وعلامة نصبه الفتحة (وهو ممنوع من الصرف).
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا</div>
+    <div class="attribution">[سورة النساء: ١٦٤]</div>
+    <div class="parse">«اللهُ»: فاعل. «<span class="hl">موسى</span>»: <strong>مفعول به</strong> منصوب بفتحة مقدَّرة على الألف. «تكليمًا»: مفعول مطلق.</div>
+  </div>
+
+  <h3 class="subsection">ب) المفعول المُضمَر</h3>
+  <p>وهو قسمان: <strong>متَّصل</strong>، و<strong>منفصل</strong>.</p>
+  <p><strong>الضمائر المتصلة في محل نصب مفعول به اثنا عشر:</strong> ني، نا، كَ، كِ، كما، كم، كنّ، هـ، ها، هما، هم، هنّ.</p>
+  <p><strong>الضمائر المنفصلة في محل نصب مفعول به اثنا عشر:</strong> إيايَ، إيانا، إياكَ، إياكِ، إياكما، إياكم، إياكنّ، إياه، إياها، إياهما، إياهم، إياهنّ.</p>
+
+  <div class="example quran">
+    <div class="ayah">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</div>
+    <div class="attribution">[سورة الفاتحة: ٥]</div>
+    <div class="parse">
+      «<span class="hl">إيّاكَ</span>»: ضمير منفصل مبنيٌّ على الفتح في محل نصب <strong>مفعول به</strong> مقدَّم.<br>
+      «نَعبُدُ»: فعل مضارع مرفوع، والفاعل ضمير مستتر تقديره «نحن».
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَنَصَرْنَاهُ مِنَ الْقَوْمِ الَّذِينَ كَذَّبُوا بِآيَاتِنَا</div>
+    <div class="attribution">[سورة الأنبياء: ٧٧]</div>
+    <div class="parse">«نَصَرْنا»: فعل ماضٍ ونا الفاعلين. «<span class="hl">الهاء</span>» (في «نصرناه»): ضمير متصل مبنيٌّ في محل نصب <strong>مفعول به</strong>.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وَإِذا الرِّياحُ تَناوَحَتْ بِفَلاةٍ ・ ألْفَيْتَني هَشَّ النَّدى بَسَّامَها
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«ألفَيْتَ»: فعل ماضٍ والتاء فاعل. «<span class="hl">ني</span>»: ضمير متصل في محل نصب <strong>مفعول به</strong>. «هَشَّ النَّدى»: مفعول به ثانٍ (لأن ألفى من أخوات ظنّ).</div>
+  </div>
+
+  <div class="note">
+    <p><strong>قاعدة في ترتيب الفعل والفاعل والمفعول:</strong> الأصل: فعل → فاعل → مفعول. وقد يتقدّم المفعول على الفاعل لأمن اللَّبس، وقد يتقدّم على الفعل كله لإفادة الحصر كقوله: <em>«إيّاك نعبد»</em>، أي لا نعبد إلا إيّاك.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     MASDAR (Maf'ul Mutlaq)
+     ========================================================= -->
+<section class="chapter" id="masdar">
+  <div class="chapter-num">— الفصل السادس عشر —</div>
+  <h1 class="chapter-title">بابُ المَصْدَر<br>(المفعولُ المُطلَق)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف المصدر</h2>
+  <div class="definition">
+    <p><span class="hl">المصدرُ</span>: هو الاسمُ المنصوبُ الذي يَجيء ثالثًا في تصريف الفعل، نحو: ضَرَبَ يَضْرِبُ <span class="hl-b">ضَرْبًا</span>.</p>
+  </div>
+
+  <h2 class="section-title">٢. قسما المصدر (المفعول المطلق)</h2>
+  <div class="rule">
+    <p>المصدر قسمان:</p>
+    <ul class="tidy">
+      <li><span class="hl">لفظيٌّ</span>: ما وافق لفظُه لفظَ فعله، نحو: «قتلتُه قَتْلًا».</li>
+      <li><span class="hl">معنويٌّ</span>: ما وافق معنى فعله دون لفظه، نحو: «جَلَستُ قُعودًا، قمتُ وُقوفًا».</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">٣. فوائد المفعول المطلق الثلاث</h2>
+  <ol class="tidy">
+    <li><strong>تأكيد عامله</strong>، نحو: «أكرمتُ زيدًا إكرامًا».</li>
+    <li><strong>بيان نوعه</strong>، نحو: «سرتُ سيرَ الكِرامِ» أو «سيرًا حسنًا».</li>
+    <li><strong>بيان عدده</strong>، نحو: «ضربتُ ضربتَيْنِ»، أو «ضربتُ ثلاثَ ضرَباتٍ».</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا</div>
+    <div class="attribution">[سورة النساء: ١٦٤]</div>
+    <div class="parse">«<span class="hl">تكليمًا</span>»: <strong>مفعول مطلق</strong> منصوب بالفتحة، يُؤكِّد عامله «كلَّم»، ويردّ احتمالَ المجاز.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا</div>
+    <div class="attribution">[سورة المزمل: ٨]</div>
+    <div class="parse">«<span class="hl">تَبتيلًا</span>»: <strong>مفعول مطلق</strong> منصوب بالفتحة لتأكيد العامل «تَبتَّل».</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا</div>
+    <div class="attribution">[سورة الأحزاب: ٤١]</div>
+    <div class="parse">«<span class="hl">ذِكْرًا</span>»: <strong>مفعول مطلق</strong> منصوب. «<span class="hl-g">كثيرًا</span>»: نعت له، فأفاد بيان النوع.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      فَصَبْرًا في مَجالِ المَوْتِ صَبْرًا ・ فَما نَيْلُ الخُلودِ بِمُسْتَطاعِ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«<span class="hl">صبرًا</span>»: مفعول مطلق منصوب، حُذف عامله جوازًا (التقدير: اصْبروا صبرًا). والثاني توكيد لفظي.</div>
+  </div>
+
+  <h2 class="section-title">٤. ما يَنوب عن المصدر في النصب على المفعولية المطلقة</h2>
+  <ul class="tidy">
+    <li><strong>صفته</strong>: «اذكروا اللهَ كثيرًا» (التقدير: ذكرًا كثيرًا).</li>
+    <li><strong>عدده</strong>: «جلدتُهم ثلاثينَ» (التقدير: ثلاثين جَلْدةً).</li>
+    <li><strong>آلتُه</strong>: «ضربتُه سَوْطًا».</li>
+    <li><strong>الإشارةُ إليه</strong>: «ضربتُه ذلكَ الضربَ».</li>
+    <li><strong>نوعُه</strong>: «رجَع القَهْقَرى».</li>
+  </ul>
+</section>
+
+<!-- =========================================================
+     DHARF (Time & Place)
+     ========================================================= -->
+<section class="chapter" id="dharf">
+  <div class="chapter-num">— الفصل السابع عشر —</div>
+  <h1 class="chapter-title">بابُ ظَرْفِ الزَّمانِ وظَرْفِ المَكانِ<br>(المفعولُ فيه)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف الظرف</h2>
+  <div class="definition">
+    <p><span class="hl">ظرفُ الزمان</span>: اسمُ الزمان المنصوبُ بتقدير «في».<br>
+    <span class="hl">ظرفُ المكان</span>: اسمُ المكان المنصوبُ بتقدير «في».</p>
+  </div>
+  <p>أي أنّ كلَّ اسمٍ من أسماء الزمان أو المكان دلَّ على وقوع الفعل فيه، ولم تَدخل عليه «في» لفظًا، فهو ظرف، ويُسمَّى أيضًا <strong>المفعولَ فيه</strong>.</p>
+
+  <h2 class="section-title">٢. ظروف الزمان المشهورة</h2>
+  <p>اليومَ، الليلةَ، غُدْوةً، بُكْرةً، سَحَرًا، غدًا، عَتَمةً، صَباحًا، مساءً، أبدًا، أمدًا، حِينًا، وما أشبه ذلك.</p>
+
+  <div class="example quran">
+    <div class="ayah">سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ</div>
+    <div class="attribution">[سورة القدر: ٥]</div>
+    <div class="parse">في الآية: «حتى» حرف جر. ولو قلنا «سلامٌ هي مَطلَعَ الفجرِ» لكان «مطلع» ظرف زمان منصوبًا. أمَّا في الآية فقد جَرَّت «حتى» الظرفَ.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَالَّيْلِ إِذَا يَغْشَىٰ ۝ وَالنَّهَارِ إِذَا تَجَلَّىٰ</div>
+    <div class="attribution">[سورة الليل: ١-٢]</div>
+    <div class="parse">«إذا»: ظرف زمان للمستقبل، في محل نصب على الظرفية، متعلِّق بجوابها.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">صَلَاةُ الْوُسْطَىٰ وَقُومُوا لِلَّهِ قَانِتِينَ</div>
+    <div class="attribution">[سورة البقرة: ٢٣٨]</div>
+    <div class="parse">من قولك: «صُمتُ <span class="hl">يومَ</span> الخميسِ»: «يومَ» ظرف زمان منصوب بالفتحة وهو مضاف، «الخميس» مضاف إليه.</div>
+  </div>
+
+  <h2 class="section-title">٣. ظروف المكان المشهورة</h2>
+  <p>أمامَ، خلفَ، قدّامَ، وراءَ، فوقَ، تحتَ، عندَ، مع، إزاءَ، حذاءَ، تِلقاءَ، ثَمَّ، هُنا، وما أشبه ذلك.</p>
+
+  <div class="example quran">
+    <div class="ayah">وَعِندَهُ مَفَاتِحُ الْغَيْبِ لَا يَعْلَمُهَا إِلَّا هُوَ</div>
+    <div class="attribution">[سورة الأنعام: ٥٩]</div>
+    <div class="parse">«<span class="hl">عندَ</span>»: ظرف مكان منصوب بالفتحة، وهو مضاف، والهاء: مضاف إليه. شِبه الجملة في محل رفع خبر مقدَّم.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَدَ اللَّهِ فَوْقَ أَيْدِيهِمْ</div>
+    <div class="attribution">[سورة الفتح: ١٠]</div>
+    <div class="parse">«<span class="hl">فوقَ</span>»: ظرف مكان منصوب، وهو مضاف. شبه الجملة في محل رفع خبر.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وَيومًا تَوافَيْنا بِوَجْهٍ مُقَسَّمٍ ・ كَأنَّ ظَبيةً تَعْطو إلى وارِقِ السَّلَمْ
+    </div>
+    <div class="attribution">— امرؤ القيس</div>
+    <div class="parse">«<span class="hl">يومًا</span>»: ظرف زمان منصوب على الظرفية، متعلِّق بـ«توافَيْنا».</div>
+  </div>
+
+  <div class="note">
+    <p><strong>الفرق بين الظرف المتصرف وغير المتصرف:</strong>
+    <ul class="tidy">
+      <li><strong>الظرف المتصرف:</strong> يأتي ظرفًا وغير ظرف، نحو: «يوم»، تقول «يومُ الجمعةِ مباركٌ» (مبتدأ)، و«سافرتُ يومَ الجمعةِ» (ظرف).</li>
+      <li><strong>الظرف غير المتصرف:</strong> لا يأتي إلا ظرفًا أو شِبهَه (أي مجرورًا بمن)، نحو: «قطُّ، عِوَضُ، إذا، أيّان».</li>
+    </ul>
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     HAL
+     ========================================================= -->
+<section class="chapter" id="hal">
+  <div class="chapter-num">— الفصل الثامن عشر —</div>
+  <h1 class="chapter-title">بابُ الحالِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف الحال</h2>
+  <div class="definition">
+    <p><span class="hl">الحالُ</span>: اسمٌ منصوبٌ، مُفسِّرٌ لما انْبَهَم من الهيئات.</p>
+  </div>
+  <p>أي أنه يُبيِّن هيئةَ صاحب الحال حين وقوع الفعل، نحو: «جاء زيدٌ راكبًا»، فـ«راكبًا» بَيَّن هيئةَ زيدٍ حين مجيئه.</p>
+
+  <h2 class="section-title">٢. شروط الحال الثلاثة</h2>
+  <div class="rule">
+    <ol class="tidy">
+      <li><span class="hl">أن تكون نكرةً</span>: «جاء زيدٌ <span class="hl-g">راكبًا</span>». لا تقول: «جاء زيدٌ الراكبَ».</li>
+      <li><span class="hl">أن تكون بعد تمام الكلام</span>: لا قبله.</li>
+      <li><span class="hl">أن يكون صاحبُها معرفةً</span>: «جاء <span class="hl-b">زيدٌ</span> راكبًا»، فزيدٌ معرفة.</li>
+    </ol>
+  </div>
+
+  <h2 class="section-title">٣. أمثلة من القرآن</h2>
+
+  <div class="example quran">
+    <div class="ayah">وَخُلِقَ الْإِنسَانُ ضَعِيفًا</div>
+    <div class="attribution">[سورة النساء: ٢٨]</div>
+    <div class="parse">
+      «خُلِقَ»: فعل ماضٍ مجهول.<br>
+      «الإنسانُ»: نائب فاعل مرفوع، صاحب الحال.<br>
+      «<span class="hl">ضعيفًا</span>»: <strong>حال</strong> منصوبة بالفتحة، نكرة، بعد تمام الكلام، وصاحبها معرفة.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">فَخَرَجَ عَلَىٰ قَوْمِهِ فِي زِينَتِهِ ۖ قَالَ الَّذِينَ يُرِيدُونَ الْحَيَاةَ الدُّنْيَا يَا لَيْتَ لَنَا مِثْلَ مَا أُوتِيَ قَارُونُ</div>
+    <div class="attribution">[سورة القصص: ٧٩]</div>
+    <div class="parse">«<span class="hl">في زينتِه</span>»: جار ومجرور، شِبه جملة في محل نصب <strong>حال</strong> من فاعل «خَرَج». (وهذا من الحال شبه الجملة).</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا</div>
+    <div class="attribution">[سورة الإسراء: ٣٧]</div>
+    <div class="parse">«<span class="hl">مَرَحًا</span>»: <strong>حال</strong> منصوبة، أي: لا تَمْشِ في الأرض حالَ كونِك مَرِحًا. (مصدر وقع موقع الحال).</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      جاءَ الرَّبيعُ مُطَلًّا بِالفُيوضِ مِنَ ・ غَيمٍ وَآسانَ الحَدائِقَ نَضْرَةً
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«<span class="hl">مُطَلًّا</span>»: حال منصوبة من فاعل «جاء».</div>
+  </div>
+
+  <h2 class="section-title">٤. أقسام الحال</h2>
+  <ul class="tidy">
+    <li><strong>حال مفردة</strong>: «جاء زيدٌ راكبًا».</li>
+    <li><strong>حال جملة فعلية</strong>: «جاء زيدٌ يَركَبُ فرسَه». ولا بدّ في الجملة الحالية من رابط (واو الحال أو ضمير أو كلاهما).</li>
+    <li><strong>حال جملة اسمية</strong>: «جاء زيدٌ والشمسُ طالعةٌ».</li>
+    <li><strong>حال شبه جملة</strong>: «رأيتُ الهلالَ بينَ السَّحاب».</li>
+  </ul>
+
+  <div class="example quran">
+    <div class="ayah">وَجَاءُوا أَبَاهُمْ عِشَاءً يَبْكُونَ</div>
+    <div class="attribution">[سورة يوسف: ١٦]</div>
+    <div class="parse">«جاءوا»: فعل وفاعل. «أباهم»: مفعول. «عشاءً»: ظرف زمان منصوب. «<span class="hl">يبكونَ</span>»: جملة فعلية في محل نصب <strong>حال</strong> من فاعل «جاءوا».</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TAMYIZ
+     ========================================================= -->
+<section class="chapter" id="tamyiz">
+  <div class="chapter-num">— الفصل التاسع عشر —</div>
+  <h1 class="chapter-title">بابُ التَّمييزِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف التمييز</h2>
+  <div class="definition">
+    <p><span class="hl">التمييزُ</span>: اسمٌ نكرةٌ منصوبٌ، مُفَسِّرٌ لما انبَهَم من الذَّوات.</p>
+  </div>
+  <p><strong>الفرق بينه وبين الحال:</strong> الحالُ يُفسِّر هيئةً، والتمييزُ يُفسِّر ذاتًا مُبهَمة كانت مَجهولة قبل ذِكْره.</p>
+
+  <h2 class="section-title">٢. أقسام التمييز</h2>
+
+  <h3 class="subsection">أ) تمييز الذات (المُفرَد)</h3>
+  <p>وهو ما يكون مُبيِّنًا لإبهامِ ما قَبْلَه من مُفرَد، كالأعداد والمَكاييل والموازين والمِساحات. كقولك:</p>
+  <ul class="tidy">
+    <li>«عندي عشرونَ <span class="hl">درهمًا</span>» — تمييز عدد.</li>
+    <li>«مَلَكْتُ تسعينَ <span class="hl">نعجةً</span>» — تمييز عدد.</li>
+    <li>«اشتريتُ رِطلًا <span class="hl">عَسَلًا</span>» — تمييز وزن.</li>
+    <li>«اشتريتُ صاعًا <span class="hl">قمحًا</span>» — تمييز كيل.</li>
+  </ul>
+
+  <div class="example quran">
+    <div class="ayah">إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا</div>
+    <div class="attribution">[سورة يوسف: ٤]</div>
+    <div class="parse">
+      «أحدَ عشرَ»: عدد مركّب مبنيٌّ على فتح الجزأين في محل نصب مفعول به.<br>
+      «<span class="hl">كوكبًا</span>»: <strong>تمييز</strong> منصوب بالفتحة، أزال إبهامَ المعدود.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَاخْتَارَ مُوسَىٰ قَوْمَهُ سَبْعِينَ رَجُلًا لِّمِيقَاتِنَا</div>
+    <div class="attribution">[سورة الأعراف: ١٥٥]</div>
+    <div class="parse">«<span class="hl">رجلًا</span>»: <strong>تمييز</strong> للعدد «سبعين» منصوب بالفتحة.</div>
+  </div>
+
+  <h3 class="subsection">ب) تمييز النسبة (الجملة)</h3>
+  <p>وهو ما يكون مُبيِّنًا لإبهامٍ في الجملة. وله عاملان: قد يكون مُحوَّلًا عن الفاعل، أو عن المفعول به، أو عن المبتدأ.</p>
+
+  <div class="example quran">
+    <div class="ayah">وَاشْتَعَلَ الرَّأْسُ شَيْبًا</div>
+    <div class="attribution">[سورة مريم: ٤]</div>
+    <div class="parse">«اشتعلَ»: فعل ماضٍ. «الرأسُ»: فاعل. «<span class="hl">شيبًا</span>»: <strong>تمييز</strong> منصوب، مُحوَّل عن الفاعل، فالأصل: اشتعل شَيْبُ الرأسِ.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">أَنَا أَكْثَرُ مِنكَ مَالًا وَأَعَزُّ نَفَرًا</div>
+    <div class="attribution">[سورة الكهف: ٣٤]</div>
+    <div class="parse">«<span class="hl">مالًا</span>»، «<span class="hl">نفرًا</span>»: تمييزان منصوبان مُحوَّلان عن المبتدأ.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      تَزَوَّدْ مِنَ التَّقْوى فَإِنَّكَ لا تَدْري ・ إذا جَنَّ لَيلٌ هَلْ تَعيشُ إلى الفَجْرِ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">من شواهد التمييز: «وَمَلأتُ الكَأسَ <span class="hl">ماءً</span>». «ماءً» تمييز منصوب.</div>
+  </div>
+
+  <h2 class="section-title">٣. شروط التمييز</h2>
+  <ol class="tidy">
+    <li>أن يكون اسمًا.</li>
+    <li>أن يكون نكرةً.</li>
+    <li>أن يكون بعد تمام الكلام.</li>
+    <li>أن يكون مُفسِّرًا لما قبله من ذاتٍ مُبهَمة.</li>
+  </ol>
+</section>
+
+<!-- =========================================================
+     ISTITHNA
+     ========================================================= -->
+<section class="chapter" id="istithna">
+  <div class="chapter-num">— الفصل العشرون —</div>
+  <h1 class="chapter-title">بابُ الاسْتِثناءِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. أدوات الاستثناء</h2>
+  <p>أدواتُ الاستثناء ثمانية، وهي على ثلاثة أقسام:</p>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>القسم</th><th>الأدوات</th><th>الحكم</th></tr></thead>
+      <tbody>
+        <tr><td>الأول: حرف</td><td>إلَّا</td><td>أدوات استثناء حرفية</td></tr>
+        <tr><td>الثاني: اسم</td><td>غيرُ، سِوى، سُوى، سَواءٌ</td><td>اسم، يأخذ حكم المستثنى بإلّا</td></tr>
+        <tr><td>الثالث: فعل أو حرف</td><td>خَلا، عدا، حاشا</td><td>إن جاء بعدها اسم منصوب فهي أفعال، وإن جاء مجرور فهي حروف جر</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">٢. أحكام المستثنى بـ«إلا»</h2>
+
+  <h3 class="subsection">أ) الكلام تامٌّ مُوجَب</h3>
+  <p>إذا كان الكلام تامًّا (مذكورًا فيه المستثنى منه) موجَبًا (غير منفي) ⟵ <strong>وَجَب نصبُ المستثنى</strong>.</p>
+  <div class="example classical">
+    <div class="verse">قامَ القومُ إلَّا زَيدًا</div>
+    <div class="parse">«زيدًا»: <strong>مستثنى</strong> بإلَّا منصوبٌ على الاستثناء.</div>
+  </div>
+
+  <h3 class="subsection">ب) الكلام تامٌّ منفيٌّ</h3>
+  <p>إذا كان الكلام تامًّا منفيًّا ⟵ <strong>جاز فيه وجهان</strong>: النصب على الاستثناء، أو الإتباع للمستثنى منه على البَدَلية، والبَدَلُ أَوْلى.</p>
+  <div class="example classical">
+    <div class="verse">ما قامَ القومُ إلَّا زَيدٌ / زَيدًا</div>
+    <div class="parse">على البَدَلية: «زيدٌ» بدل من «القوم» المرفوع، فيُرفَع. وعلى الاستثناء: منصوب.</div>
+  </div>
+
+  <h3 class="subsection">ج) الكلام ناقصٌ منفيٌّ (الاستثناء المُفَرَّغ)</h3>
+  <p>إذا كان الكلام ناقصًا (حُذف منه المستثنى منه) منفيًّا ⟵ <strong>يُعرَب المستثنى بحسب موقعه من الجملة</strong>، و«إلَّا» تكون ملغاةً.</p>
+
+  <div class="example quran">
+    <div class="ayah">وَمَا مُحَمَّدٌ إِلَّا رَسُولٌ قَدْ خَلَتْ مِن قَبْلِهِ الرُّسُلُ</div>
+    <div class="attribution">[سورة آل عمران: ١٤٤]</div>
+    <div class="parse">«ما»: نافية. «محمدٌ»: مبتدأ. «إلّا»: أداة حصر ملغاة. «<span class="hl">رسولٌ</span>»: <strong>خبر</strong> مرفوع. (استثناء مُفَرَّغ، إذ لو حذفنا «إلّا» لتمَّ المعنى).</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَمَا أَمْرُنَا إِلَّا وَاحِدَةٌ كَلَمْحٍ بِالْبَصَرِ</div>
+    <div class="attribution">[سورة القمر: ٥٠]</div>
+    <div class="parse">«<span class="hl">واحدةٌ</span>»: <strong>خبر</strong> «ما أمرُنا» مرفوع. استثناء مفرَّغ.</div>
+  </div>
+
+  <h2 class="section-title">٣. «غير» و«سوى»</h2>
+  <p>تُعرَب «غير» و«سوى» إعرابَ الاسم المستثنى بـ«إلَّا»، ويُجَرّ ما بعدهما على الإضافة.</p>
+  <div class="example quran">
+    <div class="ayah">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ</div>
+    <div class="attribution">[سورة الفاتحة: ٧]</div>
+    <div class="parse">«<span class="hl">غيرِ</span>»: نعت لـ«الذين» — وقيل بدل — مجرور وعلامة جره الكسرة، وهو مضاف.</div>
+  </div>
+
+  <h2 class="section-title">٤. «خلا، عدا، حاشا»</h2>
+  <p>هذه الأدوات الثلاث:</p>
+  <ul class="tidy">
+    <li>إن سُبقَت بـ«ما» المصدرية: فهي أفعال، وما بعدها <strong>منصوب</strong> على المفعولية: «قام القومُ ما خَلا زيدًا».</li>
+    <li>إن لم تُسبَق بـ«ما»: جاز فيها وجهانِ: الفعلية فالنصب، أو الحرفية فالجر: «قام القومُ خلا زيدًا / زيدٍ».</li>
+  </ul>
+</section>
+
+<!-- =========================================================
+     LA NAFIA LIL-JINS
+     ========================================================= -->
+<section class="chapter" id="lanafia">
+  <div class="chapter-num">— الفصل الحادي والعشرون —</div>
+  <h1 class="chapter-title">بابُ لا النَّافِيَةِ للجِنْسِ</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريفها وعملها</h2>
+  <div class="rule">
+    <p><span class="hl">«لا» النافية للجنس</span>: حرفٌ يَنفي الحُكمَ عن جنس اسمه نَفْيًا عامًّا، فتعمل عمل «إنَّ»، أي تَنصِب الاسم وتَرفع الخبر.</p>
+  </div>
+
+  <p>قال ابن مالك:</p>
+  <div class="example poetry">
+    <div class="verse">
+      عَمَلَ إِنَّ اجْعَلْ لِـلا في نَكِرَهْ ・ مُفْرَدَةً جاءَتْكَ أَوْ مُكَرَّرَهْ
+    </div>
+    <div class="attribution">— من ألفية ابن مالك</div>
+  </div>
+
+  <h2 class="section-title">٢. شروط عمل «لا» النافية للجنس</h2>
+  <ol class="tidy">
+    <li><strong>أن يكون اسمها وخبرها نكرتَيْن</strong>.</li>
+    <li><strong>ألَّا يَفصِل بينها وبين اسمها فاصلٌ</strong>.</li>
+    <li><strong>ألَّا يَدخل عليها حرفُ جرّ</strong>.</li>
+  </ol>
+  <div class="note">
+    <p>فإن اختلّ أحدُ هذه الشروط بَطَل عملُها ووجَب تَكرارُها، نحو: «لا في الدارِ رجلٌ ولا امرأةٌ».</p>
+  </div>
+
+  <h2 class="section-title">٣. أحوال اسم «لا»</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الحالة</th><th>الحكم</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>مُفرد</td><td>مبنيٌّ على ما يُنصَب به</td><td>لا رجلَ في الدارِ</td></tr>
+        <tr><td>مضاف</td><td>منصوب لفظًا</td><td>لا غلامَ رجلٍ موجودٌ</td></tr>
+        <tr><td>شبيه بالمضاف</td><td>منصوب لفظًا</td><td>لا طالعًا جبلًا حاضرٌ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">لَا إِلَٰهَ إِلَّا اللَّهُ</div>
+    <div class="attribution">[سورة محمد: ١٩]</div>
+    <div class="parse">
+      «لا»: نافية للجنس تعمل عمل إنَّ.<br>
+      «<span class="hl">إلهَ</span>»: اسم «لا» مبنيٌّ على الفتح في محل نصب، وهو مفرد.<br>
+      وخبرها محذوف تقديره: «حقٌّ» أو «موجودٌ».<br>
+      «إلّا»: أداة استثناء مُلغاة.<br>
+      «اللهُ»: لفظ الجلالة، بدلٌ من الضمير المستتر في الخبر المحذوف، مرفوع.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">لَا رَيْبَ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ</div>
+    <div class="attribution">[سورة البقرة: ٢]</div>
+    <div class="parse">
+      «لا»: نافية للجنس.<br>
+      «<span class="hl">رَيْبَ</span>»: اسم «لا» مبنيٌّ على الفتح في محل نصب.<br>
+      «فيه»: جار ومجرور في محل رفع <strong>خبر</strong>.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِي الْحَجِّ</div>
+    <div class="attribution">[سورة البقرة: ١٩٧]</div>
+    <div class="parse">ثلاثُ «لاءات» نافية للجنس، وأسماؤها مبنية على الفتح: «رَفَثَ، فسوقَ، جدالَ».</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      ألا لا بارَكَ اللهُ في سُهَيلٍ ・ إذا ما اللهُ بارَكَ في الرِّجالِ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">في هذا البيت «لا» للنفي العام (تنفي الجنس على وجه الدعاء).</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MUNADA
+     ========================================================= -->
+<section class="chapter" id="munada">
+  <div class="chapter-num">— الفصل الثاني والعشرون —</div>
+  <h1 class="chapter-title">بابُ المُنادَى</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريفه</h2>
+  <div class="definition">
+    <p><span class="hl">المنادى</span>: هو الاسمُ الذي يَتَقدَّمُه أحدُ حروف النِّداء، طُلِب إقبالُه بأحدها.</p>
+  </div>
+
+  <h2 class="section-title">٢. حروف النداء</h2>
+  <p>وهي: <span class="hl">يا، أيا، هَيا، أَيْ، الهمزة، وا</span>. وأكثرها استعمالًا «<strong>يا</strong>».</p>
+
+  <h2 class="section-title">٣. أقسام المنادى وأحكامها</h2>
+  <p>المنادى خمسة أقسام، يَنقسم في الإعراب إلى قسمين:</p>
+  <ul class="tidy">
+    <li><strong>قسم يُبنى</strong>: العَلَم المُفرَد، والنكرة المقصودة.</li>
+    <li><strong>قسم يُنصَب</strong>: المضاف، والشبيه بالمضاف، والنكرة غير المقصودة.</li>
+  </ul>
+
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>القسم</th><th>الحكم</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>المفرد العَلَم</td><td>مبنيٌّ على الضم في محل نصب</td><td>يا زيدُ</td></tr>
+        <tr><td>النكرة المقصودة</td><td>مبنيٌّ على الضم في محل نصب</td><td>يا رجلُ (لمعيَّن)</td></tr>
+        <tr><td>النكرة غير المقصودة</td><td>منصوب لفظًا</td><td>يا غافلًا تَنبَّهْ</td></tr>
+        <tr><td>المضاف</td><td>منصوب لفظًا</td><td>يا عبدَ اللهِ</td></tr>
+        <tr><td>الشبيه بالمضاف</td><td>منصوب لفظًا</td><td>يا طالعًا جبلًا</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَا نُوحُ اهْبِطْ بِسَلَامٍ مِّنَّا</div>
+    <div class="attribution">[سورة هود: ٤٨]</div>
+    <div class="parse">
+      «يا»: حرف نداء.<br>
+      «<span class="hl">نوحُ</span>»: مُنادى، عَلَمٌ مفرد، مبنيٌّ على الضم في محل نصب.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ</div>
+    <div class="attribution">[سورة آل عمران: ١٠٢]</div>
+    <div class="parse">
+      «يا»: حرف نداء.<br>
+      «<span class="hl">أيُّ</span>»: مُنادى، نكرة مقصودة، مبنيٌّ على الضم في محل نصب.<br>
+      «ها»: حرف تنبيه.<br>
+      «الذين»: اسم موصول مبنيٌّ في محل رفع نَعتٌ لـ«أيّ».
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قَالَ يَا قَوْمِ إِنِّي لَكُمْ نَذِيرٌ مُّبِينٌ</div>
+    <div class="attribution">[سورة نوح: ٢]</div>
+    <div class="parse">«<span class="hl">قومِ</span>»: منادى مضاف إلى ياء المتكلم المحذوفة للتخفيف، منصوب وعلامة نصبه فتحة مقدّرة على ما قبل ياء المتكلم المحذوفة، وحُرِّك بالكسرة مناسبةً للياء المحذوفة.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَا أَيُّهَا الْمُدَّثِّرُ ۝ قُمْ فَأَنذِرْ</div>
+    <div class="attribution">[سورة المدثر: ١-٢]</div>
+    <div class="parse">«أيُّ»: منادى نكرة مقصودة مبنيّ على الضم. «المدّثرُ»: نَعتٌ لـ«أيّ» مرفوع بالضمة.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      يا راكِبَ العَنْسِ المَخوفَ سَبيلُها ・ بَلِّغ تَحِيَّتَنا الإمامَ الأَفْضَلا
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«<span class="hl">راكبَ</span>»: منادى مضاف منصوب بالفتحة، وهو مضاف، و«العَنْسِ» مضاف إليه.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MAF'UL LI-AJLIH
+     ========================================================= -->
+<section class="chapter" id="liajli">
+  <div class="chapter-num">— الفصل الثالث والعشرون —</div>
+  <h1 class="chapter-title">بابُ المَفعولِ لأَجْلِه<br>(المفعولُ له)</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف المفعول لأجله</h2>
+  <div class="definition">
+    <p><span class="hl">المفعولُ لأجله</span>: هو الاسمُ المنصوبُ الذي يُذكر بيانًا لسبَب وقوع الفعل.</p>
+  </div>
+  <p>وهو الذي يجيب عن سؤال: «لِماذا فَعَلتَ كذا؟»، نحو: «قام زيدٌ <span class="hl">إجلالًا</span> لعَمْرٍو»، فإجلالًا بيَّن سببَ قيامه. وكقولك: «قَصَدْتُك <span class="hl">ابتغاءَ معروفِك</span>».</p>
+
+  <h2 class="section-title">٢. شروط نصبه على المفعولية لأجله</h2>
+  <ol class="tidy">
+    <li><strong>أن يكون مصدرًا قلبيًّا</strong> (أي يدلّ على معنًى قلبي كالخوف والرغبة والكراهة لا حِسِّي).</li>
+    <li><strong>أن يَتَّحد مع عاملِه في الفاعل والزمان</strong>.</li>
+    <li><strong>أن يكون عِلَّةً لما قَبْلَه</strong>.</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">وَلَا تَقْتُلُوا أَوْلَادَكُمْ خَشْيَةَ إِمْلَاقٍ</div>
+    <div class="attribution">[سورة الإسراء: ٣١]</div>
+    <div class="parse">
+      «لا تقتلوا»: فعل وفاعل ومفعول.<br>
+      «<span class="hl">خَشيةَ</span>»: <strong>مفعول لأجله</strong> منصوب بالفتحة، وهو مضاف، و«إملاقٍ» مضاف إليه.<br>
+      بَيَّن سببَ النهي عن القتل.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِم مِّنَ الصَّوَاعِقِ حَذَرَ الْمَوْتِ</div>
+    <div class="attribution">[سورة البقرة: ١٩]</div>
+    <div class="parse">«<span class="hl">حَذَرَ</span>»: <strong>مفعول لأجله</strong> منصوب بالفتحة، وهو مضاف، و«الموتِ» مضاف إليه. بيَّن سببَ جعلِ الأصابع في الآذان.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وأَغْفِرُ عَوْراءَ الكَريمِ ادِّخارَهُ ・ وأُعْرِضُ عَنْ شَتْمِ اللَّئيمِ تَكَرُّما
+    </div>
+    <div class="attribution">— حاتم الطائي</div>
+    <div class="parse">
+      «<span class="hl">ادِّخارَه</span>»: مفعول لأجله منصوب بالفتحة، بَيَّن سببَ الغفران.<br>
+      «<span class="hl">تكرُّما</span>»: مفعول لأجله منصوب بالفتحة، بَيَّن سببَ الإعراض.
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MAF'UL MA'AH
+     ========================================================= -->
+<section class="chapter" id="ma3ahu">
+  <div class="chapter-num">— الفصل الرابع والعشرون —</div>
+  <h1 class="chapter-title">بابُ المَفعولِ مَعَه</h1>
+  <div class="chapter-divider">❖ ۞ ❖</div>
+
+  <h2 class="section-title">١. تعريف المفعول معه</h2>
+  <div class="definition">
+    <p><span class="hl">المفعولُ معه</span>: هو الاسمُ المنصوبُ الذي يُذكر لبيانِ مَنْ فُعِل معه الفعل.</p>
+  </div>
+  <p>وعلامتُه أن يَسبقه فعلٌ وفاعل، ثم تأتي <strong>واوٌ بمعنى «مَعَ»</strong> فيُعقبها اسمٌ، نحو: «جاء الأميرُ والجيشَ»، أي مع الجيش. ومثل: «استوى الماءُ والخشبةَ»، أي مع الخشبة.</p>
+
+  <h2 class="section-title">٢. الفرق بينه وبين العطف</h2>
+  <p>إذا قلت: «جاء زيدٌ وعمرٌو»، فعمرٌو معطوف على زيد، يَشترك معه في المجيء. وإذا قلت: «جاء زيدٌ وعمرًا»، فعمرٌو مفعول معه، وكأنّه ليس مشاركًا في الفعل بل وَقَع الفعلُ معه فقط.</p>
+  <div class="note">
+    <p><strong>تنبيه:</strong> الواو لا تكون «واو المعيَّة» (للمفعول معه) إلا في حالة تَعَذُّر العطف، كأن يكون السياق لا يَحتمل المشاركة، أو يَتَعَذَّر عطفُ ما بعدها على ما قبلها لتقارب لفظيٍّ أو اختلافٍ معنوي.</p>
+  </div>
+
+  <div class="example classical">
+    <div class="verse">سِرتُ والنيلَ</div>
+    <div class="parse">«النيلَ»: مفعول معه منصوب بالفتحة. لا يَصلح أن يكون معطوفًا لأن النيل لا يَسير.</div>
+  </div>
+
+  <div class="example classical">
+    <div class="verse">استوى الماءُ والخشبةَ</div>
+    <div class="parse">«الخشبةَ»: مفعول معه منصوب بالفتحة. أي ساوى الماء الخشبةَ.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      فَكُونوا أَنتُمُ وَبَني أَبيكُمْ ・ مَكانَ الكُلْيَتَيْنِ مِنَ الطِّحالِ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">في هذا البيت: لو نُصبت «بني أبيكم» لكانت مفعولًا معه. والرواية المشهورة بالرفع على العطف.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MAKHFUDAT
+     ========================================================= -->
+<section class="chapter" id="makhfudat">
+  <div class="chapter-num">— القسم الرابع —</div>
+  <h1 class="chapter-title">بابُ مَخْفوضاتِ الأسماءِ<br>(المجرورات)</h1>
+  <div class="chapter-divider">۞ ❖ ۞</div>
+
+  <p class="lead">قال المؤلِّفُ: «المخفوضاتُ ثلاثةُ أنواع: مَخفوضٌ بالحرف، ومَخفوضٌ بالإضافة، وتابعٌ للمَخفوض».</p>
+
+  <h2 class="section-title">١. المخفوض بالحرف</h2>
+  <div class="rule">
+    <p>وهو ما يَنخفِض بأحدِ حروف الجر، وهي على ما ذَكَر المؤلِّف:</p>
+    <p style="text-align:center;font-size:22px;color:var(--crimson);font-weight:700;margin:14px 0">مِنْ، إلى، عَنْ، على، في، رُبَّ، الباء، الكاف، اللام، <br>وحروف القَسَم: الواو، الباء، التاء، <br>والكاف، ومُذْ، ومُنْذُ، وحاشا، وخلا، وعدا</p>
+  </div>
+
+  <h3 class="subsection">شرحُ معاني حروف الجر</h3>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الحرف</th><th>المعنى</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>مِنْ</td><td>ابتداء الغاية، التبعيض، البيان، التعليل</td><td>خرجتُ مِن البيتِ</td></tr>
+        <tr><td>إلى</td><td>انتهاء الغاية</td><td>سرتُ إلى المسجدِ</td></tr>
+        <tr><td>عَنْ</td><td>المُجاوَزة والبُعد</td><td>رَمَيتُ السَّهمَ عن القوسِ</td></tr>
+        <tr><td>على</td><td>الاستعلاء</td><td>صَعِدتُ على الجبلِ</td></tr>
+        <tr><td>في</td><td>الظرفية (المكان والزمان)</td><td>الماءُ في الكوبِ</td></tr>
+        <tr><td>رُبَّ</td><td>التقليل (وقد تأتي للتكثير)</td><td>رُبَّ أخٍ لك لم تَلِدْه أُمُّك</td></tr>
+        <tr><td>الباء</td><td>الإلصاق، الاستعانة، التعدية، السببية</td><td>كتبتُ بالقلمِ</td></tr>
+        <tr><td>الكاف</td><td>التشبيه</td><td>زيدٌ كالأسدِ</td></tr>
+        <tr><td>اللام</td><td>المِلْك، الاختصاص، التعليل</td><td>الحمدُ لله</td></tr>
+        <tr><td>الواو والباء والتاء</td><td>للقَسَم</td><td>والله، بالله، تالله</td></tr>
+        <tr><td>مُذْ، مُنذُ</td><td>ابتداء الغاية الزمانية</td><td>ما رأيتُه مُذْ يومِ الجمعةِ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى</div>
+    <div class="attribution">[سورة الإسراء: ١]</div>
+    <div class="parse">
+      «<span class="hl">بعبدِه</span>»: الباء حرف جر، «عبدِ» مجرور بها، وهو مضاف، والهاء مضاف إليه.<br>
+      «<span class="hl">من المسجدِ</span>»: «مِن» للابتداء، و«المسجدِ» مجرور.<br>
+      «<span class="hl">إلى المسجدِ</span>»: «إلى» لانتهاء الغاية، و«المسجدِ» مجرور.
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ</div>
+    <div class="attribution">[سورة الناس: ١-٣]</div>
+    <div class="parse">«برب» الباء للاستعانة. «<span class="hl">ربِّ</span>» مجرور بالباء وهو مضاف. «<span class="hl">الناسِ</span>» مضاف إليه مجرور.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وَفي الفِتْنَةِ الكُبرى يَزينُ صَحيفَتي ・ بِفِعْلٍ جَميلٍ مُذْ نَشَأْتُ وَمِنْ قَبْلُ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">«مُذْ»: حرف جر زمانيّ. «نَشَأْتُ»: ما بعد «مُذْ» جملةٌ في تأويل المصدر مجرور بـ«مذ».</div>
+  </div>
+
+  <h2 class="section-title">٢. المخفوض بالإضافة</h2>
+  <div class="definition">
+    <p><span class="hl">الإضافة</span>: نِسبةُ اسمٍ إلى اسمٍ على معنى حرف جر، فيَنخفِض الثاني بسبب الأول. ويُسمَّى الأولُ <span class="hl-b">المضافَ</span>، والثاني <span class="hl-b">المضافَ إليه</span>.</p>
+  </div>
+
+  <h3 class="subsection">أحكام الإضافة</h3>
+  <ul class="tidy">
+    <li><strong>حذف التنوين من المضاف</strong> إن كان منوَّنًا، نحو: «كتابٌ» ⟵ «كتابُ زيدٍ».</li>
+    <li><strong>حذف نون المثنى وجمع المذكر السالم</strong>، نحو: «مسلمونَ زيدٍ» ⟵ «مسلمو زيدٍ».</li>
+    <li><strong>وجوب جرّ المضاف إليه</strong>.</li>
+  </ul>
+
+  <h3 class="subsection">أقسام الإضافة عند المؤلف — قسمان</h3>
+  <p>الإضافة على قسمين:</p>
+  <ol class="tidy">
+    <li><strong>إضافة معنوية (محضة):</strong> ما تَقدَّر فيه «اللام» أو «مِن» أو «في»:
+      <ul style="margin-top:6px;padding-right:24px">
+        <li>تَقَدَّر «اللام» للملك أو الاختصاص: «غُلامُ زيدٍ» (أي غلامٌ لزيدٍ).</li>
+        <li>تَقَدَّر «مِن» للبيان: «ثوبُ خَزٍّ» (أي ثوبٌ من خزٍّ).</li>
+        <li>تَقَدَّر «في» للظرفية: «مَكْرُ الليلِ» (أي مكرٌ في الليل).</li>
+      </ul>
+    </li>
+    <li><strong>إضافة لفظية (غير محضة):</strong> ما يكون المضاف فيها وصفًا (اسم فاعل أو مفعول أو صفة مشبهة) وقد عَمِل في المضاف إليه، نحو: «ضاربُ زيدٍ» (في الأصل ضاربٌ زيدًا).</li>
+  </ol>
+
+  <div class="example quran">
+    <div class="ayah">مَالِكِ يَوْمِ الدِّينِ</div>
+    <div class="attribution">[سورة الفاتحة: ٤]</div>
+    <div class="parse">
+      «<span class="hl">مالكِ</span>»: نعت لـ«الله»، مجرور بالكسرة، وهو مضاف.<br>
+      «<span class="hl">يومِ</span>»: مضاف إليه مجرور بالكسرة، وهو مضاف.<br>
+      «<span class="hl">الدينِ</span>»: مضاف إليه مجرور بالكسرة.<br>
+      ⟵ هذه ثلاثُ إضافاتٍ متعاقبة!
+    </div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ</div>
+    <div class="attribution">[سورة آل عمران: ١٥٦]</div>
+    <div class="parse">«بما يعملون»: الباء حرف جر، و«ما» اسم موصول في محل جر، وجملة «يعملون» صلة لا محل لها.</div>
+  </div>
+
+  <div class="example poetry">
+    <div class="verse">
+      وَلِلْحُبِّ آياتٌ تُبَيَّنُ لِلْفَتى ・ شَواهِدُها مِثلُ الطَّريقِ تَلوحُ
+    </div>
+    <div class="attribution">— من شعر العرب</div>
+    <div class="parse">في هذا البيت إضافات: «شواهدُها» (شواهد + ها)، «مثلُ الطريقِ» (مثل مضاف، الطريق مضاف إليه).</div>
+  </div>
+
+  <h2 class="section-title">٣. التابع للمَخفوض</h2>
+  <p>وهذا قد تقدّم الكلام عليه في باب التوابع، فإن التابع يَتبع متبوعه في إعرابه: فإن كان مجرورًا جُرَّ، نحو:</p>
+  <div class="example quran">
+    <div class="ayah">إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</div>
+    <div class="attribution">[سورة الرعد: ٣]</div>
+    <div class="parse">«قومٍ»: مجرور باللام. «<span class="hl">يتفكَّرون</span>»: جملة فعلية في محل جر <strong>نَعتٌ</strong> لـ«قوم».</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="attribution">[سورة الفاتحة: ١]</div>
+    <div class="parse">«اللهِ»: لفظ الجلالة، مجرور. «<span class="hl">الرحمنِ</span>»: نَعتٌ مجرور تابعًا لـ«الله». «<span class="hl">الرحيمِ</span>»: نَعتٌ ثانٍ مجرور.</div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SUMMARY
+     ========================================================= -->
+<section class="chapter" id="summary">
+  <div class="chapter-num">— الخاتمة —</div>
+  <h1 class="chapter-title">خُلاصةٌ جامِعَةٌ</h1>
+  <div class="chapter-divider">۞ ❖ ۞</div>
+
+  <p class="lead">قد فَرَغْنا بحمد الله وعَوْنِه من شَرْحِ متن الآجرومية، وها هنا نَجْمَع لك أُصولَ هذا العلم في خُلاصةٍ مُرَكَّزة، يَسْهُل عليك بها استحضارُ ما تَقَدَّم.</p>
+
+  <h2 class="section-title">١. الخريطة الذهنية لعِلم النحو</h2>
+  <div class="rule">
+    <p style="text-align:center;font-size:21px;line-height:2.4">
+      <span class="hl">الكَلِم</span> ⟵ ثلاثة: <span class="hl-b">اسم</span> + <span class="hl-g">فعل</span> + <span class="hl">حرف</span><br>
+      <span class="hl">الاسم</span> ⟵ مُعرَبٌ أو مَبنيٌّ<br>
+      <span class="hl">الفعل</span> ⟵ ماضٍ (مبني) + مضارع (معرب) + أمر (مبني)<br>
+      <span class="hl">الحرف</span> ⟵ كلُّه مبنيٌّ
+    </p>
+  </div>
+
+  <h2 class="section-title">٢. حالات الإعراب الأربع — توزيعها</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الحالة</th><th>تدخل الأسماء؟</th><th>تدخل الأفعال؟</th><th>قاعدة</th></tr></thead>
+      <tbody>
+        <tr><td>الرفع</td><td>نعم</td><td>نعم</td><td>للأصل أو لعامل لفظي</td></tr>
+        <tr><td>النصب</td><td>نعم</td><td>نعم</td><td>بناصب</td></tr>
+        <tr><td>الجر</td><td><strong>نعم</strong></td><td>لا</td><td>خاص بالأسماء</td></tr>
+        <tr><td>الجزم</td><td>لا</td><td><strong>نعم</strong></td><td>خاص بالمضارع</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">٣. المرفوعات — جدول جامع</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>المرفوع</th><th>المُعرِّف</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>الفاعل</td><td>اسم مرفوع وقع منه الفعل</td><td>قامَ <strong>زيدٌ</strong></td></tr>
+        <tr><td>نائب الفاعل</td><td>اسم مرفوع حلَّ محل الفاعل</td><td>ضُرِبَ <strong>زيدٌ</strong></td></tr>
+        <tr><td>المبتدأ</td><td>اسم مرفوع لم يَسبقه عامل</td><td><strong>زيدٌ</strong> قائمٌ</td></tr>
+        <tr><td>الخبر</td><td>اسم يُسنَد إلى المبتدأ</td><td>زيدٌ <strong>قائمٌ</strong></td></tr>
+        <tr><td>اسم كان</td><td>الذي رفعَتْه كان وأخواتها</td><td>كان <strong>زيدٌ</strong> قائمًا</td></tr>
+        <tr><td>خبر إنّ</td><td>الذي رفعَتْه إنّ وأخواتها</td><td>إنَّ زيدًا <strong>قائمٌ</strong></td></tr>
+        <tr><td>التابع المرفوع</td><td>نَعت/عطف/توكيد/بدل لمرفوع</td><td>قام زيدٌ <strong>وعمرٌو</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">٤. المنصوبات — جدول جامع</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>المنصوب</th><th>الوظيفة</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>المفعول به</td><td>وقع عليه الفعل</td><td>ضربتُ <strong>زيدًا</strong></td></tr>
+        <tr><td>المفعول المطلق</td><td>تأكيد أو بيان نوع/عدد</td><td>ضربتُه <strong>ضربًا</strong></td></tr>
+        <tr><td>ظرف الزمان</td><td>زمان وقوع الفعل</td><td>صُمْتُ <strong>يومًا</strong></td></tr>
+        <tr><td>ظرف المكان</td><td>مكان وقوع الفعل</td><td>جلستُ <strong>أمامَ</strong> المسجدِ</td></tr>
+        <tr><td>الحال</td><td>هيئة الفاعل أو المفعول</td><td>جاء زيدٌ <strong>راكبًا</strong></td></tr>
+        <tr><td>التمييز</td><td>بيان مُبهَم في ذاتٍ أو نسبة</td><td>عندي عشرونَ <strong>كتابًا</strong></td></tr>
+        <tr><td>المستثنى</td><td>الخارج من حكم سابق</td><td>قام القومُ إلَّا <strong>زيدًا</strong></td></tr>
+        <tr><td>اسم لا النافية للجنس</td><td>المنفيُّ جنسُه</td><td>لا <strong>رجلَ</strong> في الدارِ</td></tr>
+        <tr><td>المنادى (المُعرَب)</td><td>المطلوب إقبالُه</td><td>يا <strong>عبدَ</strong> اللهِ</td></tr>
+        <tr><td>المفعول لأجله</td><td>سبب وقوع الفعل</td><td>قمتُ <strong>إجلالًا</strong> لك</td></tr>
+        <tr><td>المفعول معه</td><td>مَنْ فُعل الفعلُ معه</td><td>سرتُ <strong>والنيلَ</strong></td></tr>
+        <tr><td>خبر كان</td><td>الذي نصبَتْه كان وأخواتها</td><td>كان زيدٌ <strong>قائمًا</strong></td></tr>
+        <tr><td>اسم إنّ</td><td>الذي نصبَتْه إنّ وأخواتها</td><td>إنَّ <strong>زيدًا</strong> قائمٌ</td></tr>
+        <tr><td>التابع المنصوب</td><td>نعت/عطف/توكيد/بدل لمنصوب</td><td>رأيتُ زيدًا <strong>وعمرًا</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">٥. المجرورات — جدول جامع</h2>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>المجرور</th><th>السَّبَب</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td>المجرور بالحرف</td><td>دخل عليه حرفُ جرّ</td><td>مررتُ <strong>بزيدٍ</strong></td></tr>
+        <tr><td>المجرور بالإضافة</td><td>أُضيف إليه اسمٌ قبله</td><td>كتابُ <strong>زيدٍ</strong></td></tr>
+        <tr><td>التابع المجرور</td><td>نعت/عطف/توكيد/بدل لمجرور</td><td>مررتُ بزيدٍ <strong>وعمرٍو</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">٦. وصايا لطالب العلم</h2>
+  <div class="rule">
+    <ol class="tidy">
+      <li><strong>احفظ المتن غَيْبًا</strong>؛ فإنّ من حَفِظ المتنَ مَلَك القاعدةَ.</li>
+      <li><strong>أَكْثِر من الإعراب</strong>؛ فإنّ النحو ملكةٌ لا تَستقر إلا بكثرة الممارسة.</li>
+      <li><strong>اقرأ القرآنَ بتدبُّر إعرابي</strong>؛ ففيه أصحُّ الشواهد وأبلغُها.</li>
+      <li><strong>احفظ شواهد العرب من الشعر الجاهلي وصدر الإسلام</strong>؛ فإنها مَعينُ النحاة.</li>
+      <li><strong>انتقل من الآجرومية</strong> إلى <em>«قطر النَّدى»</em>، ثم <em>«شذور الذهب»</em>، ثم <em>«ألفية ابن مالك»</em>.</li>
+      <li><strong>الزَم شيخًا</strong> يَفتح لك المُغلَق ويُصحِّح لك الفَهم؛ فإنّ النحو ممَّا لا يُؤخذ من الكتب فقط.</li>
+    </ol>
+  </div>
+
+  <p style="text-align:center;font-family:'Aref Ruqaa', serif;font-size:24px;color:var(--crimson);margin:30px 0 10px">
+    تَمَّ بحمد اللهِ وحُسْن تَوفيقِه
+  </p>
+  <p style="text-align:center;color:var(--ink-soft);font-style:italic;font-size:18px">
+    والحمدُ لله ربِّ العالمين، وصلّى الله وسلّم على نبيِّنا محمدٍ، وعلى آله وصحبه ومن تَبِعَهم بإحسانٍ إلى يوم الدين.
+  </p>
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="foot">
+  <div class="orn">۞ ❖ ۞ ❖ ۞</div>
+  <p>المرجعُ الشاملُ في شرح متن الآجرومية</p>
+  <p style="margin-top:6px;font-size:14px;color:#8a7858">— عَمَلٌ مُهْدًى إلى كلِّ طالبِ علمٍ يَرومُ صَوْنَ لِسانِه بلغةِ القرآنِ —</p>
+  <p style="margin-top:14px;font-size:13px;color:#7a6848">© جميعُ النصوص الشرعية والشواهد من القرآن الكريم وكلام العرب المُعتبَر</p>
+</footer>
+
+<!-- =========================================================
+     BACK TO TOP BUTTON
+     ========================================================= -->
+<button class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="عودة إلى الأعلى">↑</button>
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+<script>
+  // Toggle TOC drawer
+  function toggleToc() {
+    document.querySelector('.toc-drawer').classList.toggle('open');
+    document.querySelector('.toc-overlay').classList.toggle('show');
+  }
+
+  // Close drawer when a link is clicked
+  document.querySelectorAll('.toc-list a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.toc-drawer').classList.remove('open');
+      document.querySelector('.toc-overlay').classList.remove('show');
+    });
+  });
+
+  // Show "back to top" button when scrolled
+  const toTop = document.querySelector('.to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  });
+
+  // Press 'Esc' to close drawer
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelector('.toc-drawer').classList.remove('open');
+      document.querySelector('.toc-overlay').classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
