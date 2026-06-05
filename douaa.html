@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كتاب الدعاء — مرجع شامل في آداب الدعاء وصيغه المأثورة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink: #1a1a1a;
+  --ink-soft: #2c2820;
+  --paper: #f7f1e1;
+  --paper-deep: #ede3c8;
+  --paper-light: #fcf8ec;
+  --gold: #c9a227;
+  --gold-deep: #8b6914;
+  --gold-light: #e6c450;
+  --indigo: #1e3a5f;
+  --indigo-deep: #0f1f3a;
+  --crimson: #6b1f1a;
+  --teal: #1f4a4a;
+  --rule: rgba(26,26,26,0.1);
+  --shadow: rgba(60,40,15,0.18);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+
+body{
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(201,162,39,0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(30,58,95,0.05) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0 0.1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  color: var(--ink);
+  line-height: 1.85;
+  font-size: 21px;
+  min-height: 100vh;
+}
+
+/* ====== NAV ====== */
+.top-nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247,241,225,0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+  box-shadow: 0 2px 12px rgba(60,40,15,0.06);
+}
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.brand{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--indigo-deep);
+  letter-spacing: 0.5px;
+}
+.brand-mark{color: var(--gold-deep); margin-left: 8px; font-size: 20px}
+.nav-links{display: flex; gap: 6px; flex-wrap: wrap}
+.nav-links a{
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 18px;
+  transition: all 0.25s;
+  font-weight: 500;
+}
+.nav-links a:hover{background: var(--indigo); color: var(--paper-light)}
+
+/* ====== HERO / TITLE PAGE ====== */
+.hero{
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 100px 32px 80px;
+  text-align: center;
+  position: relative;
+}
+.hero-frame{
+  border: 2px solid var(--gold);
+  padding: 70px 50px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(252,248,236,0.7), rgba(237,227,200,0.4));
+}
+.hero-frame::before, .hero-frame::after{
+  content: '۞';
+  position: absolute;
+  font-size: 32px;
+  color: var(--gold-deep);
+  background: var(--paper);
+  padding: 0 12px;
+  font-family: 'Amiri', serif;
+}
+.hero-frame::before{top: -22px; left: 50%; transform: translateX(-50%)}
+.hero-frame::after{bottom: -22px; left: 50%; transform: translateX(-50%)}
+.basmalah{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 34px;
+  color: var(--gold-deep);
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+.hero h1{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(46px, 7vw, 78px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  color: var(--indigo-deep);
+}
+.hero-sub{
+  font-size: 24px;
+  color: var(--ink-soft);
+  font-family: 'Amiri', serif;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+.hero-verse{
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  color: var(--crimson);
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--rule);
+  line-height: 2;
+}
+.verse-source{
+  display: block;
+  font-size: 16px;
+  color: var(--gold-deep);
+  margin-top: 8px;
+  font-style: normal;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+/* ====== OPENING PRAISE ====== */
+.opening{
+  max-width: 880px;
+  margin: 60px auto 100px;
+  padding: 0 32px;
+}
+.opening-box{
+  background: var(--paper-light);
+  border: 1px solid var(--gold);
+  padding: 60px 60px;
+  position: relative;
+  box-shadow: 0 4px 30px var(--shadow);
+}
+.opening-box::before{
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(201,162,39,0.4);
+  pointer-events: none;
+}
+.opening-title{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 32px;
+  color: var(--crimson);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.praise{
+  font-family: 'Amiri', serif;
+  font-size: 24px;
+  line-height: 2.1;
+  text-align: justify;
+}
+.praise p{margin-bottom: 22px}
+.praise .lead{
+  font-size: 26px;
+  color: var(--indigo-deep);
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.praise .salah{
+  text-align: center;
+  font-size: 22px;
+  color: var(--gold-deep);
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--rule);
+}
+
+/* ====== TOC ====== */
+.toc-section{
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 32px;
+}
+.section-title{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(38px, 5vw, 52px);
+  text-align: center;
+  color: var(--indigo-deep);
+  margin-bottom: 14px;
+}
+.section-sub{
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 19px;
+  margin-bottom: 50px;
+  font-style: italic;
+  font-family: 'Amiri', serif;
+}
+.toc-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.toc-item{
+  background: var(--paper-light);
+  padding: 22px 24px;
+  border-right: 4px solid var(--gold);
+  text-decoration: none;
+  color: var(--ink);
+  border-radius: 4px;
+  transition: all 0.3s;
+  display: block;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+.toc-item:hover{
+  transform: translateX(-4px);
+  border-right-color: var(--crimson);
+  background: #fff;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+.toc-item .chapter-num{
+  font-family: 'Aref Ruqaa', serif;
+  color: var(--gold-deep);
+  font-size: 13px;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+.toc-item .chapter-title{
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--indigo-deep);
+}
+
+/* ====== CHAPTER ====== */
+.chapter{
+  max-width: 1000px;
+  margin: 120px auto;
+  padding: 0 32px;
+}
+.chapter-header{
+  text-align: center;
+  margin-bottom: 60px;
+}
+.chapter-label{
+  display: inline-block;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 13px;
+  color: var(--gold-deep);
+  letter-spacing: 5px;
+  margin-bottom: 18px;
+  padding: 6px 24px;
+  background: var(--paper-light);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+}
+.chapter-title-main{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(36px, 5vw, 54px);
+  color: var(--crimson);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.chapter-tagline{
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ====== CONTENT ====== */
+.content-box{
+  background: var(--paper-light);
+  padding: 50px 55px;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  margin-bottom: 30px;
+  box-shadow: 0 3px 14px var(--shadow);
+}
+.content-box h3{
+  font-family: 'Aref Ruqaa', serif;
+  color: var(--indigo-deep);
+  font-size: 30px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--gold);
+}
+.content-box h4{
+  font-family: 'Reem Kufi', sans-serif;
+  color: var(--crimson);
+  font-size: 23px;
+  margin: 28px 0 14px;
+  font-weight: 600;
+}
+.content-box p{
+  font-size: 21px;
+  margin-bottom: 16px;
+  line-height: 2;
+  text-align: justify;
+}
+.content-box ul, .content-box ol{
+  margin: 16px 30px;
+  padding-right: 10px;
+}
+.content-box li{
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 1.95;
+}
+
+/* ====== AYAH BLOCK ====== */
+.ayah{
+  background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(252,248,236,0.5));
+  border: 1px solid var(--gold);
+  padding: 28px 36px;
+  margin: 24px 0;
+  border-radius: 6px;
+  position: relative;
+}
+.ayah-text{
+  font-family: 'Amiri', serif;
+  font-size: 26px;
+  line-height: 2.2;
+  color: var(--indigo-deep);
+  text-align: center;
+  font-weight: 700;
+}
+.ayah-source{
+  font-family: 'Reem Kufi', sans-serif;
+  color: var(--gold-deep);
+  font-size: 16px;
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 500;
+}
+
+/* ====== HADITH BLOCK ====== */
+.hadith{
+  background: rgba(31,74,74,0.05);
+  border-right: 4px solid var(--teal);
+  padding: 24px 30px;
+  margin: 24px 0;
+  border-radius: 4px;
+}
+.hadith-text{
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  line-height: 2.05;
+  color: var(--ink);
+}
+.hadith-text::before{content: '«'; color: var(--teal); margin-left: 4px}
+.hadith-text::after{content: '»'; color: var(--teal); margin-right: 4px}
+.hadith-source{
+  font-family: 'Reem Kufi', sans-serif;
+  color: var(--teal);
+  font-size: 15px;
+  margin-top: 12px;
+  font-weight: 500;
+  display: block;
+}
+
+/* ====== DUA CARD ====== */
+.dua-card{
+  background: linear-gradient(135deg, #fff 0%, var(--paper-light) 100%);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 36px 40px;
+  margin: 28px 0;
+  position: relative;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+.dua-card::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to left, var(--gold), var(--gold-deep), var(--gold));
+  border-radius: 8px 8px 0 0;
+}
+.dua-num{
+  display: inline-block;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 16px;
+  background: var(--indigo-deep);
+  color: var(--gold-light);
+  padding: 5px 18px;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+.dua-title{
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 22px;
+  color: var(--crimson);
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.dua-text{
+  font-family: 'Amiri', serif;
+  font-size: 27px;
+  line-height: 2.3;
+  color: var(--indigo-deep);
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px dashed rgba(201,162,39,0.4);
+  border-bottom: 1px dashed rgba(201,162,39,0.4);
+  margin: 18px 0;
+  font-weight: 700;
+}
+.dua-meaning{
+  font-size: 19px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  margin-top: 16px;
+}
+.dua-meaning strong{color: var(--crimson)}
+.dua-source{
+  font-family: 'Reem Kufi', sans-serif;
+  color: var(--gold-deep);
+  font-size: 15px;
+  margin-top: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* ====== BOX TYPES ====== */
+.note-box{
+  background: rgba(201,162,39,0.1);
+  border-right: 4px solid var(--gold);
+  padding: 18px 26px;
+  margin: 22px 0;
+  border-radius: 4px;
+  font-size: 19px;
+  line-height: 1.9;
+}
+.note-box strong{color: var(--crimson)}
+
+.warning-box{
+  background: rgba(107,31,26,0.05);
+  border: 1px solid var(--crimson);
+  padding: 20px 26px;
+  margin: 22px 0;
+  border-radius: 4px;
+}
+.warning-box strong{color: var(--crimson); display: block; margin-bottom: 8px; font-family: 'Reem Kufi', sans-serif; font-size: 18px}
+
+.benefit-box{
+  background: linear-gradient(135deg, rgba(31,74,74,0.06), rgba(252,248,236,0.5));
+  border-right: 4px solid var(--teal);
+  padding: 22px 28px;
+  margin: 22px 0;
+  border-radius: 4px;
+}
+.benefit-box strong{color: var(--teal); display: block; margin-bottom: 8px; font-family: 'Reem Kufi', sans-serif; font-size: 18px}
+
+/* ====== DIVIDER ====== */
+.divider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 70px auto;
+  max-width: 600px;
+}
+.divider .line{
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to left, transparent, var(--gold), transparent);
+}
+.divider .ornament{
+  color: var(--gold-deep);
+  font-size: 22px;
+  font-family: 'Amiri', serif;
+}
+
+/* ====== TABLE ====== */
+.times-table-wrapper{
+  overflow-x: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px var(--shadow);
+  margin: 28px 0;
+}
+.times-table{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper-light);
+  font-size: 19px;
+}
+.times-table th{
+  background: var(--indigo-deep);
+  color: var(--gold-light);
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: 600;
+  padding: 16px 20px;
+  text-align: right;
+}
+.times-table td{
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.times-table tr:hover td{background: rgba(201,162,39,0.05)}
+.times-table td:first-child{
+  font-family: 'Reem Kufi', sans-serif;
+  color: var(--crimson);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ====== CLOSING ====== */
+.closing{
+  max-width: 950px;
+  margin: 120px auto 60px;
+  padding: 70px 60px;
+  background: linear-gradient(135deg, var(--indigo-deep) 0%, var(--indigo) 100%);
+  color: var(--paper-light);
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+}
+.closing::before{
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(230,196,80,0.3);
+  pointer-events: none;
+}
+.closing h2{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 40px;
+  margin-bottom: 28px;
+  color: var(--gold-light);
+}
+.closing p{
+  font-size: 22px;
+  line-height: 2.1;
+  margin-bottom: 18px;
+  font-family: 'Amiri', serif;
+}
+.closing .final-dua{
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 26px;
+  color: var(--gold-light);
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(230,196,80,0.2);
+  line-height: 1.9;
+}
+
+/* ====== FOOTER ====== */
+footer{
+  text-align: center;
+  padding: 50px 32px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  border-top: 1px solid var(--rule);
+}
+footer .ornament{
+  color: var(--gold-deep);
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-family: 'Amiri', serif;
+}
+
+@media (max-width: 768px){
+  body{font-size: 18px}
+  .hero{padding: 60px 18px 50px}
+  .hero-frame{padding: 40px 24px}
+  .opening{padding: 0 18px; margin: 40px auto 60px}
+  .opening-box{padding: 36px 28px}
+  .content-box{padding: 30px 26px}
+  .content-box p{font-size: 19px}
+  .dua-card{padding: 24px 22px}
+  .dua-text{font-size: 22px}
+  .ayah-text{font-size: 22px}
+  .hadith-text{font-size: 19px}
+  .closing{padding: 40px 24px; margin: 60px 18px}
+  .nav-links a{font-size: 12px; padding: 4px 10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-inner">
+    <div class="brand">كتاب الدعاء <span class="brand-mark">۞</span></div>
+    <div class="nav-links">
+      <a href="#opening">المقدمة</a>
+      <a href="#toc">الفهرس</a>
+      <a href="#ch1">تعريفه</a>
+      <a href="#ch2">فضله</a>
+      <a href="#ch3">آدابه</a>
+      <a href="#ch4">شروطه</a>
+      <a href="#ch5">أوقاته</a>
+      <a href="#ch6">موانعه</a>
+      <a href="#ch7">القرآن</a>
+      <a href="#ch8">الأنبياء</a>
+      <a href="#ch9">النبي ﷺ</a>
+      <a href="#ch10">جامعة</a>
+      <a href="#closing">الخاتمة</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-frame">
+    <div class="basmalah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <h1>كتابُ الدُّعاء</h1>
+    <p class="hero-sub">مرجعٌ شاملٌ في آدابِ الدُّعاءِ وشُروطهِ وأوقاتهِ، مع جوامِعِ ما وَرَدَ في القرآنِ والسنَّةِ من صِيَغِهِ المأثورة</p>
+    <div class="hero-verse">
+      وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ ۚ إِنَّ الَّذِينَ يَسْتَكْبِرُونَ عَنْ عِبَادَتِي سَيَدْخُلُونَ جَهَنَّمَ دَاخِرِينَ
+      <span class="verse-source">— سورة غافر، الآية ٦٠ —</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OPENING PRAISE ========== -->
+<section id="opening" class="opening">
+  <div class="opening-box">
+    <h2 class="opening-title">حمدٌ وثناءٌ وصلاةٌ على الحبيب ﷺ</h2>
+    <div class="praise">
+      <p class="lead">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+
+      <p>الحمدُ للهِ الذي تَفرَّدَ بالعِزَّةِ والكِبْرياء، وتعالى بالعَظَمةِ والبَهاء، وتقدَّسَ بالجَلالِ والسَّناء، الذي خَلَقَ فسوَّى، وقدَّرَ فهَدَى، وأماتَ وأحْيا، وأضحَكَ وأبكى، وأعطى وأَكْدى، وأَغنى وأَقْنى، الذي بِيَدِهِ مَلَكُوتُ كُلِّ شيء، وإليهِ تُرجَعُ الأمور.</p>
+
+      <p>الحمدُ للهِ حَمداً يُوافي نِعَمَهُ، ويُكافِئُ مَزيدَه، حَمداً كما يَنبَغي لِجَلالِ وَجْهِهِ وعَظيمِ سُلطانِه، حَمدَ مَن استَشعرَ نِعمتَهُ فعَجَزَ عن شُكْرِها، ووَقَفَ على جَلالِهِ فحارَ في عَظَمتِه.</p>
+
+      <p>أَحْمَدُهُ سُبحانَهُ على أنْ جَعَلَ الدُّعاءَ مِفتاحَ كُلِّ خَير، وعِصْمَةً مِن كُلِّ ضَير، وقَرَّبَ به العَبدَ مِن مَولاه، وأَنالَهُ به ما يَتمنَّاه. وأَشهدُ أنْ لا إلهَ إلا اللهُ وَحدَهُ لا شَريكَ لهُ، الفَردُ الصَّمدُ، الذي لم يَلِدْ ولم يُولَدْ، ولم يَكُنْ لهُ كُفُواً أَحدٌ.</p>
+
+      <div class="salah">
+        وأَشهدُ أنَّ سَيِّدَنا ونَبيَّنا مُحمَّداً عَبدُهُ ورَسولُه،<br>
+        صَلَّى اللهُ عَليهِ وعلى آلِهِ الأطْهارِ وصَحْبِهِ الأخْيار،<br>
+        الذينَ نَهَجوا نَهْجَهُ في الدُّعاءِ والتضَرُّع، وسارُوا على سُنَّتِهِ في الافْتِقارِ والخُضوع،<br>
+        صلاةً وسلاماً دائِمَينِ مُتلازِمَينِ إلى يومِ الدِّين.
+      </div>
+
+      <p style="margin-top: 36px; text-align: center; font-size: 22px; color: var(--indigo-deep)"><strong>أمَّا بَعد:</strong></p>
+
+      <p>فإنَّ الدُّعاءَ شأنُهُ عظيم، وقدْرُهُ كبير، وقد سمَّاهُ النبيُّ ﷺ <strong>"العبادة"</strong> ولم يَقُلْ "من العبادة"، إشارةً إلى أنَّه روحُ العبادةِ وخالِصُها. وفيهِ مِن مَعاني العُبوديةِ التامَّةِ ما لا يَجتمعُ في سواه: الافْتِقارُ إلى الله، والاعتراف بالعَجْز، وإفراد الله بالطَّلب، وحُسن الظنِّ به سُبحانه.</p>
+
+      <p>وهذا الكتابُ — أيُّها القارئُ الكَريم — قَصَدْتُ فيه أنْ يكونَ لكَ <strong>مَرجعاً جامعاً</strong> في الدُّعاء: تعرفُ تعريفَهُ ومنزلتَهُ، وتُحْصي آدابَه وشُروطَه، وتعرفُ أوقاتَ إجابتِه وموانعَ الاستجابة، وتَحفظُ أمثلَتَه المأثورةَ من القرآنِ والسُّنَّة، حتى يَصيرَ لِسانُكَ رَطْباً بذِكْرِ الله، ومُتَخَلِّقاً بأَفصحِ ما خاطَبَ به الأنبياءُ ربَّهم، وأبلغِ ما عَلَّمَنا سيِّدُنا مُحمَّدٌ ﷺ.</p>
+
+      <p>أَسألُ اللهَ أنْ يَنفعَ به كاتِبَه وقارِئَه، وأنْ يَجعَلَه خالِصاً لوَجْهِه الكَريم، وأنْ يُذيقَ صاحِبَه حلاوةَ مُناجاتِه، ولذَّةَ الافتِقارِ إليه، إنَّه وَلِيُّ ذلكَ والقادرُ عليه.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TOC ========== -->
+<section id="toc" class="toc-section">
+  <h2 class="section-title">فِهرس الكتاب</h2>
+  <p class="section-sub">عشرة فصول في علم الدعاء وأمثلته المأثورة</p>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item">
+      <span class="chapter-num">الفصل الأوّل</span>
+      <span class="chapter-title">تعريفُ الدُّعاءِ ومنزلتُه</span>
+    </a>
+    <a href="#ch2" class="toc-item">
+      <span class="chapter-num">الفصل الثاني</span>
+      <span class="chapter-title">فضلُ الدُّعاءِ وثَمراتُه</span>
+    </a>
+    <a href="#ch3" class="toc-item">
+      <span class="chapter-num">الفصل الثالث</span>
+      <span class="chapter-title">آدابُ الدُّعاءِ — اثنا عشَرَ أدباً</span>
+    </a>
+    <a href="#ch4" class="toc-item">
+      <span class="chapter-num">الفصل الرابع</span>
+      <span class="chapter-title">شُروطُ إجابةِ الدُّعاء</span>
+    </a>
+    <a href="#ch5" class="toc-item">
+      <span class="chapter-num">الفصل الخامس</span>
+      <span class="chapter-title">أوقاتُ وأماكنُ الإجابة</span>
+    </a>
+    <a href="#ch6" class="toc-item">
+      <span class="chapter-num">الفصل السادس</span>
+      <span class="chapter-title">موانعُ إجابةِ الدُّعاء</span>
+    </a>
+    <a href="#ch7" class="toc-item">
+      <span class="chapter-num">الفصل السابع</span>
+      <span class="chapter-title">أدعيةُ القرآن — كُنوز التَّنزيل</span>
+    </a>
+    <a href="#ch8" class="toc-item">
+      <span class="chapter-num">الفصل الثامن</span>
+      <span class="chapter-title">أدعيةُ الأنبياء — مدرسةُ الافتقار</span>
+    </a>
+    <a href="#ch9" class="toc-item">
+      <span class="chapter-num">الفصل التاسع</span>
+      <span class="chapter-title">أدعيةُ النبيِّ ﷺ — جوامعُ الكَلِم</span>
+    </a>
+    <a href="#ch10" class="toc-item">
+      <span class="chapter-num">الفصل العاشر</span>
+      <span class="chapter-title">أدعيةٌ جامِعة للحاجات</span>
+    </a>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 1 ========== -->
+<section id="ch1" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل الأوّل ۞</div>
+    <h2 class="chapter-title-main">تعريفُ الدُّعاءِ ومنزلتُه</h2>
+    <p class="chapter-tagline">"وما الدعاء إلا حقيقة العبودية"</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الدعاء في اللغة وفي الشرع</h3>
+    <p>الدعاء في اللغة من <strong>"دَعا يَدْعو"</strong>، ومعناه: النداء والطلب والاستغاثة. تقولُ العربُ: دعاهُ إلى الأمرِ، إذا حَثَّه عليه ودعا له، إذا طلبَ له الخير.</p>
+
+    <p>وفي الشرع: هو <strong>طلبُ العبدِ من ربِّه — جلَّ وعلا — جَلْبَ خيرٍ أو دفعَ ضُرٍّ، مع إظهار الافتقار والخضوع والتذلُّل بين يديه</strong>. وهو نوعان عند العلماء:</p>
+
+    <h4>أولاً: دعاء العبادة</h4>
+    <p>وهو كلُّ عبادةٍ يتقرَّب بها العبدُ إلى ربِّه — من صلاةٍ وصيامٍ وحجٍّ وذكرٍ — فإنها دعاءٌ بلسانِ الحال؛ يقولُ العبد بفعله: يا رب، أتقرَّبُ إليكَ بهذه الطاعةِ رجاءَ ثوابِكَ وخوفَ عقابك.</p>
+
+    <h4>ثانياً: دعاء المسألة</h4>
+    <p>وهو ما اعتاد الناس تسميته بالدعاء: أن يقول العبدُ بلسانه: <em>"اللهم اغفر لي، اللهم ارزقني، اللهم اشفِني"</em>. وهذا هو موضوع كتابنا — وإن كان النوع الأول لا ينفكُّ عنه.</p>
+
+    <div class="note-box">
+      <strong>قاعدة جامعة:</strong> كلُّ دعاءِ مسألةٍ متضمِّن لدعاء العبادة (لأن السائلَ يَعبدُ بسؤاله)، وكلُّ دعاءِ عبادةٍ متضمِّن لدعاء المسألة (لأن العابد يطلب الثواب). فاجتمعا في معنى التعبُّد لله.
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h3>منزلة الدعاء في الإسلام</h3>
+    <p>للدعاءِ منزلةٌ عظيمةٌ، لا يُدركها إلا من تأمَّل النصوص. فهو:</p>
+
+    <h4>١ ـ روح العبادة بل هو العبادة نفسها</h4>
+    <div class="hadith">
+      <div class="hadith-text">الدُّعاءُ هُوَ العِبادَة</div>
+      <span class="hadith-source">رواه الترمذي وأبو داود وغيرهما، وصحَّحه الألباني — عن النعمان بن بشير ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <h4>٢ ـ أكرم شيء على الله</h4>
+    <div class="hadith">
+      <div class="hadith-text">ليسَ شيءٌ أكرَمَ على اللهِ تعالى من الدُّعاء</div>
+      <span class="hadith-source">رواه الترمذي وحسَّنه — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <h4>٣ ـ سببٌ لدفع البلاء وعلاجٌ للقدر</h4>
+    <div class="hadith">
+      <div class="hadith-text">لا يَرُدُّ القَضاءَ إلا الدُّعاءُ، ولا يَزيدُ في العُمُرِ إلا البِرُّ</div>
+      <span class="hadith-source">رواه الترمذي وابن ماجه وغيرهما — عن سلمان الفارسي ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <p>وقد ضرب لنا النبيُّ ﷺ مَثلاً عظيماً في عُلوِّ منزلة الدعاء، فأخبرَ أنَّ مَن لم يَدْعُ اللهَ غضِبَ عليه:</p>
+    <div class="hadith">
+      <div class="hadith-text">مَن لم يَسألِ اللهَ يَغضَبْ عليه</div>
+      <span class="hadith-source">رواه الترمذي وحسَّنه — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <div class="benefit-box">
+      <strong>تأمَّل هذا الفرق:</strong> الإنسان يَغضَب إذا سُئل كثيراً، واللهُ يَغضَب إذا لم يُسأَل! لأنَّ سؤالَك إقرارٌ بفقرك إليه، وكِبَرك عن السؤال استكبارٌ على عبادته.
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 2 ========== -->
+<section id="ch2" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل الثاني ۞</div>
+    <h2 class="chapter-title-main">فضلُ الدُّعاءِ وثَمراتُه</h2>
+    <p class="chapter-tagline">"كَنزٌ لا يَنفَدُ، وبَحرٌ لا يَنضَب"</p>
+  </div>
+
+  <div class="content-box">
+    <h3>ثَمراتُ الدُّعاءِ في الدنيا والآخرة</h3>
+    <p>الدعاء ليس مجرَّد طلبٍ يَفعَله العبدُ ثم ينصرف، بل هو معاملةٌ شاملةٌ تَثمرُ في حياة العبد كلِّها. ومن أعظم ثمراته:</p>
+
+    <h4>الثمرة الأولى: تحقيق العبودية</h4>
+    <p>الدعاء يُذكِّرُك بمقامك من الله. أنت العبدُ الفقير، وهو الرَّبُّ الغنيّ. وكلَّما ازدادَ دعاؤكَ، ازدادَ شعورُك بالعبودية، وهذا أعلى مَقامات السالكين.</p>
+    <div class="ayah">
+      <div class="ayah-text">يَا أَيُّهَا النَّاسُ أَنتُمُ الْفُقَرَاءُ إِلَى اللَّهِ ۖ وَاللَّهُ هُوَ الْغَنِيُّ الْحَمِيدُ</div>
+      <div class="ayah-source">— سورة فاطر، الآية ١٥ —</div>
+    </div>
+
+    <h4>الثمرة الثانية: الاستجابة وتحقيق المطلوب</h4>
+    <p>وعدَ اللهُ — ووعدُهُ حقٌّ — بإجابة الداعي، وما تخلَّفت الإجابةُ إلا لمانعٍ من الداعي، لا لقصورٍ في رحمة الله.</p>
+    <div class="ayah">
+      <div class="ayah-text">وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا لِي وَلْيُؤْمِنُوا بِي لَعَلَّهُمْ يَرْشُدُونَ</div>
+      <div class="ayah-source">— سورة البقرة، الآية ١٨٦ —</div>
+    </div>
+
+    <h4>الثمرة الثالثة: دفع البلاء قبل وقوعه</h4>
+    <p>الدعاء يَلتقي بالبلاء فيُصارعُه، فإمَّا أن يَدفعَه، وإمَّا أن يُخفِّفَه، وإمَّا أن يَدَّخره صاحبُه يومَ القيامة. قال النبيُّ ﷺ:</p>
+    <div class="hadith">
+      <div class="hadith-text">ما من مُسلِمٍ يَدعُو اللهَ بدَعوةٍ ليسَ فيها إثمٌ ولا قَطيعةُ رَحِمٍ، إلا أعطاهُ اللهُ بها إحدى ثلاث: إمَّا أنْ تُعَجَّلَ لهُ دَعوَتُه، وإمَّا أنْ يَدَّخِرَها لهُ في الآخرة، وإمَّا أنْ يَصرِفَ عنهُ من السُّوءِ مِثلَها</div>
+      <span class="hadith-source">رواه أحمد والبزَّار بإسناد جيِّد — عن أبي سعيد الخدري ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <h4>الثمرة الرابعة: راحةٌ في القلب وأنسٌ بالله</h4>
+    <p>من جرَّب الدعاء حقَّ التجربة عَلِم أنَّ فيه أُنساً لا يَجدُه إلا الداعون. تَخلو بربك تشكو إليه، فتجدُ قلبَك يَنفتح، وهَمَّك يَخفُّ، وغمَّك ينجلي. وقد قال النبيُّ ﷺ:</p>
+    <div class="hadith">
+      <div class="hadith-text">إذا أراد اللهُ بعَبدٍ خيراً فَتَحَ له بابَ الدعاء</div>
+      <span class="hadith-source">من أقوال السلف — وله شواهد في معناه</span>
+    </div>
+
+    <h4>الثمرة الخامسة: السلامة من العَجْب والغرور</h4>
+    <p>المداومُ على الدعاء لا يَسلُكُ مَسلكَ المتكبِّرين. لأنَّه كلَّما رَفعَ يديه إلى الله، انكسرَ قلبُه، وعَلِم أنَّ ما يَملكُ شيئاً، وأنَّ كلَّ خيرٍ هو منه سبحانه.</p>
+
+    <div class="benefit-box">
+      <strong>قال ابن القيم:</strong> "ولو لم يَكن في الدعاء إلا فائدةٌ واحدة — وهي أنَّه يَفتَحُ بابَ الذلِّ والافتقار للهِ والعبودية — لكفى به فائدةً وشَرفاً".
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 3 ========== -->
+<section id="ch3" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل الثالث ۞</div>
+    <h2 class="chapter-title-main">آدابُ الدُّعاءِ — اثنا عشَرَ أدباً</h2>
+    <p class="chapter-tagline">"وللدعاءِ آدابٌ هي مَسلَكُ المُجابين"</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الأوَّل: الإخلاصُ لله وحدَه</h3>
+    <p>أَوَّلُ ما يُشترَطُ في الدعاء: أنْ يكونَ خالصاً للهِ وحدَه، لا يَدعو معه أحداً، ولا يَتوسَّلُ إليه إلا بما شرَع. قال تعالى:</p>
+    <div class="ayah">
+      <div class="ayah-text">وَأَنَّ الْمَسَاجِدَ لِلَّهِ فَلَا تَدْعُوا مَعَ اللَّهِ أَحَدًا</div>
+      <div class="ayah-source">— سورة الجن، الآية ١٨ —</div>
+    </div>
+    <p>فمَن دَعا ميِّتاً، أو غائباً، أو طلَب من غير الله ما لا يَقدِرُ عليه إلا اللهُ — فقد وقَع في الشِّرك. والدعاءُ عبادةٌ، وصَرفُ العبادةِ لغير الله شِرْكٌ بَيِّن.</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الثاني: حضورُ القلبِ والحُضورُ مع الله</h3>
+    <p>لا تَدْعُ ولِسانُك يَدْعو وقلبُك في وادٍ آخر. قال النبيُّ ﷺ:</p>
+    <div class="hadith">
+      <div class="hadith-text">ادعوا اللهَ وأنتم مُوقِنُونَ بالإجابة، واعلَموا أنَّ اللهَ لا يَستجيبُ دُعاءً من قَلبٍ غافِلٍ لاهٍ</div>
+      <span class="hadith-source">رواه الترمذي والحاكم وحسَّنه — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+    <p>وحضور القلب أن تَستشعِرَ عظمةَ من تدعو، وحاجَتَكَ إليه، وفقرَك بين يديه. فلا تَدعُو وأنت تُفكِّر في طعامِك أو عملك أو مالك.</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الثالث: البدء بحَمد اللهِ والصلاةِ على النبيِّ ﷺ</h3>
+    <p>هذا الأدب من أعظم الآداب وأكثرها تأثيراً في الإجابة. قال النبيُّ ﷺ — لمَّا سَمعَ رجلاً يَدعو في صلاته ولم يَحمَدِ اللهَ ولم يُصَلِّ على النبيِّ:</p>
+    <div class="hadith">
+      <div class="hadith-text">عَجِلَ هذا — ثم دَعاه فقال له أو لغيره — إذا صَلَّى أحدُكم فلْيَبدأ بتَحميدِ ربِّه والثَّناءِ عليه، ثم يُصَلِّي على النبيِّ ﷺ، ثم يَدعو بعدُ بما شاء</div>
+      <span class="hadith-source">رواه الترمذي وأبو داود وصحَّحه الألباني — عن فضالة بن عبيد ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <div class="benefit-box">
+      <strong>فائدة:</strong> الدعاء يَصعَدُ بين الحمدِ والصلاةِ على النبيِّ ﷺ، فأمَّا الحمدُ فهو شُكرٌ للهِ مَخصوصٌ به، يَستجلِبُ المزيد. وأمَّا الصلاةُ على النبي فهي سببُ القبول؛ لأنَّها لا تُرَدُّ، فإذا اقتَرَنَ بها دعاؤكَ جاءَ في مَركَبٍ لا يُرَدُّ.
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الرابع: التوسُّل بأسماء اللهِ الحُسنى</h3>
+    <p>أَن تُناسِبَ بين الاسمِ الإلهيِّ والمَطلوب. تقول في طلَبِ الرِّزقِ: <em>"يا رَزَّاق"</em>. وفي طلَبِ المغفرة: <em>"يا غفَّار"</em>. وفي طلَبِ الشفاء: <em>"يا شافي"</em>. قال تعالى:</p>
+    <div class="ayah">
+      <div class="ayah-text">وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا</div>
+      <div class="ayah-source">— سورة الأعراف، الآية ١٨٠ —</div>
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الخامس: استقبالُ القبلةِ ورَفعُ اليدين</h3>
+    <p>كان النبيُّ ﷺ يَستقبل القبلةَ في كثيرٍ من أدعيته، ويَرفَعُ يديه. وثبَت عنه ﷺ أنه قال:</p>
+    <div class="hadith">
+      <div class="hadith-text">إنَّ ربَّكم تباركَ وتعالى حَيِيٌّ كريمٌ، يَستَحْيي مِن عَبدِه إذا رَفَعَ يَدَيهِ إليه أنْ يَرُدَّهُما صِفْراً خائبَتين</div>
+      <span class="hadith-source">رواه أبو داود والترمذي وصحَّحه — عن سلمان الفارسي ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+    <p>وصِفةُ الرَّفعِ: أنْ تَجعَل بُطون كفَّيكَ نحو السَّماء، كأنَّكَ سائلٌ يَطلُبُ ما يُوضَعُ فيهما.</p>
+
+    <div class="note-box">
+      <strong>تنبيه:</strong> رَفعُ اليدين أدبٌ في الدعاء المُطلَق. أمَّا الأدعية المرتبطة بحالٍ معيَّن — كالصلاة، أو خُطبة الجمعة (إلا الاستسقاء) — فلم يَرفع النبيُّ ﷺ فيها يديه. والسُّنة هي الميزان.
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب السادس: الإلحاحُ والتَّكرار</h3>
+    <p>لا تَدْعُ مرَّةً واحدةً ثم تنصرف. كرِّر دعاءك، أَلِحَّ في الطلب، فإنَّ اللهَ يُحبُّ المُلِحِّينَ في الدُّعاء. كان النبيُّ ﷺ إذا دعا دَعا ثلاثاً، وإذا سأل سأل ثلاثاً. (رواه مسلم)</p>
+    <p>ومن إلحاحه ﷺ: أنَّه ظلَّ يدعو في غزوة بدر حتى سقطَ رداؤه عن منكبيه، فجاء أبو بكر فألقى رداءه عليه وقال: "يا نبيَّ الله، كفاكَ مُناشَدَتُك ربَّك، فإنه سيُنجزُ لك ما وَعدك". (رواه مسلم)</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب السابع: عدمُ الاستعجالِ في الإجابة</h3>
+    <p>هذا من أعظم الموانع التي تُحرَم بسببها كثيرٌ من الإجابات. قال النبيُّ ﷺ:</p>
+    <div class="hadith">
+      <div class="hadith-text">يُستجابُ لأحدِكم ما لم يَعجَل، يقول: قد دَعَوْتُ فلم يُستَجَبْ لي</div>
+      <span class="hadith-source">رواه البخاري ومسلم — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+    <p>فاثبُتْ على الدعاء، ولا تَيأَس، ولا تَملَّ. فإنَّ الله — جلَّ وعلا — قد يُؤخِّر الإجابةَ لِما هو خيرٌ لك، أو لِيَدَّخِرَها لك يومَ القيامة، أو لِيَدفَعَ بها عنك بلاءً.</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الثامن: تَحرِّي أوقاتِ الإجابة وأماكنها</h3>
+    <p>للدُّعاءِ مَواطنُ تَكثُرُ فيها الإجابة، سنُفرِدُ لها فصلاً مستقلاًّ. ومن جَمَع بين <strong>صدق القلب وحُسن المُنتقَى من الأوقات</strong>، فاز.</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب التاسع: التضرُّعُ والخُشوعُ وخَفضُ الصَّوت</h3>
+    <p>قال تعالى:</p>
+    <div class="ayah">
+      <div class="ayah-text">ادْعُوا رَبَّكُمْ تَضَرُّعًا وَخُفْيَةً ۚ إِنَّهُ لَا يُحِبُّ الْمُعْتَدِينَ</div>
+      <div class="ayah-source">— سورة الأعراف، الآية ٥٥ —</div>
+    </div>
+    <p>والتضرُّع: إظهارُ الذلِّ والمسكنة. والخُفية: خَفضُ الصوت، فإنَّه أَدْعى للإخلاص، وأَبعدُ عن الرياء، وأَدَلُّ على افتقار العبد. وقد أَثنى اللهُ على زكريا فقال: <em>"إذ نادى رَبَّه نداءً خَفِيًّا"</em>.</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب العاشر: عدمُ تَكلُّفِ السَّجعِ والتنطُّع</h3>
+    <p>لا تَتكلَّفْ تَنميق العباراتِ وسَجْعَها كأنَّك تَنظِمُ شعراً. بل اُدْعُ بقلبٍ خاشعٍ ولسانٍ صادق. قال ابن عباس ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﻤﺎ: "انظُرِ السَّجعَ مِن الدُّعاءِ فاجتَنِبْه؛ فإنِّي عَهِدتُ رسولَ اللهِ ﷺ وأصحابَه لا يَفعَلون إلا ذلك" — يَعني الاجتناب. (رواه البخاري)</p>
+
+    <div class="note-box">
+      <strong>الموازنة:</strong> هذا لا يَعني أنَّ الأدعية المأثورة المسجوعة منهيٌّ عنها — بل هي محبوبةٌ مَطلوبة. وإنَّما المنهيُّ عنه: تَكَلُّفُ السجعِ من العبدِ نفسِه، وتَركُ صدق الدعاء طلباً لتزيين العبارة.
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الحادي عشر: عَزْمُ المسألةِ والجزمُ بها</h3>
+    <p>قال النبيُّ ﷺ:</p>
+    <div class="hadith">
+      <div class="hadith-text">إذا دَعا أحدُكم فلْيَعزِمِ المسألة، ولا يَقولَنَّ: اللَّهُمَّ إنْ شِئتَ فأَعطِني، فإنَّ اللهَ لا مُكرِهَ له</div>
+      <span class="hadith-source">رواه البخاري ومسلم — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+    <p>فلا تَقُل: <em>"اللهم اغفر لي إن شئت"</em>. بل قُلْ: <em>"اللهم اغفر لي"</em>. لأنَّ هذا التعليق يَدُلُّ على ضَعفِ الرَّغبةِ وكَأَنَّك تَستَكثرُ على ربِّك أنْ يُعطيك.</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأدب الثاني عشر: عمومُ الدعاءِ للنفسِ وغيرِها</h3>
+    <p>لا تَخُصَّ نفسَك بالدعاء، ولكن ادعُ لإخوانك المسلمين. قال النبيُّ ﷺ:</p>
+    <div class="hadith">
+      <div class="hadith-text">دَعوةُ المرءِ المُسلم لأخيه بظَهرِ الغَيبِ مُستجابة، عند رأسه مَلَكٌ مُوكَّل، كلَّما دَعا لأخيه بخير قال المَلَك المُوكَّل به: آمين، ولكَ بمِثل</div>
+      <span class="hadith-source">رواه مسلم — عن أبي الدرداء ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+    <p>فإذا أردتَ خيراً لنفسك فادعُ لإخوانك، فيؤمِّن المَلَك على دعائك، ويقول لك مِثل ما دعوت لهم. فكَم فاتَكَ من خيرٍ بِشُحِّ نَفسِك على الدعاء لغيرك!</p>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 4 ========== -->
+<section id="ch4" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل الرابع ۞</div>
+    <h2 class="chapter-title-main">شُروطُ إجابةِ الدُّعاء</h2>
+    <p class="chapter-tagline">"بابُ الإجابةِ مفتوحٌ، ولكنَّ له مَفاتيح"</p>
+  </div>
+
+  <div class="content-box">
+    <p>الإجابة موعودةٌ، ولكنَّها مَشروطةٌ. وهذه الشروط لو اجتمعت في عبد، استَجاب اللهُ دعاءَه — بإذنه. وهي:</p>
+
+    <h4>الشرط الأول: التوحيد وسلامة العقيدة</h4>
+    <p>لا يَنفعُ الدعاءُ مع شركٍ بالله، فإنَّ المشركَ لا يُجابُ دعاؤه إلا في الشدائد التي يَلجأ فيها إلى الله مُخلِصاً. قال تعالى:</p>
+    <div class="ayah">
+      <div class="ayah-text">فَإِذَا رَكِبُوا فِي الْفُلْكِ دَعَوُا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ فَلَمَّا نَجَّاهُمْ إِلَى الْبَرِّ إِذَا هُمْ يُشْرِكُونَ</div>
+      <div class="ayah-source">— سورة العنكبوت، الآية ٦٥ —</div>
+    </div>
+
+    <h4>الشرط الثاني: حِلِّيَّةُ المَطعَمِ والمَلْبَسِ والمَكسَب</h4>
+    <p>وهذا من أعظم شروط الإجابة. قال النبيُّ ﷺ — فيما رواه مسلم — يَذكر الرجلَ يطيل السفر أشعَث أغبَر يمُدُّ يديه إلى السماء: يا رب، يا رب! ثم قال:</p>
+    <div class="hadith">
+      <div class="hadith-text">ومَطعَمُهُ حَرامٌ، ومَشرَبُهُ حَرامٌ، ومَلبَسُهُ حَرامٌ، وغُذِيَ بالحَرام، فأنَّى يُستجاب لذلك؟!</div>
+      <span class="hadith-source">رواه مسلم — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+
+    <div class="warning-box">
+      <strong>تأمَّل!</strong> هذا الرجل اجتمعت فيه أسبابُ الإجابة: السفر (وفي السفر إجابة)، والأشعث الأغبر (يَدُلُّ على التواضُع)، ورَفع اليدين، والإلحاح بـ"يا رب، يا رب". ومع ذلك يقول النبيُّ ﷺ: "فأنَّى يُستجابُ لذلك" — لِأَنَّ الحرامَ سَدَّ بابَ الإجابة. فاحذَر الحرامَ كأنَّك تَحذَرُ النار.
+    </div>
+
+    <h4>الشرط الثالث: ألَّا يَدعوَ بإثمٍ أو قَطيعةِ رَحِم</h4>
+    <p>كأنْ يَدعوَ على والديه، أو يَدعوَ بالموتِ لمُسلِم، أو يَدعوَ على شخصٍ بِغيرِ حق. هذا لا يُستجاب.</p>
+
+    <h4>الشرط الرابع: عدمُ الاعتداء في الدعاء</h4>
+    <p>كأنْ يَطلبَ ما لا يُعطى — كرفع المنزلة فوق منزلة الأنبياء — أو يَطلبَ ما لا يَنبغي — كالخلود في الدنيا. قال تعالى:</p>
+    <div class="ayah">
+      <div class="ayah-text">ادْعُوا رَبَّكُمْ تَضَرُّعًا وَخُفْيَةً ۚ إِنَّهُ لَا يُحِبُّ الْمُعْتَدِينَ</div>
+      <div class="ayah-source">— سورة الأعراف، الآية ٥٥ —</div>
+    </div>
+
+    <h4>الشرط الخامس: اليقين بالإجابة وحُسنُ الظنِّ بالله</h4>
+    <p>قال النبيُّ ﷺ في الحديث القدسي:</p>
+    <div class="hadith">
+      <div class="hadith-text">أنا عند ظنِّ عبدي بي، فلْيَظُنَّ بي ما شاء</div>
+      <span class="hadith-source">رواه أحمد والحاكم وصحَّحه — عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ</span>
+    </div>
+    <p>فادعُ وأنت موقنٌ بالإجابة، مُحسنٌ ظنَّك بالله. ولا تقُلْ في نفسك: "ما هو بمُجيبي" — فإنَّ سوءَ الظنِّ بالله ذنبٌ عظيم.</p>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 5 ========== -->
+<section id="ch5" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل الخامس ۞</div>
+    <h2 class="chapter-title-main">أوقاتُ وأماكنُ الإجابة</h2>
+    <p class="chapter-tagline">"للزَّمَن أبوابٌ، فاطرُقْها"</p>
+  </div>
+
+  <div class="content-box">
+    <h3>الأوقاتُ الفاضِلةُ للدعاء</h3>
+    <p>هذه أوقاتٌ خاصَّةٌ يَرجى فيها أنْ يُستجاب الدعاء. تَخَيَّرها واغتَنِمها:</p>
+
+    <div class="times-table-wrapper">
+      <table class="times-table">
+        <thead>
+          <tr>
+            <th>الوقت</th>
+            <th>الدليل أو التفصيل</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>الثلث الأخير من الليل</td>
+            <td>«يَنزِل ربُّنا تباركَ وتعالى كلَّ ليلةٍ إلى السماء الدنيا حين يَبقى ثلثُ الليل الآخر، فيقول: من يَدعوني فأَستجيبَ له...» (متفق عليه)</td>
+          </tr>
+          <tr>
+            <td>عند الأذان وبينه وبين الإقامة</td>
+            <td>«الدُّعاءُ لا يُرَدُّ بين الأذان والإقامة» (صحيح، رواه أبو داود والترمذي)</td>
+          </tr>
+          <tr>
+            <td>في السجود</td>
+            <td>«أقرَبُ ما يكونُ العبدُ من ربِّه وهو ساجد، فأَكثِروا الدعاء» (رواه مسلم)</td>
+          </tr>
+          <tr>
+            <td>قبل التسليم في الصلاة</td>
+            <td>«إذا قَضى أحدُكم التشهُّد الآخر، فلْيَتَعوَّذ بالله من أربع...» (متفق عليه)</td>
+          </tr>
+          <tr>
+            <td>ساعة يوم الجمعة</td>
+            <td>«فيه ساعةٌ لا يُوافِقُها عبدٌ مسلمٌ يَسأل الله شيئاً إلا أعطاه إيَّاه» (متفق عليه) — وأرجاها بعد العصر</td>
+          </tr>
+          <tr>
+            <td>عند نزول المطر</td>
+            <td>«ثِنتانِ ما تُرَدَّان: الدعاءُ عند النداء، وتحت المطر» (صحيح، رواه أبو داود)</td>
+          </tr>
+          <tr>
+            <td>عند الفطر للصائم</td>
+            <td>«ثلاثٌ لا تُرَدُّ دعوتُهم: الصائم حتى يُفطر، والإمام العادل، والمظلوم» (صحيح، رواه الترمذي)</td>
+          </tr>
+          <tr>
+            <td>ليلة القدر</td>
+            <td>وعلى المسلم أن يَجتهد في العشر الأواخر من رمضان، خاصَّةً الأوتار</td>
+          </tr>
+          <tr>
+            <td>يوم عرفة</td>
+            <td>«خيرُ الدعاءِ دعاءُ يومِ عرفة» (رواه الترمذي وحسَّنه)</td>
+          </tr>
+          <tr>
+            <td>عند صياح الديك</td>
+            <td>«إذا سَمِعتُمْ صياحَ الدِّيَكَة، فاسألوا اللهَ من فضلِه، فإنَّها رأت مَلَكاً» (متفق عليه)</td>
+          </tr>
+          <tr>
+            <td>عند صلاة المغرب وقبل أذان الفجر</td>
+            <td>أوقاتُ تَنزُّلِ البَركة، وكان السلفُ يُلازِمونها</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:40px">الأماكنُ والأحوالُ الفاضِلة</h3>
+    <ul>
+      <li><strong>عند الكعبة</strong>: للحاجِّ والمعتمر، خاصَّةً عند المُلْتزَم (بين الباب والحجر الأسود).</li>
+      <li><strong>في عرفة والمزدلفة ومنى</strong>: أيام الحج.</li>
+      <li><strong>عند الصفا والمروة</strong>: في السعي.</li>
+      <li><strong>المسجد الحرام والمسجد النبوي والمسجد الأقصى</strong>: ثلاثة مساجد لا تُشَدُّ الرحال إلا إليها.</li>
+      <li><strong>عند نزول المُصيبة</strong>: «أَلَا أدُلُّكُم على دواءٍ مما تخافونه؟ هي دعوةُ ذي النُّون» (سيأتي ذكرها).</li>
+      <li><strong>في السَّفَر</strong>: «ثلاثُ دَعَواتٍ مُستجاباتٌ لا شكَّ فيهنَّ: دَعوةُ الوالد، ودَعوةُ المُسافر، ودَعوةُ المظلوم» (رواه أبو داود والترمذي).</li>
+      <li><strong>دعاء المظلوم</strong>: «اتَّقِ دعوةَ المظلوم، فإنَّها ليس بينها وبين اللهِ حِجاب» (متفق عليه).</li>
+      <li><strong>دعاء الوالد لولده، والوالدة، والصائم، والإمام العادل</strong>: لا تُرَدُّ.</li>
+    </ul>
+
+    <div class="benefit-box">
+      <strong>لطيفة:</strong> لو جمَعتَ بين أكثر من سبب، كان أرجى للإجابة. كَمَن يدعو في ثُلث الليل الآخر وهو ساجدٌ في رمضان وهو صائم — فقد جمَع ستَّةَ مَواطنَ للإجابة في وقتٍ واحد!
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 6 ========== -->
+<section id="ch6" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل السادس ۞</div>
+    <h2 class="chapter-title-main">موانعُ إجابةِ الدُّعاء</h2>
+    <p class="chapter-tagline">"وإنَّ للقَبولِ حُجُباً، فاكشِفها"</p>
+  </div>
+
+  <div class="content-box">
+    <p>قد يَدعو الرَّجلُ ولا يُستجاب له، فيتَّهم رَبَّه — والعياذُ بالله — وإنَّما المانعُ منه. وهذه أَبرَزُ الموانع:</p>
+
+    <h4>المانع الأول: أكلُ الحرامِ ولُبسه</h4>
+    <p>أعظم الموانع — تقدَّم في شروط الإجابة.</p>
+
+    <h4>المانع الثاني: الاستعجالُ في الإجابة</h4>
+    <p>أنْ يقولَ: <em>"قد دعوتُ ودعوتُ، فلم أُجَبْ"</em>، ثم يَترك الدعاء. هذا من أكبر أسباب الحرمان.</p>
+
+    <h4>المانع الثالث: تَركُ الأمرِ بالمعروفِ والنهيِ عن المنكر</h4>
+    <p>قال النبيُّ ﷺ: «والذي نَفسي بيده، لَتَأمُرُنَّ بالمعروفِ ولَتَنهَوُنَّ عن المنكر، أو لَيُوشِكَنَّ اللهُ أنْ يَبعثَ عليكم عقاباً منه، ثم تَدعونه فلا يُستجاب لكم» (رواه الترمذي وحسَّنه).</p>
+
+    <h4>المانع الرابع: غَفلةُ القلبِ حين الدعاء</h4>
+    <p>دعاءٌ بلا قلب لا يَصعَد. كَيف تَنتظر الإجابة وأنت تدعو بلسانك وقلبُك في الدنيا؟</p>
+
+    <h4>المانع الخامس: الإصرارُ على المعاصي</h4>
+    <p>الذنوبُ تُظلِم القلب وتَحجُبُه عن الله. فإذا أَردتَ صَفاءَ السماء بين دعائك ومُولاك، فطَهِّر قلبك من الذنوب بالتوبة.</p>
+
+    <h4>المانع السادس: الدعاءُ بإثمٍ أو قطيعةِ رَحِم</h4>
+    <p>مَن دَعا بحَرام لا يُستجاب له. ودَعوةُ القاطعِ لرَحِمه على رَحِمه مَردودة.</p>
+
+    <h4>المانع السابع: ضَعفُ اليقينِ والاتِّكال على غير الله</h4>
+    <p>أنْ تَدعوَ وأنت تعتمدُ على دَعوتِك لا على ربِّك، أو تَدعوَ وأنت تَعتقدُ أنَّ الأسبابَ الأرضية هي المُؤَثِّرة لا اللهُ سُبحانه.</p>
+
+    <h4>المانع الثامن: الاستغناءُ والكِبْر</h4>
+    <p>قال تعالى:</p>
+    <div class="ayah">
+      <div class="ayah-text">إِنَّ الَّذِينَ يَسْتَكْبِرُونَ عَنْ عِبَادَتِي سَيَدْخُلُونَ جَهَنَّمَ دَاخِرِينَ</div>
+      <div class="ayah-source">— سورة غافر، الآية ٦٠ —</div>
+    </div>
+    <p>والاستكبارُ عن العبادة يَدخُلُ فيه الاستكبارُ عن الدعاء — لأنَّه عبادة.</p>
+
+    <div class="warning-box">
+      <strong>قاعدة:</strong> إنْ تأخَّرتْ عنك الإجابةُ، فاتَّهِم نفسَك لا ربَّك. فتِّش في موانعك، طَهِّر قلبك، تُبْ من ذنبك، تَحَرَّ الحلال، ثم ادْعُ — يُجبْكَ ربُّك.
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 7 ========== -->
+<section id="ch7" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل السابع ۞</div>
+    <h2 class="chapter-title-main">أدعيةُ القرآن — كُنوزُ التَّنزيل</h2>
+    <p class="chapter-tagline">"أَفصحُ ما خاطَبَ به العَبدُ رَبَّه"</p>
+  </div>
+
+  <div class="content-box">
+    <p>أَكْرَمُ الدُّعاءِ ما عَلَّمَنا اللهُ في كتابه. هي أَدعيةٌ صاغها له سُبحانه، فحَرِيٌّ بها أنْ تَصعَدَ إليه بسلام. احفظها وادْعُ بها.</p>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١</div>
+      <div class="dua-title">دعاءُ الفاتحة — أُمُّ القرآن</div>
+      <div class="dua-text">
+        اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝<br>
+        صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> أعظم دعاءٍ في الكتاب، تَطلبُ به الهدايةَ إلى الطريق المستقيم — طريق النبيِّين والصدِّيقين والشهداء والصالحين، لا طريق اليهود الذين غضِب الله عليهم، ولا النصارى الذين ضلُّوا. تَدعو بها في كلِّ ركعةٍ من صلاتك، فاحضُر قلبَك معها.
+      </div>
+      <div class="dua-source">— سورة الفاتحة، الآيتان ٦-٧ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢</div>
+      <div class="dua-title">دعاء آخر سورة البقرة — يَكفي مَن قرأهما في ليلة</div>
+      <div class="dua-text">
+        رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنتَ مَوْلَانَا فَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> تَتَوسَّل به أن لا يُؤاخذك على نسيانٍ أو خطأ، ولا يُحَمِّلكَ من التكاليف ما حَمَّلَه على السابقين، وتَطلبُ العفو والمغفرة والرحمة والنصر.<br>
+        <strong>الفضل:</strong> قال النبيُّ ﷺ: «مَن قرأ بالآيتين من آخر سورة البقرة في ليلةٍ كَفَتاه» (متفق عليه).
+      </div>
+      <div class="dua-source">— سورة البقرة، الآية ٢٨٦ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣</div>
+      <div class="dua-title">دعاءُ الحسنتين — أَجمعُ الأدعية</div>
+      <div class="dua-text">
+        رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءٌ جامعٌ لخير الدنيا والآخرة، يَدخُلُ فيه كلُّ خير. الحسنةُ في الدنيا: العافية والرزق الحلال والزوجة الصالحة والولد البار. والحسنةُ في الآخرة: الجنةُ والنظرُ إلى وجه الله. والوقايةُ من النار خاتمةُ كلِّ خير.<br>
+        <strong>الفضل:</strong> كان النبيُّ ﷺ أكثر دعائه: <em>«اللهم آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار»</em>. (متفق عليه)
+      </div>
+      <div class="dua-source">— سورة البقرة، الآية ٢٠١ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤</div>
+      <div class="dua-title">دعاءُ الراسخين في العلم</div>
+      <div class="dua-text">
+        رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءٌ بالثَّبات على الهداية. وكان النبيُّ ﷺ يُكثِر من قوله: «يا مُقَلِّبَ القلوبِ، ثَبِّت قلبي على دينك» — فالقلوبُ تَتقَلَّب وقد يَضِلُّ بعد هدايته، فاسأل الله الثبات دائماً.
+      </div>
+      <div class="dua-source">— سورة آل عمران، الآية ٨ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٥</div>
+      <div class="dua-title">دعاءُ آل عمران</div>
+      <div class="dua-text">
+        رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ المُجاهدين الصابرين الذي وُصِفوا في الآية قبلَها، فاستحقُّوا حُبَّ الله. فيه طلَب المغفرةِ من الذنوب، والإسرافِ في الأمور، والتثبيتُ في المواقف الصعبة، والنصر.
+      </div>
+      <div class="dua-source">— سورة آل عمران، الآية ١٤٧ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٦</div>
+      <div class="dua-title">دعاءُ التضرُّع لطلَب الذرِّيَّة الصالحة</div>
+      <div class="dua-text">
+        رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ زكريا — عليه السلام — لمَّا رأى مِن آيات الله في كفالةِ مريم. هو طلَبٌ للذُّرِّيَّة الصالحة لا مُجَرَّد الذُّرِّيَّة. ادْعُ به أنت لذُرِّيَّتِك المُنتظَرة.
+      </div>
+      <div class="dua-source">— سورة آل عمران، الآية ٣٨ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٧</div>
+      <div class="dua-title">دعاءُ التوبة لآدم وحوَّاء — أصلُ كلِّ دعاءٍ بالاستغفار</div>
+      <div class="dua-text">
+        رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> الاعترافُ بالذنبِ أوَّلُ التوبة. آدمُ ﷺ — أبو البشر — لم يقُل: <em>"رَبَّنا أَخطأنا"</em> فحسب، بل قال: <em>"ظَلَمنا أَنفُسَنا"</em>. وهذا أَدبٌ عظيم في التوبة: الاعترافُ بالخطأ ونِسبَتُه إلى النَّفسِ لا إلى غيرها.
+      </div>
+      <div class="dua-source">— سورة الأعراف، الآية ٢٣ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٨</div>
+      <div class="dua-title">دعاءُ موسى — في الكَرب وبَعدَ الصَّدمة</div>
+      <div class="dua-text">
+        رَبِّ إِنِّي ظَلَمْتُ نَفْسِي فَاغْفِرْ لِي
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعا به موسى ﷺ بعد قَتله القبطيَّ خطأً، فاعترَفَ بظُلمه نفسَه واستغفر. فغَفَرَ اللهُ له بكلمتين. دعاءٌ مختصرٌ بليغٌ، تَدعو به إذا أحسستَ بثقلِ ذنب.
+      </div>
+      <div class="dua-source">— سورة القصص، الآية ١٦ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٩</div>
+      <div class="dua-title">دعاءُ موسى — حين الحاجة والافتقار</div>
+      <div class="dua-text">
+        رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءٌ في غاية الأدب. لمَّا فرَّ موسى ﷺ إلى مَدْين بلا مالٍ ولا أهل، سَقى للمرأتين ثم تَنَحَّى تحت الشجرة، فقال هذا الدعاء. لاحِظ كيف لم يَسألْ شيئاً بعينه، بل أظهرَ افتقاره — فأَرسلَ اللهُ إليه الزَّوجةَ والمأوى والعمل. ادْعُ به إذا ضاقت بك الحياة.
+      </div>
+      <div class="dua-source">— سورة القصص، الآية ٢٤ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٠</div>
+      <div class="dua-title">دعاءُ ذي النُّون — يونس ﷺ في بطن الحوت</div>
+      <div class="dua-text">
+        لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> توحيدٌ، وتنزيهٌ، واعترافٌ بالظُّلم. لمَّا دعا بها يونس ﷺ في ظلمات الليل والبحر وبطن الحوت — استَجابَ اللهُ له ونَجَّاه.<br>
+        <strong>الفضل:</strong> قال النبيُّ ﷺ: «دَعوةُ ذي النُّون إذ دَعا بها وهو في بطن الحوت: <em>لا إله إلا أنت سبحانك إني كنت من الظالمين</em>، فإنَّه لم يَدْعُ بها مُسلِمٌ في شيءٍ قطُّ إلا استجاب اللهُ له» (رواه الترمذي والحاكم وصحَّحه).
+      </div>
+      <div class="dua-source">— سورة الأنبياء، الآية ٨٧ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١١</div>
+      <div class="dua-title">دعاءُ أيُّوب — في البلاء والمرض</div>
+      <div class="dua-text">
+        أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ نَبيِّ اللهِ أيُّوب ﷺ بعد سنواتٍ من البلاء. لاحِظ الأَدَب العظيم: لم يَقُل "اشفِني"، بل أَخبَر بحاله — "مَسَّنيَ الضُّرُّ" — ثم تَوسَّلَ برحمةِ الله. وهذا أَبلَغُ مِن الطَّلَبِ المُباشِر، لأنَّه يُفَوِّضُ الأمرَ إلى الله.
+      </div>
+      <div class="dua-source">— سورة الأنبياء، الآية ٨٣ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٢</div>
+      <div class="dua-title">دعاءُ نوحٍ ﷺ لنفسه ولوالديه وللمؤمنين</div>
+      <div class="dua-text">
+        رَّبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءٌ جامعٌ يَبدأُ بالنفس، ثم الوالدين، ثم الضَّيف المؤمن، ثم عُموم المؤمنين. تَستفيدُ منه ترتيب الدعاء وعموم النَّفع.
+      </div>
+      <div class="dua-source">— سورة نوح، الآية ٢٨ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٣</div>
+      <div class="dua-title">دعاءُ إبراهيم لذُرِّيَّته — البَلَدِ الآمِنِ والصلاةِ</div>
+      <div class="dua-text">
+        رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ ۝<br>
+        رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> طلَب إبراهيمُ ﷺ من اللهِ أنْ يَجعلَه ومِن ذرِّيَّته مُقيمي الصلاة، ثم سَأَل المغفرةَ لنفسه ولوالديه وللمؤمنين. دعاءٌ يَجمعُ بين تثبيتِ الصلاة وأعظمِ ما يَنتظرُ المؤمنُ يومَ القيامة.
+      </div>
+      <div class="dua-source">— سورة إبراهيم، الآيتان ٤٠-٤١ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٤</div>
+      <div class="dua-title">دعاءُ عبادِ الرَّحمن — لإصلاحِ الأهلِ والذُّرِّيَّة</div>
+      <div class="dua-text">
+        رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> هذا من أَجَلِّ ما تَدعو به على بَيتِك. تَطلُبُ أَنْ يَجعَل اللهُ أَزواجكَ وذُرِّيَّتَكَ قُرَّةَ عَينٍ لك — أي صالحينَ تَفرحُ بهم. وأنْ يَجعَلكَ إماماً للمتَّقين — لا في الإمامةِ السياسية، بل في القُدوة الصالحة.
+      </div>
+      <div class="dua-source">— سورة الفرقان، الآية ٧٤ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٥</div>
+      <div class="dua-title">دعاءُ سُليمان ﷺ — في الشكر وعمل الصالح</div>
+      <div class="dua-text">
+        رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ سُليمان ﷺ لمَّا تَبسَّمَ من قول النَّملة. ادْعُ به إذا أَنعمَ الله عليك بنعمةٍ ظاهرة — تَوفيق في عمل، نَجاحٍ في امتحان، شفاء، رزق — فأنت بأَشَدِّ الحاجةِ إلى الشكر، وبه يَدومُ النعيم.
+      </div>
+      <div class="dua-source">— سورة النمل، الآية ١٩ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٦</div>
+      <div class="dua-title">دعاءُ سُليمان ﷺ — في طلَب المُلك الذي لا يَنبَغي لأحد</div>
+      <div class="dua-text">
+        رَبِّ اغْفِرْ لِي وَهَبْ لِي مُلْكًا لَّا يَنبَغِي لِأَحَدٍ مِّن بَعْدِي ۖ إِنَّكَ أَنتَ الْوَهَّابُ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> بدأ سُليمان ﷺ بالاستغفار قبل طَلَب المُلك. هذا أَدَبٌ عظيم — لا تَطلُبْ من الله نِعمةً إلا وقد بَدأتَ بالاستغفار، فإنَّ الذنوبَ تَحجُبُ القَبول.
+      </div>
+      <div class="dua-source">— سورة ص، الآية ٣٥ —</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 8 ========== -->
+<section id="ch8" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل الثامن ۞</div>
+    <h2 class="chapter-title-main">أدعيةُ الأنبياء — مَدرسةُ الافتقار</h2>
+    <p class="chapter-tagline">"تَعَلَّم من الأنبياءِ كيفَ يُخاطَبُ الجَبَّار"</p>
+  </div>
+
+  <div class="content-box">
+    <h3>درسٌ في الافتقار</h3>
+    <p>الأنبياءُ صَفوةُ الخَلق، وأَدعِيَتُهم مدرسةٌ لِمَن أراد أنْ يَتَعَلَّمَ كيف يَدعو. لاحِظ في كلِّ دعاءٍ منها: <strong>كيفَ يَتأَدَّبون، وكيفَ يَعتَرفون، وكيفَ يَتَوَسَّلون، وكيفَ يَطلُبون</strong>.</p>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٧</div>
+      <div class="dua-title">دعاءُ زكريا — حينَ كَبِرَ سِنُّه</div>
+      <div class="dua-text">
+        رَبِّ إِنِّي وَهَنَ الْعَظْمُ مِنِّي وَاشْتَعَلَ الرَّأْسُ شَيْبًا وَلَمْ أَكُن بِدُعَائِكَ رَبِّ شَقِيًّا ۝<br>
+        وَإِنِّي خِفْتُ الْمَوَالِيَ مِن وَرَائِي وَكَانَتِ امْرَأَتِي عَاقِرًا فَهَبْ لِي مِن لَّدُنكَ وَلِيًّا
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> تأمَّل أَدبَ زكريا ﷺ. لم يَقُل "أَعطِني وَلداً" مباشرةً، بل بَدأَ بحالِه (ضَعفِ العَظمِ، شَيبِ الرَّأس)، ثم تَوَسَّلَ بسابقَتِه في دُعاء الله (<em>"ولم أَكنْ بدُعائكَ رَبِّ شَقِيًّا"</em>)، ثم ذَكَر سَببَ طَلَبه (الخوف من المَوالي)، ثم طَلَب. هذا أُسلوبٌ تَعليميٌّ في الدعاء.
+      </div>
+      <div class="dua-source">— سورة مريم، الآيتان ٤-٥ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٨</div>
+      <div class="dua-title">دعاءُ موسى — لشَرحِ الصَّدرِ وتيسيرِ الأمر</div>
+      <div class="dua-text">
+        رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي ۝<br>
+        وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي ۝ يَفْقَهُوا قَوْلِي
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعا به موسى ﷺ لمَّا أرسلَه اللهُ إلى فرعون. ادْعُ به إذا أَردتَ أمراً صَعباً، أو دَخَلتَ مَوقفاً يَحتاج رَباطةَ جَأشٍ وفصاحةَ لسان: امتحاناً، مُقابلةً مَصيريَّةً، مُحاضَرَةً، خُطبَةً. اطلُبْ شَرحَ الصَّدر وتيسير الأمر وانطلاقَ اللسان وفهمَ المُستمِع.
+      </div>
+      <div class="dua-source">— سورة طه، الآيات ٢٥-٢٨ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ١٩</div>
+      <div class="dua-title">دعاءُ يوسف — في تَفويضِ الأمر للهِ والوفاةِ على الإسلام</div>
+      <div class="dua-text">
+        رَبِّ قَدْ آتَيْتَنِي مِنَ الْمُلْكِ وَعَلَّمْتَنِي مِن تَأْوِيلِ الْأَحَادِيثِ ۚ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ أَنتَ وَلِيِّي فِي الدُّنْيَا وَالْآخِرَةِ ۖ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ يوسف ﷺ بعد أنْ جَمَع اللهُ شَملَه بأهله. لاحِظ: بَدَأ بالشُّكر على النِّعَم، ثم تَوسَّلَ بصِفاتِ الله، ثم سأَل خاتمةَ السَّعادة — أنْ يَموتَ على الإسلام، وأنْ يُلحَقَ بالصالحين. هذا أَعظمُ مَطلبٍ في الحياة.
+      </div>
+      <div class="dua-source">— سورة يوسف، الآية ١٠١ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٠</div>
+      <div class="dua-title">دعاءُ إبراهيم — لمكَّةَ ولأَهلِها</div>
+      <div class="dua-text">
+        رَبِّ اجْعَلْ هَٰذَا بَلَدًا آمِنًا وَارْزُقْ أَهْلَهُ مِنَ الثَّمَرَاتِ مَنْ آمَنَ مِنْهُم بِاللَّهِ وَالْيَوْمِ الْآخِرِ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ إبراهيم ﷺ لمَّا تَركَ هاجَر وإسماعيل بمكَّة. تَدعو به لأهل بلدك، أو لأهل مكَّة، أو لكلِّ بلَدٍ مُسلم: بالأَمن، والرِّزق من الثَّمَرات والخيرات.
+      </div>
+      <div class="dua-source">— سورة البقرة، الآية ١٢٦ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢١</div>
+      <div class="dua-title">دعاءُ نوحٍ ﷺ — لمَّا اعترضَه القَومُ</div>
+      <div class="dua-text">
+        رَبِّ إِنِّي مَغْلُوبٌ فَانتَصِرْ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءٌ في غاية الإيجاز وعَظَمة المعنى. كلمتان فقط بعد المُنادى: <em>"مَغلوبٌ"</em> اعترافٌ بالحال، <em>"فانتَصِرْ"</em> طلَب النَّصر. ادْعُ به إذا اشتدَّ بكَ الكَرب وضاقت الحِيَل.
+      </div>
+      <div class="dua-source">— سورة القمر، الآية ١٠ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٢</div>
+      <div class="dua-title">دعاءُ المؤمنين الصابرين أمامَ جالوت</div>
+      <div class="dua-text">
+        رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> دعاءُ جنود طالوت قبل لقاء جالوت. <em>"أَفرِغْ"</em> يعني: صُبَّ علينا صبراً صَبَّاً، فلم يَكتفوا بطَلَب الصبر بل طلبوه فيضاً. ادعُ به في الأزمات.
+      </div>
+      <div class="dua-source">— سورة البقرة، الآية ٢٥٠ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٣</div>
+      <div class="dua-title">دعاءُ يونس بعد الخروج من الحوت — في الشكرِ والإنابة</div>
+      <div class="dua-text">
+        لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>تنبيه:</strong> هذا هو نفسُ دعاءِ ذي النُّون السابق ذِكرُه، ذَكرناه هنا للتأكيد على أهميَّته، فاحفَظْه واجعَلْه في قلبك كلَّما ضاقت بك الدنيا.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 9 ========== -->
+<section id="ch9" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل التاسع ۞</div>
+    <h2 class="chapter-title-main">أدعيةُ النبيِّ ﷺ — جوامعُ الكَلِم</h2>
+    <p class="chapter-tagline">"وأَفصَحُ منه نبيٌّ ما تَكَلَّمَا"</p>
+  </div>
+
+  <div class="content-box">
+    <h3>هَدْيُه ﷺ في الدعاء</h3>
+    <p>كان النبيُّ ﷺ <strong>يُعطى جوامعَ الكَلِم</strong>، يعني الكَلِمات القليلة التي تَحوي معانيَ كثيرة. وأَدعيَتُه ﷺ كذلك: مُختَصَرة في اللفظ، شاملةٌ في المعنى، كأنَّ كلَّ دعاءٍ منها بَحرٌ يَتَّسعُ لكلِّ شيء.</p>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٤</div>
+      <div class="dua-title">سَيِّد الاستغفار — أفضلُ ما يَستغفر به العبد</div>
+      <div class="dua-text">
+        اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ،<br>
+        وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ،<br>
+        أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ،<br>
+        أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي،<br>
+        فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> قال النبيُّ ﷺ: «مَن قالها من النَّهار مُوقِناً بها فماتَ من يومه قبلَ أن يُمسي، فهو من أهل الجنَّة. ومَن قالها من الليل وهو مُوقِنٌ بها فمات قبل أن يُصبح، فهو من أهل الجنَّة». (رواه البخاري)<br>
+        <strong>الأدب فيها:</strong> اعترافٌ بالعبودية، إقرارٌ بالعهد، استعاذةٌ من شر العمل، اعترافٌ بالنعمة وبالذنب، طلَب المغفرة. مدرسةٌ كاملة في خمسة أسطر.
+      </div>
+      <div class="dua-source">— رواه البخاري عن شَدَّاد بن أوس ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٥</div>
+      <div class="dua-title">دعاءُ الكَرْب — للهَمِّ والضِّيق</div>
+      <div class="dua-text">
+        لَا إِلَٰهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ،<br>
+        لَا إِلَٰهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ،<br>
+        لَا إِلَٰهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> كان النبيُّ ﷺ يقولها عند الكَرب. (متفق عليه عن ابن عباس)<br>
+        <strong>متى تَقولها:</strong> عند الهَم، الضِّيق، الحَيرة، القلَق، الخوف. تُكَرِّرها وتَتأَمَّل عظَمةَ الله، فإذا استَحضَرتَ أنَّه ربُّ العرش العظيم — هانَ عليك الكَرب.
+      </div>
+      <div class="dua-source">— متفق عليه عن ابن عبَّاس ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﻤﺎ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٦</div>
+      <div class="dua-title">دعاءُ الهَمِّ والحُزن — يُذهبُهما اللهُ</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، ابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ،<br>
+        مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ،<br>
+        أَسْأَلُكَ بِكُلِّ اسْمٍ هُوَ لَكَ، سَمَّيْتَ بِهِ نَفْسَكَ،<br>
+        أَوْ أَنْزَلْتَهُ فِي كِتَابِكَ، أَوْ عَلَّمْتَهُ أَحَدًا مِنْ خَلْقِكَ،<br>
+        أَوِ اسْتَأْثَرْتَ بِهِ فِي عِلْمِ الْغَيْبِ عِنْدَكَ،<br>
+        أَنْ تَجْعَلَ الْقُرْآنَ رَبِيعَ قَلْبِي، وَنُورَ صَدْرِي،<br>
+        وَجَلَاءَ حُزْنِي، وَذَهَابَ هَمِّي
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> قال النبيُّ ﷺ: «ما قالها عَبدٌ قَطُّ إذا أصابَهُ هَمٌّ أو حُزن، إلا أذهَبَ اللهُ هَمَّه وحُزنَه، وأَبدلَه مكانَه فرحاً». قالوا: يا رسول الله، أَلا نَتعلَّمها؟ قال: «بَلى، يَنبغي لِمَن سَمِعَها أنْ يَتعلَّمها». (رواه أحمد وصحَّحه)<br>
+        <strong>تأمَّل:</strong> "ابن عبدك ابن أمتك" — إقرارٌ بالعبودية حتى في النَّسَب. "ناصيَتي بيدك" — أي أنا تحت قَهرك وحُكمك. ثم تَوسُّلٌ بكلِّ أسماء الله. ثم طلَب أنْ يَكون القرآنُ رَبيعَ القلب — والربيعُ زَمَن الخِصب والفَرَح. مَن جَعل القرآنَ رَبيعَ قلبِه ذَهَب همُّه.
+      </div>
+      <div class="dua-source">— رواه أحمد عن ابن مسعود ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٧</div>
+      <div class="dua-title">الدعاء الجامِع — كان النبيُّ ﷺ يَدعو به كثيراً</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> أَربعةُ مَطالبَ تَجمَع خيرَ الدنيا والآخرة. <em>الهُدى</em>: في العلم والعمل. <em>التُّقى</em>: في القلب والجوارح. <em>العَفاف</em>: عن المُحَرَّمات والشَّهَوات. <em>الغِنى</em>: غِنى النَّفس، الذي هو حقيقة الغِنى — لا غنى المال.
+      </div>
+      <div class="dua-source">— رواه مسلم عن ابن مسعود ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٨</div>
+      <div class="dua-title">دعاءُ الاستخارة — لمَن أَرادَ أمراً</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ،<br>
+        وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ،<br>
+        فَإِنَّكَ تَقْدِرُ وَلَا أَقْدِرُ، وَتَعْلَمُ وَلَا أَعْلَمُ،<br>
+        وَأَنْتَ عَلَّامُ الْغُيُوبِ.<br>
+        اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ <em>(تُسمِّيه)</em><br>
+        خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي،<br>
+        فَاقْدُرْهُ لِي وَيَسِّرْهُ لِي ثُمَّ بَارِكْ لِي فِيهِ.<br>
+        وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي،<br>
+        فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ،<br>
+        وَاقْدُرْ لِيَ الْخَيْرَ حَيْثُ كَانَ ثُمَّ أَرْضِنِي بِهِ
+      </div>
+      <div class="dua-meaning">
+        <strong>متى تَستَخير:</strong> في كلِّ أمرٍ مُباحٍ تَتَردَّدُ فيه — زواج، عمل، سَفَر، شراء بيت، انتقال. صَلِّ ركعتين، ثم ادْعُ بهذا الدعاء. <em>"تَيَمَّمْ ما يَنشرحُ له صَدرُك"</em> بعد الاستخارة.<br>
+        <strong>تنبيه:</strong> الاستخارة لا تَكون في فِعل واجبٍ أو تَركِ حَرام، بل في الأمور المُباحة التي يَخفى وَجهُ الخير فيها.
+      </div>
+      <div class="dua-source">— رواه البخاري عن جابر ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٢٩</div>
+      <div class="dua-title">دعاءٌ كان النبيُّ ﷺ يُكثِرُ منه</div>
+      <div class="dua-text">
+        يَا مُقَلِّبَ الْقُلُوبِ، ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> قالت أمُّ سَلَمة: كان أكثرَ دُعائه ﷺ <em>"يا مُقَلِّب القلوب..."</em>، فقلت: يا رسول الله، ما أكثَر ما تَدعو بهذا الدعاء! فقال: «يا أمَّ سَلَمة، إنَّه ليسَ آدميٌّ إلا وقَلبُه بين أُصبُعَين من أصابع الله، فمَن شاء أَقام، ومَن شاءَ أَزاغ». (رواه الترمذي وصحَّحه)<br>
+        <strong>تأمَّل:</strong> إذا كان النبيُّ ﷺ — وهو سيِّد الخلق — يُكثِر من هذا الدعاء، فكيف بنا نحن؟ احفَظه ولا تَنَسْه.
+      </div>
+      <div class="dua-source">— رواه الترمذي وصحَّحه عن أمِّ سلمة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﺎ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٠</div>
+      <div class="dua-title">دعاءُ الإعانة على الذكر والشكر وحُسن العبادة</div>
+      <div class="dua-text">
+        اللَّهُمَّ أَعِنِّي عَلَىٰ ذِكْرِكَ، وَشُكْرِكَ، وَحُسْنِ عِبَادَتِكَ
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> قال النبيُّ ﷺ لمعاذ: «يا معاذ، إنِّي والله لَأُحِبُّك، فلا تَدَعَنَّ في دُبُر كلِّ صلاةٍ أنْ تَقول: <em>اللهم أعِنِّي على ذكرك وشكرك وحُسن عبادتك</em>». (رواه أبو داود والنسائي وصحَّحه الألباني)<br>
+        <strong>متى تَقولها:</strong> بعد كلِّ صلاة. ثلاثة مَطالبَ تَجمعُ روحَ الدين كلِّه: ذِكْرٌ، شُكْر، حُسنُ عبادة.
+      </div>
+      <div class="dua-source">— رواه أبو داود عن معاذ بن جبل ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣١</div>
+      <div class="dua-title">دعاءُ الاستعاذةِ من الفتن — كان يَقوله ﷺ في كلِّ صلاة</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ،<br>
+        وَمِنْ عَذَابِ النَّارِ،<br>
+        وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ،<br>
+        وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ
+      </div>
+      <div class="dua-meaning">
+        <strong>متى تَقولها:</strong> قبل التَّسليم من الصلاة (بين التَّشَهُّد والتَّسليم). أَمَر النبيُّ ﷺ بها فقال: «إذا تَشَهَّد أحدُكم فلْيَستعِذ بالله من أربع، يقول: <em>اللهم إنِّي أعوذ بك...</em>». (رواه مسلم)
+      </div>
+      <div class="dua-source">— رواه مسلم عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٢</div>
+      <div class="dua-title">دعاءُ الاستعاذةِ من أربع — جامع</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ،<br>
+        وَالْجُبْنِ وَالْبُخْلِ وَالْهَرَمِ وَعَذَابِ الْقَبْرِ.<br>
+        اللَّهُمَّ آتِ نَفْسِي تَقْوَاهَا، وَزَكِّهَا أَنْتَ خَيْرُ مَنْ زَكَّاهَا،<br>
+        أَنْتَ وَلِيُّهَا وَمَوْلَاهَا.<br>
+        اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ،<br>
+        وَمِنْ قَلْبٍ لَا يَخْشَعُ، وَمِنْ نَفْسٍ لَا تَشْبَعُ،<br>
+        وَمِنْ دَعْوَةٍ لَا يُسْتَجَابُ لَهَا
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> كان النبيُّ ﷺ يَدعو به ويُعلِّمه أصحابَه. (رواه مسلم)<br>
+        <strong>تأمَّل:</strong> العَجزُ (عَدَمُ القُدرة)، الكَسَلُ (عَدَمُ النَّشاط)، الجُبنُ (الخوف)، البُخل (شُحُّ النفس)، الهَرَمُ (الكِبَر). كلُّها آفاتٌ تَمنع الإنسانَ من الخير. وقَلبٌ لا يَخشع — كَنزٌ ضائع. ودَعوةٌ لا يُستجاب لها — أخوفُ ما يَخاف منه الداعي.
+      </div>
+      <div class="dua-source">— رواه مسلم عن زيد بن أرقم وأبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﻤﺎ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٣</div>
+      <div class="dua-title">دعاءُ القنوت في الوتر — تَقَع به الكِفاية</div>
+      <div class="dua-text">
+        اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ،<br>
+        وَعَافِنِي فِيمَنْ عَافَيْتَ،<br>
+        وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ،<br>
+        وَبَارِكْ لِي فِيمَا أَعْطَيْتَ،<br>
+        وَقِنِي شَرَّ مَا قَضَيْتَ،<br>
+        فَإِنَّكَ تَقْضِي وَلَا يُقْضَىٰ عَلَيْكَ،<br>
+        وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ،<br>
+        وَلَا يَعِزُّ مَنْ عَادَيْتَ،<br>
+        تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> علَّمَه النبيُّ ﷺ الحَسَنَ بن علي يَدعو به في قُنوت الوتر. (رواه أبو داود والترمذي وصحَّحه)<br>
+        <strong>تأمَّل:</strong> سَبعةُ مَطالبَ في خَمسةِ أسطر. الهداية، العافية، التَّولِّي، البَرَكة، الوقاية. كلُّها مَربوطةٌ بالاسم الإلهي العظيم: <em>"تَقضي ولا يُقضى عليك"</em>. ادْعُ به في قُنوتك، وادْعُ به في الشدائد.
+      </div>
+      <div class="dua-source">— رواه أبو داود والترمذي عن الحسن بن علي ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﻤﺎ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٤</div>
+      <div class="dua-title">دعاءُ الصباحِ والمساء — سيِّد ما ورَد</div>
+      <div class="dua-text">
+        اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا،<br>
+        وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> كان النبيُّ ﷺ يَقولُها كلَّ صباحٍ ومَساء. وفي المساء يَقول: «اللهم بك أَمسينا، وبك أَصبحنا، وبك نَحيا، وبك نَموت، وإليك المَصير». (رواه الترمذي وصحَّحه)
+      </div>
+      <div class="dua-source">— رواه الترمذي عن أبي هريرة ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٥</div>
+      <div class="dua-title">سَيِّد أذكار الصباح والمساء — حَدُّ الكفاية</div>
+      <div class="dua-text">
+        اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ،<br>
+        خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ،<br>
+        أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ،<br>
+        أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي،<br>
+        فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> سيِّد الاستغفار، وقد سَبق ذِكره. مَن قاله مُوقِناً به في صباحه فمات في يَومه دَخَل الجَنَّة، ومَن قاله مُوقِناً به في مَسائه فمات في ليلته دَخَل الجَنَّة. (رواه البخاري)
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CHAPTER 10 ========== -->
+<section id="ch10" class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">۞ الفصل العاشر ۞</div>
+    <h2 class="chapter-title-main">أدعيةٌ جامعةٌ للحاجات</h2>
+    <p class="chapter-tagline">"لكلِّ حالةٍ دُعاءٌ يُناسِبُها"</p>
+  </div>
+
+  <div class="content-box">
+    <p>هذه الأدعية انتقاءٌ مما ثَبَت عن النبيِّ ﷺ والسَّلَف، رتَّبتُها على الأحوال التي قد تَمُرُّ بها، لتَجدَ ضالَّتك مُنَظَّمة.</p>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٦ — للسَّعَة في الرِّزق</div>
+      <div class="dua-title">دعاءٌ نَبَوي مأثور</div>
+      <div class="dua-text">
+        اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ،<br>
+        وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ
+      </div>
+      <div class="dua-meaning">
+        <strong>تأمَّل:</strong> لم يَطلُب مُجَرَّد الرِّزق، بل طَلَب الرِّزقَ الحلال، والاستغناءَ عن الخَلق بالله. هذا هو الرِّزق الحقيقيُّ. (رواه الترمذي وحسَّنه عن علي ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻪ)
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٧ — لِقَضاءِ الدَّيْن</div>
+      <div class="dua-title">دعاءٌ نَبويٌّ كان يُعَلِّمه النبيُّ ﷺ</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ،<br>
+        وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ،<br>
+        وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ،<br>
+        وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> دَخَل النبيُّ ﷺ على رَجلٍ في المسجد فإذا هو يَهتمُّ، فعَلَّمه هذا الدُّعاء، فدعا به الرَّجلُ فقَضى اللهُ دَينَه. (رواه أبو داود وصحَّحه)
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٨ — للشفاءِ من المرض</div>
+      <div class="dua-title">دعاء عيادةِ المريض</div>
+      <div class="dua-text">
+        أَسْأَلُ اللَّهَ الْعَظِيمَ، رَبَّ الْعَرْشِ الْعَظِيمِ،<br>
+        أَنْ يَشْفِيَكَ — أو يَشفِيَني —
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> قال النبيُّ ﷺ: «مَن عاد مريضاً لم يَحضُره أجَله، فقال عنده سَبعَ مرَّات: <em>أسأل الله العظيم، ربَّ العَرش العظيم، أنْ يَشفيَك</em>، إلا عافاه اللهُ من ذلك المرض». (رواه أبو داود والترمذي وصحَّحه)<br>
+        <strong>الدُّعاء الآخر:</strong> «اللَّهُمَّ ربَّ النَّاس، أَذهِبِ البَأس، اشفِ، أنتَ الشَّافي، لا شِفاءَ إلا شِفاؤك، شِفاءً لا يُغادِر سَقَماً». (متفق عليه)
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٣٩ — للحِفظِ من شَرِّ كلِّ ذي شَرّ</div>
+      <div class="dua-title">دعاءُ التَّحَصُّن في الصباح والمَساء</div>
+      <div class="dua-text">
+        بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ،<br>
+        وَهُوَ السَّمِيعُ الْعَلِيمُ
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> قال النبيُّ ﷺ: «مَن قال — حين يُمسي وحين يُصبح — <em>بسم الله الذي لا يَضُرُّ مع اسمه شيءٌ...</em> ثلاثَ مرَّات، لم يَضُرَّه شيء». (رواه أبو داود والترمذي وصحَّحه)<br>
+        <strong>قُلْها ثلاثاً</strong> صباحاً وثلاثاً مساءً.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٠ — لطلَب العِلم النافع</div>
+      <div class="dua-title">دعاءُ النبيِّ ﷺ بعد صلاة الفجر</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> كان النبيُّ ﷺ يَقولها بعد سَلامه من صلاة الفجر. ثلاثة مَطالبَ تَجمعُ خيرَ الدنيا والآخرة: عِلمٌ نافعٌ في الدين، رِزقٌ طَيِّبٌ حَلال، عَمَلٌ يَقبَلُه الله. (رواه ابن ماجه وصحَّحه)
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤١ — لحُسنِ الخاتمة</div>
+      <div class="dua-title">دعاءُ يوسف ﷺ في القرآن</div>
+      <div class="dua-text">
+        رَبِّ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>تأمَّل:</strong> هذا أَعظمُ مَطلبٍ يَطلبُه عاقل. ما قيمةُ كلِّ شيءٍ إذا ماتَ المرءُ على غيرِ الإسلام؟ ادْعُ به دائماً، خاصَّةً في السَّجَدات وعند الإفطار وفي ثلث الليل الآخر.
+      </div>
+      <div class="dua-source">— سورة يوسف، الآية ١٠١ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٢ — للعَفوِ والعافية</div>
+      <div class="dua-title">دعاءُ ليلةِ القَدر</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> قالت عائشةُ ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﺎ: قُلتُ يا رسول الله، إن وافَقتُ ليلةَ القَدر فما أَدعو؟ قال: «قُولي: <em>اللهم إنَّك عَفُوٌّ تُحِبُّ العَفوَ فاعفُ عنِّي</em>». (رواه أحمد والترمذي وصحَّحه)<br>
+        <strong>زيادة "كريم"</strong> ثابتة في بعض الروايات، وكلاهما حسن. ادْعُ به ليالي العَشر الأواخر.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٣ — للذُّرِّيَّةِ الصالحة</div>
+      <div class="dua-title">دعاءُ زكريا في القرآن</div>
+      <div class="dua-text">
+        رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ
+      </div>
+      <div class="dua-meaning">
+        ادْعُ به للأبناء قبل وُلوجِهم الدنيا، وأَنت تَنتظِرهم، وأثناءَ تَربيتهم. والذُّرِّيَّة الطَّيِّبة هي التي تَحفظُ والديها في الحياة، وتَذكُرهما بَعد المَمات.
+      </div>
+      <div class="dua-source">— سورة آل عمران، الآية ٣٨ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٤ — قبل النَّوم</div>
+      <div class="dua-title">دعاءُ خاتمة الليل</div>
+      <div class="dua-text">
+        بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا
+      </div>
+      <div class="dua-meaning">
+        <strong>السياق:</strong> كان النبيُّ ﷺ إذا أَرادَ أن يَنامَ قال هذا الدعاء. وإذا استَيقَظَ قال: «الحمد لله الذي أحيانا بعد ما أَماتنا وإليه النُّشور». (رواه البخاري ومسلم)
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٥ — قبل الطعام وبعدَه</div>
+      <div class="dua-title">دعاءُ الطعامِ المأثور</div>
+      <div class="dua-text">
+        قبل الطعام: بِسْمِ اللَّهِ<br><br>
+        بعد الطعام:<br>
+        الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَٰذَا، وَرَزَقَنِيهِ، مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> «مَن قاله بعد طعامه غُفِرَ له ما تَقدَّم من ذَنبه». (رواه أبو داود والترمذي وحسَّنه)<br>
+        ولو قُلتَ بعد الطعام: «الحمد لله الذي أطعمنا وسقانا وجعَلنا مُسلمين» لكان دُعاءً جامعاً نَبَوياً.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٦ — للوالدين</div>
+      <div class="dua-title">دعاءٌ قُرآنيٌّ للوالدين</div>
+      <div class="dua-text">
+        رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا
+      </div>
+      <div class="dua-meaning">
+        <strong>المعنى:</strong> أَمَر اللهُ في القرآن بأن يَدعو الإنسان لوالديه بهذا الدُّعاء. <em>"كما رَبَّياني صغيراً"</em>: تَوَسُّلٌ بصِفَة تَربيتِهما. وهو تَعليمٌ ربَّاني لمَن أَراد أن يُكافِئَ والديه. ادْعُ به لهما — أحياءً وأمواتاً — في كلِّ سَجدة.
+      </div>
+      <div class="dua-source">— سورة الإسراء، الآية ٢٤ —</div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٧ — الدعاء الذي ما دُعِيَ به في شيءٍ إلا اسْتُجيب</div>
+      <div class="dua-title">دعاءُ ذي النُّون (تَكرارٌ لأهمِّيَّتِه)</div>
+      <div class="dua-text">
+        لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ
+      </div>
+      <div class="dua-meaning">
+        <strong>قاعدة:</strong> هذا الدعاء فيه ثلاثةُ أركان: التوحيدُ (لا إله إلا أنت)، والتنزيهُ (سبحانك)، والاعترافُ بالظُّلم (إني كنت من الظالمين). فإذا اجتَمَعت هذه الثلاثة في قلب الداعي، فالباب مفتوح.
+      </div>
+    </div>
+
+    <div class="dua-card">
+      <div class="dua-num">الدعاء ٤٨ — دعاءٌ جامعٌ تَدعو به دائماً</div>
+      <div class="dua-title">من جوامع كَلِم النبيِّ ﷺ</div>
+      <div class="dua-text">
+        اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنَ الْخَيْرِ كُلِّهِ، عَاجِلِهِ وَآجِلِهِ، مَا عَلِمْتُ مِنْهُ وَمَا لَمْ أَعْلَمْ،<br>
+        وَأَعُوذُ بِكَ مِنَ الشَّرِّ كُلِّهِ، عَاجِلِهِ وَآجِلِهِ، مَا عَلِمْتُ مِنْهُ وَمَا لَمْ أَعْلَمْ.<br>
+        اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ عَبْدُكَ وَنَبِيُّكَ مُحَمَّدٌ ﷺ،<br>
+        وَأَعُوذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَ مِنْهُ عَبْدُكَ وَنَبِيُّكَ مُحَمَّدٌ ﷺ،<br>
+        اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَمَا قَرَّبَ إِلَيْهَا مِنْ قَوْلٍ أَوْ عَمَلٍ،<br>
+        وَأَعُوذُ بِكَ مِنَ النَّارِ وَمَا قَرَّبَ إِلَيْهَا مِنْ قَوْلٍ أَوْ عَمَلٍ،<br>
+        وَأَسْأَلُكَ أَنْ تَجْعَلَ كُلَّ قَضَاءٍ قَضَيْتَهُ لِي خَيْرًا
+      </div>
+      <div class="dua-meaning">
+        <strong>الفضل:</strong> دعاءٌ جامعٌ، عَلَّمَتهُ عائشةُ ﺭﺿﻲ ﺍﻟﻠﻪ ﻋﻨﻬﺎ. يَجمع الخيرَ كلَّه ويَدفعُ الشرَّ كلَّه، حتى ما تَجهلُه! فلا تَتركُ في دعائك شيئاً مَنسيًّا. (رواه أحمد وابن ماجه وصحَّحه الألباني)
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="line"></span><span class="ornament">۞ ❋ ❀ ❋ ۞</span><span class="line"></span></div>
+
+<!-- ========== CLOSING ========== -->
+<section id="closing" class="closing">
+  <h2>خاتِمَةُ الكِتابِ ودَعوةٌ للقَلْب</h2>
+  <p>أَخي القارئ، وَفَّقَكَ اللهُ وثَبَّتكَ ، ها قد بَلَغتَ آخِرَ هذا الكتاب، ولكنَّ بِدايةَ رحلتِكَ مع الدُّعاء لم تَبدأ بَعد.</p>
+
+  <p>اعلمْ — وفَّقَكَ اللهُ — أنَّ المَقصودَ ليسَ أنْ تَحفظَ هذه الأدعية وكفى، بل أنْ تَدخُلَ بها إلى عالَمِ المُناجاة. أنْ تَجعَلَ لنَفسِك خَلوةً يَوميَّة، تَفتحُ فيها قَلبَك للهِ، وتُلقي بأَحمالك بَين يَدَيه، وتَتَخَلَّقُ بأَخلاقِ المُفتَقِرين.</p>
+
+  <p>وإن نسيتَ كلَّ شيءٍ مما قرأتَ، فلا تَنسَ هذه الكلمات الثلاث:<br>
+  <strong>اعتَرِفْ بِفَقرِك. أَيقِنْ بسماعِه. أَلِحَّ في طَلَبِك.</strong></p>
+
+  <p>واعلَمْ أنَّ اللهَ — جلَّ في عُلاه — لم يَتعِبْ مَن قَصَدَه، ولم يَخِبْ مَن دَعاه. مَن أَيقَن بهذا، رَطَّبَ لِسانَه بالدُّعاء، ولم يَزَل يَنالُ من خِزانةِ الكَريم ما لا يَنفَد.</p>
+
+  <div class="final-dua">
+    اللَّهُمَّ اجْعَلْ هَذَا الْكِتَابَ نُورًا لِقَارِئِهِ،<br>
+    وَزَكَاةً لِجَامِعِهِ، وَشَفِيعًا لَهُمَا يَوْمَ يَلْقَيَانِكَ،<br>
+    وَاجْعَلْنَا مِنَ الَّذِينَ إِذَا دَعَوْكَ سَمِعْتَ،<br>
+    وَإِذَا سَأَلُوكَ أَعْطَيْتَ،<br>
+    وَإِذَا أَخْطَأُوا غَفَرْتَ.<br>
+    وَصَلَّى اللَّهُ وَسَلَّمَ عَلَى نَبِيِّنَا مُحَمَّدٍ،<br>
+    وَعَلَى آلِهِ وَصَحْبِهِ أَجْمَعِينَ،<br>
+    وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+  </div>
+</section>
+
+<footer>
+  <div class="ornament">۞ ❋ ۞</div>
+  <div>كتابُ الدُّعاء — مَرجعٌ شامِل</div>
+  <div style="margin-top:8px; opacity:0.7; font-size:14px">جُمِعَ بنِيَّةٍ خالِصةٍ لله، نَفَعَ اللهُ بهِ قارِئَه وجامِعَه</div>
+</footer>
+
+</body>
+</html>
