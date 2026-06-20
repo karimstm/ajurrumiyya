@@ -302,7 +302,7 @@ p.lead{font-size:21px;color:var(--ink-soft);font-style:italic;text-align:center;
 }
 .example.quran::before{content:'من القرآن الكريم';background:var(--emerald)}
 .example.poetry::before{content:'من الشعر العربي';background:var(--crimson)}
-.example.classical::before{content:'مثال كلاسيكي';background:var(--gold);color:var(--ink)}
+.example.classical::before{content:'مثال';background:var(--gold);color:var(--ink)}
 
 .ayah, .verse{
   font-family:'Amiri', serif;
@@ -1815,41 +1815,212 @@ footer p{margin-bottom:6px;font-family:'Amiri',serif;color:#c8b888}
 
   <!-- ============ النعت ============ -->
   <h2 class="section-title">أوّلًا: النَّعت (الصِّفة)</h2>
+
+  <h3 class="subsection">١. التعريفُ الجامعُ المانع</h3>
   <div class="definition">
-    <p><span class="hl">النعتُ</span>: تابعٌ يَدُلُّ على صفةٍ في اسمٍ قبله يُسمَّى المنعوت.</p>
+    <p><span class="hl">النعتُ</span>: تابعٌ يُكمِّلُ متبوعَه ببَيانِ صِفةٍ في المتبوعِ نفسِه، أو في اسمٍ ظاهرٍ بعدَه له تَعلُّقٌ بالمتبوعِ بضميرٍ يَعودُ إليه.</p>
   </div>
-  <p><strong>قاعدة التطابق:</strong> يَتْبع النعتُ منعوتَه في أربعةٍ من عشرة:</p>
-  <ol class="tidy">
-    <li>الإعراب: رفع — نصب — جر.</li>
-    <li>العدد: إفراد — تثنية — جمع.</li>
-    <li>الجنس: تذكير — تأنيث.</li>
-    <li>التعريف والتنكير.</li>
-  </ol>
+
+  <p><strong>شَرحُ القيود</strong>:</p>
+  <ul class="tidy">
+    <li><strong>«تابعٌ»</strong>: لإخراج ما ليس بتابع، كالمبتدأ والخبر والفاعل والمفعول.</li>
+    <li><strong>«يُكمِّل متبوعَه»</strong>: لإخراج البَدَل الذي يَحُلُّ مَحلَّ متبوعِه (لا يُكمِّله).</li>
+    <li><strong>«ببَيانِ صفة»</strong>: لإخراج العَطْف الذي يَدُلُّ على المُشاركة لا على وَصْف، ولإخراج التوكيد الذي يُقرِّر الحُكمَ من غير صفةٍ زائدة.</li>
+    <li><strong>«في المتبوع نفسه»</strong>: يَدْخُلُ به <span class="hl-g">النعتُ الحقيقي</span>، نحو: «جاءَ الرجلُ الكريمُ».</li>
+    <li><strong>«أو في اسمٍ ظاهرٍ بعدَه له تَعلُّقٌ بالمتبوع»</strong>: يَدْخُلُ به <span class="hl-g">النعتُ السببي</span>، نحو: «جاءَ الرجلُ الكريمُ أبوه».</li>
+  </ul>
+
+  <h3 class="subsection">٢. تقسيمُ النعتِ من جهةِ المعنى — حقيقيٌّ وسببيٌّ</h3>
+
+  <!-- ===== haqiqi ===== -->
+  <h4 style="font-family:'Reem Kufi',sans-serif;font-size:20px;color:var(--crimson);margin:22px 0 10px;font-weight:600;padding:6px 12px 6px 0;border-right:3px solid var(--gold)">أ) النَّعتُ الحقيقي</h4>
+
+  <div class="definition">
+    <p><span class="hl">النعتُ الحقيقي</span>: ما رَفَع ضميرًا مُسْتَتِرًا، ودَلَّ على صفةٍ في <strong>المنعوتِ نفسه</strong>.</p>
+  </div>
+
+  <div class="rule">
+    <p><strong>حُكمُه:</strong> يُطابِق منعوتَه في <strong>أربعةٍ من عشَرة</strong>:</p>
+    <ol class="tidy">
+      <li><strong>في الإعراب:</strong> رفعٌ — نصبٌ — جرٌّ.</li>
+      <li><strong>في العَدَد:</strong> إفرادٌ — تثنيةٌ — جمعٌ.</li>
+      <li><strong>في النوع:</strong> تذكيرٌ — تأنيث.</li>
+      <li><strong>في التعريف والتنكير:</strong> فلا يَكون نعتًا لمعرفةٍ إلا معرفةٌ، ولا لنكرةٍ إلا نكرةٌ.</li>
+    </ol>
+  </div>
 
   <div class="example quran">
     <div class="ayah">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ</div>
     <div class="attribution">[سورة الفاتحة: ٢-٤]</div>
+    <div class="parse">«اللهِ»: لفظ الجلالة مجرور. «<span class="hl">ربِّ</span>»: <strong>نعتٌ حقيقي</strong> أول لـ«الله»، مجرورٌ بالكسرة. «<span class="hl">الرحمنِ</span>»، «<span class="hl">الرحيمِ</span>»، «<span class="hl">مالكِ</span>»: نعوتٌ حقيقيّةٌ تَوالَت، كلُّها مجرورةٌ تَبَعًا للمنعوت. وكلُّها معارفُ كالمنعوت، مفردةٌ كالمنعوت، مذكَّرةٌ كالمنعوت ⟵ <strong>طابَقَت في الأربعة</strong>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَجَاءَ مِنْ أَقْصَى الْمَدِينَةِ رَجُلٌ يَسْعَىٰ</div>
+    <div class="attribution">[سورة يس: ٢٠]</div>
+    <div class="parse">«رجلٌ»: فاعل مرفوع نكرة. «<span class="hl">يَسعى</span>»: فعل مضارع وفاعلُه ضمير مستتر، والجملةُ الفعلية في محلِّ رفع <strong>نعتٌ حقيقي</strong> لـ«رجل». والرابطُ الضميرُ المستترُ العائدُ على «رجل».</div>
+  </div>
+
+  <div class="example classical">
+    <div class="verse">جاءَ الرَّجُلانِ الكَريمانِ ・ ورأيتُ المسلماتِ الصالحاتِ</div>
+    <div class="parse">«الكريمانِ»: نعتٌ حقيقي مرفوع بالألف، مثنّى كالمنعوت، معرفة كالمنعوت، مذكَّر كالمنعوت. «الصالحاتِ»: نعت حقيقي منصوب بالكسرة، جمع مؤنث سالم كالمنعوت. — مثال على المطابقة في الأربعة.</div>
+  </div>
+
+  <!-- ===== sababi ===== -->
+  <h4 style="font-family:'Reem Kufi',sans-serif;font-size:20px;color:var(--crimson);margin:28px 0 10px;font-weight:600;padding:6px 12px 6px 0;border-right:3px solid var(--gold)">ب) النَّعتُ السببي</h4>
+
+  <div class="definition">
+    <p><span class="hl">النعتُ السببي</span>: ما رَفَع اسمًا ظاهرًا بعدَه، فيه ضميرٌ يَعودُ على المنعوت، ودَلَّ على صفةٍ في ذلك الاسمِ الذي بعدَه، لا في المنعوت نفسه.</p>
+  </div>
+
+  <p><strong>تأمَّل:</strong> إذا قُلْتَ «جاء الرجلُ الكريمُ أبوه» فالصفةُ بالكَرَم في الحقيقة لـ<strong>الأبِ</strong>، لكنّك جَعَلْتَ هذه الصفةَ نَعتًا للرَّجُل بسببِ تَعلُّقه به (وهو أبٌ له، أي بسببِ ضميرِ «أبوه» العائد على الرجل). ولهذا سُمِّيَ <strong>سَببيًّا</strong>.</p>
+
+  <div class="rule">
+    <p><strong>حُكمُه (وهو يَختلف عن الحقيقي):</strong></p>
+    <ol class="tidy">
+      <li><strong>يُطابِقُ المنعوتَ في اثنين فقط:</strong>
+        <ul style="padding-right:20px;margin-top:6px">
+          <li>الإعراب (رفعًا ونصبًا وجرًّا).</li>
+          <li>التعريف والتنكير.</li>
+        </ul>
+      </li>
+      <li><strong>يُطابِقُ ما بعده (الاسمَ الظاهرَ المرفوعَ به) في واحد:</strong>
+        <ul style="padding-right:20px;margin-top:6px">
+          <li>التذكير والتأنيث.</li>
+        </ul>
+      </li>
+      <li><strong>يَلْزَم الإفرادَ دائمًا</strong>، فلا يُثنَّى ولا يُجْمَع وإن كان ما بعدَه مثنًّى أو جمعًا.</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <p><strong>علامةٌ ظاهرة:</strong> أنَّ السببيَّ يَتْبَعُهُ <strong>اسمٌ ظاهرٌ</strong> مرفوعٌ به (وهو فاعلٌ أو نائبُ فاعلٍ لاسم الفاعل أو المفعول أو الصفة المشبَّهة)، ويَتَّصِلُ بهذا الاسمِ ضميرٌ يَرْجِع إلى المنعوت. فإن لم يَتَّصِل به ضميرٌ، فليس بسببي.</p>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">إِنَّهَا بَقَرَةٌ صَفْرَاءُ فَاقِعٌ لَّوْنُهَا تَسُرُّ النَّاظِرِينَ</div>
+    <div class="attribution">[سورة البقرة: ٦٩]</div>
     <div class="parse">
-      «اللهِ»: لفظ الجلالة مجرور. «<span class="hl">ربِّ</span>»: <strong>نعت</strong> أول لله، مجرور وعلامة جره الكسرة. «<span class="hl">الرحمنِ</span>»: نعت ثانٍ مجرور. «<span class="hl">الرحيمِ</span>»: نعت ثالث مجرور. «<span class="hl">مالكِ</span>»: نعت رابع مجرور. فكلُّها تَبِعَت «الله» في الجر.
+      <strong>هذه الآية فيها النَّعتانِ معًا — وهي من أَبْدَعِ شواهد التفريق بينهما:</strong><br><br>
+      «بقرةٌ»: خبرُ «إنّ» مرفوع، <em>نكرة، مفرد، مؤنّث</em>.<br>
+      «<span class="hl">صفراءُ</span>»: <strong>نعتٌ حقيقي</strong> مرفوع، طابَق المنعوتَ في الأربعة: رَفْع، نكرة، إفراد، تأنيث — لأنَّ الصُّفرةَ صفةٌ في البقرةِ نفسِها.<br><br>
+      «<span class="hl">فاقعٌ</span>»: <strong>نعتٌ سببي</strong> مرفوع، طابَق المنعوتَ «بقرة» في اثنينِ فقط: الرفع، والتنكير. وطابَق ما بعدَه «لونُها» في واحدٍ: التذكير. ولزِم الإفرادَ.<br>
+      «لونُها»: فاعلٌ لـ«فاقع» (اسم الفاعل) مرفوع بالضمة، والهاء: ضميرٌ يعود على «بقرة».<br><br>
+      ⟵ فاجْتمعَ في الآية النَّعتُ الحقيقي «صفراء» (تَصِف البقرةَ بنفسها)، والنَّعتُ السببي «فاقعٌ» (يَصِف اللونَ المتعلِّقَ بها بسبب الإضافة).
     </div>
   </div>
 
   <div class="example quran">
-    <div class="ayah">جَاءَ رَجُلٌ كَرِيمٌ</div>
-    <div class="attribution">[مثال نحوي شائع]</div>
-    <div class="parse">«رجلٌ»: فاعل مرفوع، نكرة، مفرد، مذكر. «<span class="hl">كريمٌ</span>»: نعت مرفوع، نكرة، مفرد، مذكر. فطابق منعوتَه في الأربعة.</div>
+    <div class="ayah">فَأَخْرَجْنَا بِهِ نَبَاتًا مُّخْتَلِفًا أَلْوَانُهُ</div>
+    <div class="attribution">[سورة فاطر: ٢٧]</div>
+    <div class="parse">
+      «نباتًا»: مفعول به منصوب، <em>نكرة، مفرد، مذكَّر</em>.<br>
+      «<span class="hl">مختلفًا</span>»: <strong>نعتٌ سببي</strong> منصوب بالفتحة، طابَق المنعوتَ في النصب والتنكير. وطابَق «ألوانه» في التذكير. ومُفردٌ مع أنّ ما بعده جمع.<br>
+      «ألوانُه»: فاعلٌ لـ«مختلفًا» مرفوع، والهاء: ضميرٌ يعود على «نبات».
+    </div>
   </div>
 
-  <div class="example poetry">
+  <h3 class="subsection">٣. مقارَنةٌ تفصيليّةٌ بين الحقيقي والسببي</h3>
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>وَجْهُ المقارَنة</th><th>الحقيقي</th><th>السببي</th></tr></thead>
+      <tbody>
+        <tr><td>مَن يَصِف</td><td>المنعوتَ نفسَه</td><td>اسمًا بعدَه مُتعلِّقًا بالمنعوت</td></tr>
+        <tr><td>ما يَرْفَعُه</td><td>ضميرًا مُستتِرًا يعود على المنعوت</td><td>اسمًا ظاهرًا بعدَه فيه ضميرٌ يعود على المنعوت</td></tr>
+        <tr><td>المطابقة في الإعراب</td><td>يُطابِقُ المنعوت</td><td>يُطابِقُ المنعوت</td></tr>
+        <tr><td>المطابقة في التعريف والتنكير</td><td>يُطابِقُ المنعوت</td><td>يُطابِقُ المنعوت</td></tr>
+        <tr><td>المطابقة في التذكير والتأنيث</td><td>يُطابِقُ المنعوت</td><td>يُطابِقُ ما بعدَه</td></tr>
+        <tr><td>المطابقة في العَدَد</td><td>يُطابِقُ المنعوت (إفراد/تثنية/جمع)</td><td>يَلْزَم الإفرادَ دائمًا</td></tr>
+        <tr><td>أصلُه في الصياغة</td><td>صفةٌ مُشَبَّهة أو اسم فاعل أو مفعول</td><td>اسم فاعلٍ أو اسم مفعولٍ غالبًا</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example classical">
     <div class="verse">
-      وَلَقَدْ ذَكَرْتُكِ والرِّماحُ نَواهِلٌ ・ مِنّي وَبيضُ الهِنْدِ تَقْطُرُ مِن دَمي
+      <span style="color:var(--emerald)">جاء الرجلُ الكريمُ</span>　·　<span style="color:var(--crimson)">جاء الرجلُ الكريمُ أبوهُ</span><br>
+      <span style="color:var(--emerald)">جاءَ الرجلانِ الكريمانِ</span>　·　<span style="color:var(--crimson)">جاءَ الرجلانِ الكريمُ أبوهما</span><br>
+      <span style="color:var(--emerald)">جاءَتِ المرأةُ الكريمةُ</span>　·　<span style="color:var(--crimson)">جاءَتِ المرأةُ الكريمُ أبوها</span>
     </div>
-    <div class="attribution">— عنترة بن شدّاد</div>
-    <div class="parse">«الرماحُ»: مبتدأ. «نواهلٌ»: خبر مرفوع. وهي بمنزلة النعت المعنوي في الوصف.</div>
+    <div class="parse">
+      <strong>تأمَّل الفروق:</strong><br>
+      في الأمثلة الخضراء: «الكريم» نعتٌ حقيقيٌّ، تَغَيَّر بتغيُّر المنعوت إفرادًا وتثنيةً وتأنيثًا.<br>
+      في الأمثلة الحمراء: «الكريم» نعتٌ سببيٌّ، لزِمَ الإفرادَ، وَوافَق التذكيرَ لِما بعدَه «أبو-» في الجميع، وإن اختلف المنعوت إفرادًا أو تثنيةً أو تأنيثًا.
+    </div>
+  </div>
+
+  <h3 class="subsection">٤. تقسيمُ النعتِ من جهةِ اللفظ</h3>
+
+  <p>يَنقَسم النعتُ — بحسبِ صورتِه اللفظية — إلى ثلاثة أقسام:</p>
+
+  <h4 style="font-family:'Reem Kufi',sans-serif;font-size:19px;color:var(--emerald);margin:18px 0 8px;font-weight:600">١) النَّعتُ المفرد</h4>
+  <p>وهو ما ليس بجملةٍ ولا شِبهِ جملة، نحو: «الرحيم، الكريم، المؤمنون». والأمثلةُ السابقةُ كلُّها مفردةٌ.</p>
+
+  <h4 style="font-family:'Reem Kufi',sans-serif;font-size:19px;color:var(--emerald);margin:18px 0 8px;font-weight:600">٢) النَّعتُ جملةٌ</h4>
+  <p>وهو نوعانِ: جملةٌ فعليّة، وجملةٌ اسمية. وشرطُه: أن يكون المنعوتُ <strong>نكرةً</strong>، وأن يَشتمل النعتُ على ضميرٍ يَعود على المنعوت (يُسمَّى <strong>الرابطَ</strong>).</p>
+
+  <div class="rule">
+    <p style="text-align:center;font-family:'Aref Ruqaa',serif;color:var(--crimson);font-size:18px">«الجملُ بعدَ النكراتِ صفاتٌ، وبعد المعارفِ أحوالٌ».</p>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَاتَّقُوا يَوْمًا تُرْجَعُونَ فِيهِ إِلَى اللَّهِ</div>
+    <div class="attribution">[سورة البقرة: ٢٨١]</div>
+    <div class="parse">«يومًا»: مفعول به منصوب، نكرة. «<span class="hl">تُرجَعون فيه</span>»: جملةٌ فعليّةٌ في محلِّ نصب <strong>نعتٌ ليومًا</strong>. والرابطُ الضميرُ في «فيه» العائد على «يومًا».</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَاتَّقُوا فِتْنَةً لَّا تُصِيبَنَّ الَّذِينَ ظَلَمُوا مِنكُمْ خَاصَّةً</div>
+    <div class="attribution">[سورة الأنفال: ٢٥]</div>
+    <div class="parse">«فتنةً»: مفعول به منصوب، نكرة. «<span class="hl">لا تُصيبَنَّ</span>...»: جملةٌ فعليّةٌ في محلِّ نصب <strong>نعتٌ لفتنة</strong>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَسَارِعُوا إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا السَّمَاوَاتُ وَالْأَرْضُ</div>
+    <div class="attribution">[سورة آل عمران: ١٣٣]</div>
+    <div class="parse">«جنّةٍ»: مجرورة، نكرة. «<span class="hl">عَرضُها السمواتُ والأرضُ</span>»: <strong>جملةٌ اسميةٌ</strong> في محلِّ جر <strong>نعتٌ لجنة</strong>. والرابطُ الضمير في «عرضُها». مبتدأ ثاني «عَرضُها» وخبره «السمواتُ والأرضُ».</div>
+  </div>
+
+  <h4 style="font-family:'Reem Kufi',sans-serif;font-size:19px;color:var(--emerald);margin:18px 0 8px;font-weight:600">٣) النَّعتُ شِبْهُ جملة</h4>
+  <p>وهو الجارُّ والمجرور، أو الظرفُ، إذا وَقَعَا بعد نكرة:</p>
+
+  <div class="example quran">
+    <div class="ayah">وَلَهُم مَّقَامِعُ مِنْ حَدِيدٍ</div>
+    <div class="attribution">[سورة الحج: ٢١]</div>
+    <div class="parse">«مقامعُ»: مبتدأ مؤخر، نكرة. «<span class="hl">من حديدٍ</span>»: جار ومجرور، شبه جملة في محل رفع <strong>نعتٌ لمقامع</strong>.</div>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">وَجِفَانٍ كَالْجَوَابِ وَقُدُورٍ رَّاسِيَاتٍ</div>
+    <div class="attribution">[سورة سبأ: ١٣]</div>
+    <div class="parse">«جِفانٍ»: مجرورة، نكرة. «<span class="hl">كالجوابِ</span>»: جار ومجرور، شبه جملة في محل جر <strong>نعتٌ لجفان</strong>. «راسياتٍ»: نعت مفرد لـ«قدور».</div>
+  </div>
+
+  <h3 class="subsection">٥. الأغراضُ البلاغيّةُ للنعت</h3>
+  <p>لا يكون النعتُ في فصيح الكلام عَبَثًا، بل لأغراضٍ بَلاغيّةٍ مختلفة، أهمُّها:</p>
+
+  <div class="tbl-wrap">
+    <table class="gram">
+      <thead><tr><th>الغَرض</th><th>متى يكون</th><th>المثال</th></tr></thead>
+      <tbody>
+        <tr><td><strong>التخصيصُ</strong></td><td>إذا كان المنعوتُ نكرةً</td><td>﴿فَتَحْرِيرُ رَقَبَةٍ <span class="hl">مُّؤْمِنَةٍ</span>﴾</td></tr>
+        <tr><td><strong>التوضيحُ</strong></td><td>إذا كان المنعوتُ معرفةً</td><td>﴿هَلْ أَتَاكَ حَدِيثُ ضَيْفِ إِبْرَاهِيمَ <span class="hl">الْمُكْرَمِينَ</span>﴾</td></tr>
+        <tr><td><strong>المَدحُ</strong></td><td>الوصفُ بصفةِ كَمالٍ</td><td>﴿بِسْمِ اللَّهِ <span class="hl">الرَّحْمَٰنِ الرَّحِيمِ</span>﴾</td></tr>
+        <tr><td><strong>الذَّمُّ</strong></td><td>الوصف بصفة نَقْص</td><td>﴿فَاسْتَعِذْ بِاللَّهِ مِنَ الشَّيْطَانِ <span class="hl">الرَّجِيمِ</span>﴾</td></tr>
+        <tr><td><strong>الترَّحُّمُ</strong></td><td>إظهار العَطْفِ والشَّفقة</td><td>«اللهمّ ارحم عبدَك <span class="hl">المسكينَ الضعيف</span>»</td></tr>
+        <tr><td><strong>التأكيدُ</strong></td><td>تَقريرُ معنًى في المنعوت</td><td>﴿فَإِذَا نُفِخَ فِي الصُّورِ نَفْخَةٌ <span class="hl">وَاحِدَةٌ</span>﴾</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example quran">
+    <div class="ayah">فَإِذَا نُفِخَ فِي الصُّورِ نَفْخَةٌ وَاحِدَةٌ</div>
+    <div class="attribution">[سورة الحاقة: ١٣]</div>
+    <div class="parse">«نفخةٌ»: نائب فاعل مرفوع. «<span class="hl">واحدةٌ</span>»: نعتٌ حقيقي مرفوع، طابَق المنعوتَ في الأربعة. والغرضُ منه <strong>التأكيد</strong>، إذ المصدرُ «نفخة» يَدُلُّ على المرَّةِ، ثم أُكِّد بـ«واحدة» بَيانًا للهَوْل وإقصاءَ احتمال التَّعدُّد.</div>
   </div>
 
   <!-- ============ المعارف ============ -->
-  <h3 class="subsection">المعارف عند المؤلف</h3>
+  <h3 class="subsection">٦. المعارف عند المؤلف</h3>
   <p>المعرفة خمسة أنواع:</p>
   <ol class="tidy">
     <li><strong>الاسم المُضمَر</strong> نحو: أنا، أنتَ.</li>
